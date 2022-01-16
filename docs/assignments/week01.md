@@ -1,61 +1,32 @@
 # 1. Principles and practices
 
-This week I worked on defining my final project idea and started to getting used to the documentation process.
+## Too many interesting projects on my mind...
+...I would say weather station is most interesting, but also it is very challenging if amount of used sensors are very many. However, you can start with simple one first and add more later.
 
-## Research
+Here comes short specs for each of those.
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+### Outdoor weather station
+Design and manufacture feature rich outdoor weather station. More sensors the better. Operating power could be taken from solar panels or wind turbine if electricity is not available. Communication by some wireless method, WiFi, LoRa, etc.
 
-> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+* Temperature
+* Humidity
+* Atmospheric pressure
+* Wind speed
+* Rainfall
+* Seismometer
+* Fog meter
 
-## Useful links
+A lot of commercial solutions exits and most of those professional models are even very expensive (Vaisala, etc.).
 
-- [Jekyll](http://jekyll.org)
-- [Google](http://google.com)
-- [Markdown](https://en.wikipedia.org/wiki/Markdown)
+![](../images/weather_station_graph.png)
 
-## Code Example
+### Magic mirror
+Manufacture mirror that shows some live information, like weather forecast or room temperature. Technically it is computers screen which is covered by mirror glass than can be seen through - semi-transparent mirror. Computer drives the screen behind the mirror and does all the needed logic. Possible sensor used is for example motion sensor which turns on screen when motion is detected.
 
-Use the three backticks to separate code.
+![](../images/magic_mirror_graph.png)
 
-```
-// the setup function runs once when you press reset or power the board
-void setup() {
-  // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
-}
+### Vehicle speed monitor
+Display that shows speed of the approaching car or some other object. Use Doppler radar as sensing speed of vehicle and display it on the screen and/or feed data electronically to some other systems. It is similar solutions than existing ones you can see on some places to warn if you are driving over the limits. Needs suitable doppler radar module and possible display and some logic.
 
-// the loop function runs over and over again forever
-void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);                       // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);                       // wait for a second
-}
-```
+![](../images/vehicle_speed_monitor_graph.png)
 
-## Gallery
-
-![](../images/sample-photo.jpg)
-
-## Video
-
-### From Vimeo
-
-<iframe src="https://player.vimeo.com/video/10048961" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/10048961">Sound Waves</a> from <a href="https://vimeo.com/radarboy">George Gally (Radarboy)</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-
-### From Youtube
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jjNgJFemlC4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-## 3D Models
-
-<div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/658c8f8a2f3042c3ad7bdedd83f1c915/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-
-<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
-    <a href="https://sketchfab.com/models/658c8f8a2f3042c3ad7bdedd83f1c915?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Dita&#39;s Gown</a>
-    by <a href="https://sketchfab.com/francisbitontistudio?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Francis Bitonti Studio</a>
-    on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
-</p>
-</div>
