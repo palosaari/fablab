@@ -1,8 +1,8 @@
 # Replace the text below to customize your site
-site_name: Fab Academy Student Name
-site_description: My Fabacademy site
+site_name: Fab Lab Oulu
+site_description: Fab Lab Oulu Course
 
-site_author: Your name here
+site_author: Antti Palosaari
 docs_dir: docs
 site_dir: _site
 copyright: Creative Commons Attribution Non Commercial
