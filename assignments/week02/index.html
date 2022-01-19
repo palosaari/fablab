@@ -720,17 +720,50 @@
 <h2 id="setup-tools">Setup tools<a class="headerlink" href="#setup-tools" title="Permanent link">&para;</a></h2>
 <p>I am using Fedora Linux workstation so many of needed tools were easily available from the distribution package management. Also I have used many of the needed tools earlier so those were already installed.</p>
 <h3 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="go">sudo dnf install git</span>
+</code></pre></div>
+
 <p>Tool was already installed. I have used it a lot.</p>
+<p>Here is some basic commands I use most often:</p>
+<div class="codehilite"><pre><span></span><code><span class="go">git status</span>
+<span class="go">git log</span>
+<span class="go">git show</span>
+<span class="go">git diff</span>
+<span class="go">git reset --hard</span>
+<span class="go">git add &lt;filename&gt;</span>
+<span class="go">git commit -s</span>
+<span class="go">git push origin master</span>
+</code></pre></div>
+
+<p>Status shows general state of your current tree, like edited or new files. Log shows your commit history. Show shows last commit on your tree. Diff shows uncommitted changes what you have made your files. Reset &ndash;hard is handy when you have made changes to tree, but you need to discard those for some reason. Add adds file or directory you have edited to your commit you are going to do. Commit does the commit itself. Push uploads your local working tree to GitHub on my chase.</p>
 <h3 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">&para;</a></h3>
+<p>https://github.com/</p>
 <p>GitHub was already in use and configured. No need to to anything special. I decided to use it instead of GitLab due to that reason.</p>
+<p>For GitHub you need account. After that you need to add your public ssh key to GitHub in order to access using git-command.</p>
 <h3 id="github-pages">GitHub Pages<a class="headerlink" href="#github-pages" title="Permanent link">&para;</a></h3>
+<p>https://github.com/</p>
 <p>Used to host this WWW-site. It is easy to maintain that document just by pulling tree to GitHub using Git. Pages needed to be enabled from GitHub settings.</p>
+<p>Following settings are needed to GitHub Pages to point out location it loads that WWW-site.
+<img alt="" src="../../images/week02/GitHub_Pages_settings.png" /></p>
 <h3 id="mkdocs">MkDocs<a class="headerlink" href="#mkdocs" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="go">sudo dnf install mkdocs-material</span>
+</code></pre></div>
+
 <p>First I thought I will maintain static HTML pages by hand. After I looked some videos, recommended MkDocs starts feeling more handy so I decided to give it a try. Also there was Material theme based existing template for the course. Installation was pretty straightforward from the package manager: <em>sudo dnf install mkdocs-material</em>. It will install both theme and documentation tool as a dependency. After that I manually copied course template files to my local working Git tree and tested it with command <em>mkdocs serve</em>. Worked, pretty simple.</p>
 <p>There was some challenges releasing that documentation on GitHub Pages. MkDocs documentation needs to be build in order to get site that can be released on GitHub Pages. It didn&rsquo;t feel very comfortable to commit machine build documentation to my working Git branch as it pollutes branch unintentionally without a reason. Fortunately there was a command <em>mkdocs gh-deploy</em> which makes new branch for documentation and publish it automatically.</p>
+<div class="codehilite"><pre><span></span><code><span class="go">mkdocs serve</span>
+<span class="go">mkdocs gh-deploy</span>
+</code></pre></div>
+
+<p>Serve launch local development site to your computer. gh-deploy builds site and uploads it to the GitHub Pages.</p>
 <h3 id="graph-easy">Graph-Easy<a class="headerlink" href="#graph-easy" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="go">sudo dnf install perl-Graph-Easy</span>
+</code></pre></div>
+
 <p>Makes those simple diagrams used.</p>
-<p><em>echo &ldquo;[sensor 1], [sensor 2], [sensor N] -&gt; [logic] &lt;-&gt; [radio] [power] -&gt; [logic]&rdquo; | graph-easy &ndash;as_dot | dot -Tpng -o weather_station_graph.png</em></p>
+<div class="codehilite"><pre><span></span><code><span class="go">echo &quot;[sensor 1], [sensor 2], [sensor N] -&gt; [logic] &lt;-&gt; [radio] [power] -&gt; [logic]&quot; | graph-easy --as_dot | dot -Tpng -o weather_station_graph.png</span>
+</code></pre></div>
+
 <p>Gives you graph:</p>
 <p><img alt="" src="../../images/weather_station_graph.png" /></p>
                 
