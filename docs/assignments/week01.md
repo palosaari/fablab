@@ -20,6 +20,12 @@ A lot of commercial solutions exits and most of those professional models are ev
 
 ![](../images/weather_station_graph.png)
 
+<figure markdown>
+  ![Image title](../images/weather_station_sketch_1.jpeg){ width="200" }
+  ![Image title](../images/weather_station_sketch_2.jpeg){ width="200" }
+  <figcaption>Pictures by Kaisa, thanks!</figcaption>
+</figure>
+
 ### Magic mirror
 Manufacture mirror that shows some live information, like weather forecast or room temperature. Technically it is computers screen which is covered by mirror glass than can be seen through - semi-transparent mirror. Computer drives the screen behind the mirror and does all the needed logic. Possible sensor used is for example motion sensor which turns on screen when motion is detected.
 
