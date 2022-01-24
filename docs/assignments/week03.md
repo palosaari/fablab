@@ -1,61 +1,48 @@
 # 3. Computer Aided design
 
-This week I worked on defining my final project idea and started to getting used to the documentation process.
+This week task was to study and evaluate different design tools - raster, vector, 2D and 3D. My personal needs are mostly 3D design so I did more testing and evaluation on that side. Selected design tools are: GIMP, Inkscape and FreeCAD.
 
-## Research
+## GIMP
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+Basic picture editing tool selected was simply GIMP (GNU Image Manipulation Program). I have used it earlier, it comes with Linux distribution used and it does the job. I think I don't even need it much during these courses.
 
-> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+![](../images/week03/gimp.png)
 
-## Useful links
-
-- [Jekyll](http://jekyll.org)
-- [Google](http://google.com)
-- [Markdown](https://en.wikipedia.org/wiki/Markdown)
-
-## Code Example
-
-Use the three backticks to separate code.
-
-```
-// the setup function runs once when you press reset or power the board
-void setup() {
-  // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
-}
-
-// the loop function runs over and over again forever
-void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);                       // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);                       // wait for a second
-}
+```console
+sudo dnf install gimp
 ```
 
-## Gallery
+## Inkscape
 
-![](../images/sample-photo.jpg)
+Inkscape is a vector graphics editor I selected. It was natural choice as it was available from my OS package manager and it is rather feature rich. I am not sure how much I will need that kind of 2D vector graphic design tool still - probably for the laser cutter at least.
 
-## Video
+As a test, I quickly draw simple half wave dipole antenna around 1000 MHz (not simulated not even calculated accurate, just a concept). I wonder if it is possible to laser cut that kind of small antennas from few millimeter thick aluminum plate...
 
-### From Vimeo
+![](../images/week03/inkscape.png)
 
-<iframe src="https://player.vimeo.com/video/10048961" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/10048961">Sound Waves</a> from <a href="https://vimeo.com/radarboy">George Gally (Radarboy)</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+```console
+sudo dnf install inkscape
+```
 
-### From Youtube
+[dipole antenna.svg](../images/week03/dipole antenna.svg)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jjNgJFemlC4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-## 3D Models
+## FreeCAD
 
-<div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/658c8f8a2f3042c3ad7bdedd83f1c915/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+3D design tool is one I likely need most. Here I evaluated Fusion 360 and FreeCAD. I had too much problems with Fusion 360. Firstly, Fusion 360 does not have Linux version and secondly that mess about user account. I tried it with Wine (Windows API implementation for Linux) but not very great results. It worked somehow, but feeling was a bit buggy. Also registration for Autodesk in order to get license was a bit tricky and you have to send some proofs (like picture of student id) in order to get education license. And for some reason it still started 30 days trial version of Fusion 360 even "You’re eligible for free one-year educational access to Autodesk products through the Autodesk Education Community.".
 
-<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
-    <a href="https://sketchfab.com/models/658c8f8a2f3042c3ad7bdedd83f1c915?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Dita&#39;s Gown</a>
-    by <a href="https://sketchfab.com/francisbitontistudio?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Francis Bitonti Studio</a>
-    on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
-</p>
-</div>
+So I eventually switched to FreeCAD. My only earlier experience of 3D modeling I had was some experience modelling antennas using CST Studio. FreeCAD feels totally different which means learning curve will be rather heavy. After looking some tutorials from YouTube I was finally able to made simple design. It wasn't any part for my final project, but something useful still - it is cover plate for light switch. I need that as I have replaced manual light switches with smart ones that are controlled via home automation.
+
+3D design made was build from 4 different blocks. All blocks were first drawn as 2D sketch and then converted to 3D model. First block was "Pad" which covers outlines of whole part. Then rest of three blocks were "Pocket" which are then removed from the Pad by boolean style operation.
+
+![](../images/week03/freecad.png)
+
+```console
+sudo dnf install freecad
+```
+
+[ABB Cover frame Jussi Impressivo.FCStd](../images/week03/ABB Cover frame Jussi Impressivo.FCStd)
+
+[ABB Cover frame Jussi Impressivo.stl](../images/week03/ABB Cover frame Jussi Impressivo.stl)
+
+
