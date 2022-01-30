@@ -1,40 +1,8 @@
-# Replace the text below to customize your site
-site_name: Fab Lab Oulu
-site_description: Fab Lab Oulu Course
+site_name: Fab Lab Oulu Student Blog
 
-site_author: Antti Palosaari
-docs_dir: docs
-site_dir: _site
-copyright: Creative Commons Attribution Non Commercial
 theme:
-  name: material
-  # see https://squidfunk.github.io/mkdocs-material/getting-started/#color-palette
-  palette:
-    primary: "deep"
-    accent: "indigo"
-  font:
-    false
-    # text: "Ubuntu"
-    # code: "Ubuntu Mono"
-feature:
-    - navigation.tabs
-extra:
-  social:
-    - icon: "fontawesome/brands/github"
-      link: "https://github.com/academany"
-    - icon: "fontawesome/brands/twitter"
-      link: "https://twitter.com/fabacademany"
-    - icon: "fontawesome/brands/linkedin"
-      link: "https://linkedin.com/in/academany"
-    - icon: "fontawesome/brands/instagram"
-      link: "https://instagram.com/fabacademany"
-
+    name: material
 
 markdown_extensions:
-  - extra
-  - smarty
-  - admonition
-  - codehilite:
-      guess_lang: false
-  - toc:
-      permalink: true
+    - extra
+
