@@ -30,6 +30,36 @@ GitHub was already in use and configured. No need to to anything special. I deci
 
 For GitHub you need account. After that you need to add your public ssh key to GitHub in order to access using git-command.
 
+#### GitHub SSH keys
+
+Here is yet another documentation required by documentation how to add ssh keys to GitHub.
+
+On GitHub web user interface, go to your account settings. Settings => SSh and GPG keys. Push green button "New SSH key".
+
+![](../images/week02/GitHub_ssh_key_1.png)
+
+Give some name you like to key, I used "Home Workstation".
+
+Then you need to find your personal PUBLIC key. Here is how it is found from Linux workstation - assuming you have already generated it. Copy & paste that ssh key (do not paste this unique key, it is my public key, you need your own) to GitHub as seen on picture below.
+
+```console
+cat ~/.ssh/id_rsa.pub 
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA5X7AWrmUrXkaqkgtyf7t4/j1miUFQu/j+BYfi/yiJswm2ampZE+eBI16EooCwK8z3l//M/DE98pY5ClMI8ulzqrStHdLXxFm4enLBr891/w0U+utejjKeenOGq8oJ0zQJLlVZ31JQwtdAO+hWyz+nz18TvmzQSs8dwA73nf9tGLkfbfTDxnoRio83NUHA3I0ReOH9ukK5EM4uM9HvCGDlObtm2atjnJAI63AS8ztEnEJGUhPFjTy1FX79yPSnClm2XfJeF4Lid4lb7jtpVmWtqQPnHH6kB0Qt+b5a+ZF2LXHGq47yoVTnnZhnUTdMyMLtCQ/rMlBpPil1/5vYizzUQ== crope@localhost.localdomain
+```
+
+![](../images/week02/GitHub_ssh_key_2.png)
+
+As you are going to add new login method / key to your existing GitHub account it will ask your password as confirmation.
+
+![](../images/week02/GitHub_ssh_key_3.png)
+
+
+If everything went correctly added key should appear to list of ssh keys at your GitHub account.
+
+![](../images/week02/GitHub_ssh_key_4.png)
+
+
+
 ### GitHub Pages
 https://github.com/
 
