@@ -255,6 +255,19 @@
     GitHub
   </a>
   
+    <nav class="md-nav" aria-label="GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-ssh-keys" class="md-nav__link">
+    GitHub SSH keys
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -364,6 +377,19 @@
     GitHub
   </a>
   
+    <nav class="md-nav" aria-label="GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-ssh-keys" class="md-nav__link">
+    GitHub SSH keys
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -430,6 +456,20 @@ git push origin master
 <p>https://github.com/</p>
 <p>GitHub was already in use and configured. No need to to anything special. I decided to use it instead of GitLab due to that reason.</p>
 <p>For GitHub you need account. After that you need to add your public ssh key to GitHub in order to access using git-command.</p>
+<h4 id="github-ssh-keys">GitHub SSH keys</h4>
+<p>Here is yet another documentation required by documentation how to add ssh keys to GitHub.</p>
+<p>On GitHub web user interface, go to your account settings. Settings =&gt; SSh and GPG keys. Push green button "New SSH key".</p>
+<p><img alt="" src="../../images/week02/GitHub_ssh_key_1.png" /></p>
+<p>Give some name you like to key, I used "Home Workstation".</p>
+<p>Then you need to find your personal PUBLIC key. Here is how it is found from Linux workstation - assuming you have already generated it. Copy &amp; paste that ssh key (do not paste this unique key, it is my public key, you need your own) to GitHub as seen on picture below.</p>
+<pre><code class="language-console">cat ~/.ssh/id_rsa.pub 
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA5X7AWrmUrXkaqkgtyf7t4/j1miUFQu/j+BYfi/yiJswm2ampZE+eBI16EooCwK8z3l//M/DE98pY5ClMI8ulzqrStHdLXxFm4enLBr891/w0U+utejjKeenOGq8oJ0zQJLlVZ31JQwtdAO+hWyz+nz18TvmzQSs8dwA73nf9tGLkfbfTDxnoRio83NUHA3I0ReOH9ukK5EM4uM9HvCGDlObtm2atjnJAI63AS8ztEnEJGUhPFjTy1FX79yPSnClm2XfJeF4Lid4lb7jtpVmWtqQPnHH6kB0Qt+b5a+ZF2LXHGq47yoVTnnZhnUTdMyMLtCQ/rMlBpPil1/5vYizzUQ== crope@localhost.localdomain
+</code></pre>
+<p><img alt="" src="../../images/week02/GitHub_ssh_key_2.png" /></p>
+<p>As you are going to add new login method / key to your existing GitHub account it will ask your password as confirmation.</p>
+<p><img alt="" src="../../images/week02/GitHub_ssh_key_3.png" /></p>
+<p>If everything went correctly added key should appear to list of ssh keys at your GitHub account.</p>
+<p><img alt="" src="../../images/week02/GitHub_ssh_key_4.png" /></p>
 <h3 id="github-pages">GitHub Pages</h3>
 <p>https://github.com/</p>
 <p>Used to host this WWW-site. It is easy to maintain that document just by pulling tree to GitHub using Git. Pages needed to be enabled from GitHub settings.</p>
