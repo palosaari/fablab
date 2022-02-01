@@ -31,6 +31,12 @@ Manufacture mirror that shows some live information, like weather forecast or ro
 
 ![](../images/magic_mirror_graph.png)
 
+<figure markdown>
+  ![Image title](../images/week01/magic_mirror_sketch.resized.jpeg){ width="200" }
+  <figcaption>Pictures by Kaisa, thanks!</figcaption>
+</figure>
+
+
 ### Vehicle speed monitor
 Display that shows speed of the approaching car or some other object. Use Doppler radar as sensing speed of vehicle and display it on the screen and/or feed data electronically to some other systems. It is similar solutions than existing ones you can see on some places to warn if you are driving over the limits. Needs suitable doppler radar module and possible display and some logic.
 
