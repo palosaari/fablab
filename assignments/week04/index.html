@@ -306,6 +306,19 @@
     3D model of simple block
   </a>
   
+    <nav class="md-nav" aria-label="3D model of simple block">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-design" class="md-nav__link">
+    Download design:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -317,6 +330,20 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-files" class="md-nav__link">
+    Design files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
   
 </li>
       
@@ -404,6 +431,19 @@
     3D model of simple block
   </a>
   
+    <nav class="md-nav" aria-label="3D model of simple block">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-design" class="md-nav__link">
+    Download design:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -415,6 +455,20 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-files" class="md-nav__link">
+    Design files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
   
 </li>
       
@@ -443,7 +497,8 @@
 <p><img alt="" src="../../images/week04/roland_gs24.resized.jpg" /></p>
 <p>Usually cutter is connected to computer like a printer using printer driver made for the device. So instead of printing, it will cut. Printed document needs to be converted some vector format. Line width didn't seems to have any requirement at our test, it just cuts where the line center line was. Anyhow, printer driver API is for printers and does not fit 100% well other use cases like that, so be warned there may be device vendor specific tricks which are varying from manufacturer to other and so.</p>
 <p>As a vinyl cutting exercise I made some Pokemon Go Team Valor logo stickers. I downloaded suitable existing logo which was a red colored raster image on transparent background in .png format. Then I used Inkscape Trace Bitmap tool to "cut" border of from that logo in order to get vector image from logo borders. That vector image was then cut using vinyl cutter.</p>
-<p>Here is original image of used <a href="https://www.seekpng.com/ima/u2q8u2i1t4u2q8t4/">Valor logo</a></p>
+<p>Here is original image used <a href="https://www.seekpng.com/ima/u2q8u2i1t4u2q8t4/">Valor logo</a></p>
+<p>And vector image converted from original <a href="../../images/week04/pokemon_valor_logo.svg">Valor logo</a></p>
 <p><img alt="" src="../../images/week04/stickers.resized.jpg" /></p>
 <h2 id="laser-cutting">Laser cutting</h2>
 <h3 id="kerf">Kerf</h3>
@@ -458,36 +513,53 @@ ans =  0.13600
 <p><img alt="" src="../../images/week04/IMG_20220131_010329.resized.jpg" />
 <img alt="" src="../../images/week04/IMG_20220131_010530.resized.jpg" /></p>
 <h3 id="3d-model-of-simple-block">3D model of simple block</h3>
-<p>I used FreeCAD to design simple brick having 4 joints, one for each side. Design is about simplest possible one. First I made 2D sketch and added constraints everywhere where possible.</p>
+<p>I used FreeCAD to design simple brick having 4 joints, one for each side. I saw this kind of pieces on lab so I decided to go where it was easiest. First I made 2D sketch on FreeCAD. Then draw outline of part using polyline tool on sketcher. After that I added constraint for horizontal and vertical lines. Then symmetry around center point of XY-plane. Then I added equal length constraint of all similar length lines. And finally parametrized that slot width. </p>
 <p><img alt="" src="../../images/week04/FreeCAD_sketch.resized.png" /></p>
-<p>Spreadsheet is created basically just for the kerf parameter. It may be a bit overkill for this small design but parametric design principles were required so here it is in all flavors.</p>
-<p><img alt="" src="../../images/week04/FreeCAD_params.resized.png" /></p>
-<p>It was somehow difficult to export sketch or 3D model outlines as vector format needed for laser cutter. On ideal case you just need to save/export it some format and that's all - but it is far from that. The way I did it was I made FreeCAD TehcnicalDrawing from part and exported it as a .svg. After that you can edit it on Inkscape, change line width to 0.02mm required by laser and so...</p>
+<p>Spreadsheet is created for the kerf and material thickness parameters. It may be a bit overkill for this small design but parametric design principles were required so here it is in all flavors.</p>
+<p>Technically, that FreeCAD spreadsheet contains formula slotwidth = thickness - kerf, which can be seen on picture. Then parameter 'slotwidth' from spreadsheet is used on sketch to define slot width for one slot. Other 3 slots on the sketch are set same size as constraint so same value propagates that way to all slots on design.</p>
+<p><img alt="" src="../../images/week04/FreeCAD_parametric1.resized.png" />
+<img alt="" src="../../images/week04/FreeCAD_parametric2.resized.png" /></p>
+<p>It was somehow difficult to export sketch or 3D model outlines as vector format needed for laser cutter. On ideal case you just need to save/export it some format and that's all - but it is far from that. The way I did it was I made FreeCAD TehcnicalDrawing from part and exported it as a .svg (small button on bar, hardly visible on attached picture). After that you can edit it on Inkscape, change line width to 0.02mm required by laser (if line width is too large laser refuses and does error beep). From Inkscape save drawing as a .pdf and use laser printer workstation to print it.</p>
 <p>I still wonder if there really is better tool chain to do all these tasks a bit more automatically.
 <img alt="" src="../../images/week04/FreeCAD_techdraw.resized.png" />
 <img alt="" src="../../images/week04/FreeCAD_block.resized.png" /></p>
-<p><a href="../../images/week04/block.FCStd">Download that block FreeCAD design</a></p>
+<h4 id="download-design">Download design:</h4>
+<ul>
+<li><a href="../../images/week04/block.FCStd">block.FCStd</a></li>
+<li><a href="../../images/week04/block.stl">block.stl</a></li>
+<li><a href="../../images/week04/block.pdf">block.pdf</a></li>
+</ul>
 <h3 id="laser-cutting_1">Laser cutting</h3>
 <p>Laser used was Epilog Fusion M2 40.</p>
 <p>3D model from FreeCAD was imported to laser using following steps:</p>
 <ul>
-<li>Export FreeCAD Technical Drawing to vector format .svg</li>
-<li>Import .svg to Inkscape</li>
-<li>Edit line width to 0.02mm and check outlines</li>
-<li>Save as .pdf</li>
-<li>Open .pdf on laser workstation</li>
-<li>Select printer and edit printer settings</li>
-<li>Load correct laser settings per material used</li>
-<li>Send printer work to laser</li>
-<li>On laser; load material, power, air, etc.</li>
-<li>JOG. It is staring point of your laser print - upper left corner of document you sent to laser. There is red laser pointer showing exact point, use joystick to adjust.</li>
-<li>FOCUS. It is distance between laser beam and material. Mechanical triangle tool is for that. Use joystick to adjust, moves bed up/down.</li>
-<li>JOB. That's is printing document queue received by the laser machine. Select your job - it is likely the last one.</li>
-<li>GO. Start cutting.</li>
-<li>Wait minute or so after laser is finished before opening the lid. That's in order to get all burning products like dangerous smoke to get removed from the machine.</li>
+<li>Design workstation; Export FreeCAD Technical Drawing to vector format .svg</li>
+<li>Design workstation; Import .svg to Inkscape</li>
+<li>Design workstation; Edit line width to 0.02mm and check outlines</li>
+<li>Design workstation; Save as .pdf</li>
+<li>Laser cutter; turn on (air intake on, air outlet on, laser power on)</li>
+<li>Laser workstation; Open .pdf</li>
+<li>Laser workstation; Select printer and edit printer (laser) settings</li>
+<li>Laser workstation; Load correct laser settings per material used (you should not need to define your own settings as there is existing settings for most common materials)</li>
+<li>Laser workstation; Send printer work to laser</li>
+<li>Laser cutter; JOG. It is staring point of your laser print - upper left corner of document you sent to laser. There is red laser pointer showing exact point, use joystick to adjust.</li>
+<li>Laser cutter; FOCUS. It is distance between laser beam and material. Mechanical triangle tool is for that. Use joystick to adjust, moves bed up/down.</li>
+<li>Laser cutter; JOB. That's is printing document queue received by the laser machine. Select your job - it is likely the last one.</li>
+<li>Laser cutter; GO. Start cutting.</li>
+<li>Laser cutter; Wait minute or so after laser is finished before opening the lid. That's in order to get all burning products like dangerous smoke to get removed from the machine.</li>
 </ul>
-<p>Unfortunately there is very many things you can do wrong. It must be very careful with safety issues when working with laser cutter. Always do the basic checks mentioned on many places near laser (air intake, air outlet) and check the material compatibility.</p>
+<p>Unfortunately there is very many things you can do wrong. It must be very careful with safety issues when working with laser cutter. Always do the basic checks mentioned on many places near laser (air intake, air outlet) and check the material compatibility. Check where fire blanket is and make plan on your head what you will do if it starts burning before you start cutting.</p>
+<p>Laser cut blocks in random configuration. If something useful is needed then blocks can be reconfigured as a kettle base.</p>
 <p><img alt="" src="../../images/week04/laser_work1.resized.jpg" /></p>
+<h2 id="design-files">Design files</h2>
+<ul>
+<li><a href="../../images/week04/pokemon_valor_logo.svg">pokemon_valor_logo.svg</a></li>
+<li><a href="../../images/week04/block.FCStd">block.FCStd</a></li>
+<li><a href="../../images/week04/block.stl">block.stl</a></li>
+<li><a href="../../images/week04/block.pdf">block.pdf</a></li>
+</ul>
+<h2 id="summary">Summary</h2>
+<p>TOO MUCH WORK. This week was terrible amount of things. Something should be reduced. I would reduce the documentation and focus more learning.</p>
                 
               
               
