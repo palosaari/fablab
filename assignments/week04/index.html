@@ -271,6 +271,19 @@
     Vinyl cutting
   </a>
   
+    <nav class="md-nav" aria-label="Vinyl cutting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sticker" class="md-nav__link">
+    Sticker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -311,6 +324,13 @@
           <li class="md-nav__item">
   <a href="#power-frequency-speed-tests" class="md-nav__link">
     Power, frequency, speed tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dpi-test" class="md-nav__link">
+    DPI test
   </a>
   
 </li>
@@ -368,6 +388,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week05/" title="5. Invention, intellectual property and income" class="md-nav__link">
+      5. Invention, intellectual property and income
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -410,6 +442,19 @@
     Vinyl cutting
   </a>
   
+    <nav class="md-nav" aria-label="Vinyl cutting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sticker" class="md-nav__link">
+    Sticker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -450,6 +495,13 @@
           <li class="md-nav__item">
   <a href="#power-frequency-speed-tests" class="md-nav__link">
     Power, frequency, speed tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dpi-test" class="md-nav__link">
+    DPI test
   </a>
   
 </li>
@@ -522,12 +574,133 @@
 <h2 id="vinyl-cutting">Vinyl cutting</h2>
 <p>Vinyl cutter is printer look-a-like machine that has small knife in order to cut rather thin and soft material. Typically that material is just vinyl tape which is cut to some stickers.</p>
 <p>Used vinyl cutter was Roland CAMM-1 GS-24 and it was controlled by Windows workstation.</p>
-<p><img alt="" src="../../images/week04/roland_gs24.resized.jpg" /></p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/roland_gs24.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Roland CAMM-1 GS-24 vinyl cutter</td>
+</tr>
+</tbody>
+</table>
 <p>Usually cutter is connected to computer like a printer using printer driver made for the device. So instead of printing, it will cut. Printed document needs to be converted some vector format. Line width didn't seems to have any requirement at our test, it just cuts where the line center line was. Anyhow, printer driver API is for printers and does not fit 100% well other use cases like that, so be warned there may be device vendor specific tricks which are varying from manufacturer to other and so.</p>
-<p>As a vinyl cutting exercise I made some Pokemon Go Team Valor logo stickers. I downloaded suitable existing logo which was a red colored raster image on transparent background in .png format. Then I used Inkscape Trace Bitmap tool to "cut" border of from that logo in order to get vector image from logo borders. That vector image was then cut using vinyl cutter.</p>
+<h3 id="sticker">Sticker</h3>
+<p>As a vinyl cutting exercise I made some Pokemon Go Team Valor logo stickers. I downloaded suitable existing logo which was a red colored raster image on transparent background in .png format. Then I used Inkscape Trace Bitmap tool to the logo in order to get vector image with borders. Vector image was then cut by using vinyl cutter.</p>
 <p>Here is original image used <a href="https://www.seekpng.com/ima/u2q8u2i1t4u2q8t4/">Valor logo</a></p>
-<p>And vector image converted from original <a href="../../images/week04/pokemon_valor_logo.svg">Valor logo</a></p>
-<p><img alt="" src="../../images/week04/stickers.resized.jpg" /></p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/stickers.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Valor stickers</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/sticker.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Valor sticker installation I made on workroom door</td>
+</tr>
+</tbody>
+</table>
+<p>"Edge detection" method ended up with unwanted results because it made double line borders. I think it could be caused by the smooth borders of the original photo. First I removed those duplicate lines manually, which was pretty much work. I eventually decided to test other trace algorithms as Inkscape supports very many of them - 5 for single scan and 4 for multiple scans. I found that "Edge detection" and "Autotrace" methods make pretty good looking traces for my logo image. I used default parameters for both of those tracing algorithms and finally vinyl cut few pieces of logos for each used tracing algorithm. There was not big difference in the result between both algorithms.</p>
+<ul>
+<li>Cutter; Turn power on</li>
+<li>Cutter; Open vinyl load lever, located back left</li>
+<li>Cutter; Insert large enough piece of vinyl</li>
+<li>Cutter; Close vinyl load lever, located back left</li>
+<li>Cutter; Set left and right rollers. Those need to be on white markings. Roller locations are used to detect material width.</li>
+<li>Cutter; Select "PIECE" from "SELECT SHEET" cutter menu. There is some other material options available too like "ROLL", but for small cutting "PIECE" is enough. Piece means small piece of material, cutter measures height automatically and width is taken automatically from roller locations.</li>
+<li>Inkscape; Open your vector design file</li>
+<li>Inkscape; Open "Extensions -&gt; Roland CutStudio". This extension is installed on our fab lab workstation. It opens CutStudio with your design from Inkscape.</li>
+<li>CutStudio; File -&gt; Cutting Setup... Get sheet size from the cutter "Get From machine". It should show same size you can see on vinyl cutter screen</li>
+<li>CutStudio; Scale your drawing to fit vinyl sheet size and set drawing position on sheet. Also you could for example clone it or do other tricks needed before cutting.</li>
+<li>CutStudio; File -&gt; Cutting... in order to physical cut operation.</li>
+</ul>
+<p>After cutting is finished it can be removed from the cutter. Firstly it is better to move cutting head to parking position from the cutter setting in order to get more room to work. Then release load lever and remove vinyl. It should then manually remove those unneeded parts from the vinyl and for that job you may need scissors, needle or tweezers especially if cutting contains very small vinyl parts. After all the unneeded parts are removed you need to add adhesive transfer sheet in order to place vinyl sticker to final position.</p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/GS-24_sheet_size.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sheet size detected by the cutter with PIECE setting</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/inkscape_cutstudio.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inkscape launch CutStudio</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/peeling.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Peeling vinyl tape</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/GS-24_printer_driver_sheet_size.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Get sheet size from cutter</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/GS-24_sheet.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select sheet type</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/cutstudio.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Roland CutStudio</td>
+</tr>
+</tbody>
+</table>
 <h2 id="laser-cutting">Laser cutting</h2>
 <h3 id="kerf">Kerf</h3>
 <p>Kerf is term for "extra" material removed by the cutting process itself. On ideal case cutting process does nothing but cuts your material as desired, but on real life there is very often mechanical or some other process that removes material. That is for example saw blade or laser beam. So if your saw blade is 1mm wide it will remove that much material and it is said that 1mm kerf is removed. Same applies for laser beam too as it burns material during cutting process. Kerf should be taken into account when that small amounts of extra removed material is essential.</p>
@@ -538,26 +711,145 @@ ans =  0.055000
 &gt;&gt; (100-98.64)/10
 ans =  0.13600
 </code></pre>
-<p><img alt="" src="../../images/week04/IMG_20220131_010329.resized.jpg" />
-<img alt="" src="../../images/week04/IMG_20220131_010530.resized.jpg" /></p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/IMG_20220131_010329.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kerf 0.055mm</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/IMG_20220131_010530.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kerf 0.136mm</td>
+</tr>
+</tbody>
+</table>
 <h3 id="focus-test">Focus test</h3>
-<p>Some test were made how focus effects to cutting. +/-2mm and +/-4mm offsets were tested to plywood. Laser is usually calibrated that most of the power is on focus. Due to that, more off the material is from focus the less the power it gets. 4mm offset with used settings caused it does not cut through anymore on one test.
-<img alt="" src="../../images/week04/laser_focus.resized.jpg" /></p>
+<p>Some test were made how focus effects to cutting. +/-2mm and +/-4mm offsets were tested to plywood. Laser is usually calibrated that most of the power is on focus. Due to that, more off the material is from focus the less the power it gets. 4mm offset with used settings caused it does not cut through anymore on one test.</p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/laser_focus.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Focus test</td>
+</tr>
+</tbody>
+</table>
 <h3 id="power-frequency-speed-tests">Power, frequency, speed tests</h3>
 <p>Test made how different laser parameters effects to cut and engrave. All these 3 parameters have some relation for operation result. If you for example decrease power you can/should also decrease speed in order to succeed same thickness material cut.</p>
 <p>Test plate shows how increased speed eventually fails cut. On test plate you can see same happens for decreased power too.</p>
-<p><img alt="" src="../../images/week04/laser_test.resized.jpg" /></p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/laser_test.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Power, frequency, speed tests</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dpi-test">DPI test</h3>
+<p>Laser DPI test was made for 150, 300 and 600 DPI resolutions. Result is that 150DPI burns less material and 600DPI most, which is expected. It is because bigger the resolution then more there is overlapping burned points by laser beam. As we calculated Kerf, for 3mm vinyl, upper side, it was 0.136mm. So lets assume that this is beam width and it is same for MDF (~rough estimate). DPI is shorthand for Dots Per Inch. Inch is 2.54cm =&gt; 25.4mm.</p>
+<pre><code>&gt;&gt; 2.54*10/0.136
+ans =  186.76
+&gt;&gt; 600/186.76
+ans =  3.2127
+</code></pre>
+<p>So calculating maximum DPI from that kerf value we got 186.76 DPI. And all points after that gets lasered multiple times / overlapping and thus burns more material. 600DPI means every single point is burned roughly 3.2 times (hope calculations about are correct).</p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/dpi_test.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DPI test</td>
+</tr>
+</tbody>
+</table>
 <h3 id="3d-model-of-simple-block">3D model of simple block</h3>
-<p>I used FreeCAD to design simple brick having 4 joints, one for each side. I saw this kind of pieces on lab so I decided to go where it was easiest. First I made 2D sketch on FreeCAD. Then draw outline of part using polyline tool on sketcher. After that I added constraint for horizontal and vertical lines. Then symmetry around center point of XY-plane. Then I added equal length constraint of all similar length lines. And finally parametrized that slot width. </p>
-<p><img alt="" src="../../images/week04/FreeCAD_sketch.resized.png" /></p>
+<p>I used FreeCAD to design simple brick having 4 joints, one for each side. I saw this kind of pieces on lab so I decided to go where it was easiest. First I made 2D sketch on FreeCAD. Then draw outline of part using <strong>polyline</strong> tool on <strong>sketcher</strong>. After that I added constraint for horizontal and vertical lines. Then symmetry around center point of XY-plane. Then I added equal length constraint of all similar length lines. And finally parametrized that slot width. </p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/FreeCAD_sketch.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FreeCAD Sketcher</td>
+</tr>
+</tbody>
+</table>
 <p>Spreadsheet is created for the kerf and material thickness parameters. It may be a bit overkill for this small design but parametric design principles were required so here it is in all flavors.</p>
 <p>Technically, that FreeCAD spreadsheet contains formula slotwidth = thickness - kerf, which can be seen on picture. Then parameter 'slotwidth' from spreadsheet is used on sketch to define slot width for one slot. Other 3 slots on the sketch are set same size as constraint so same value propagates that way to all slots on design.</p>
-<p><img alt="" src="../../images/week04/FreeCAD_parametric1.resized.png" />
-<img alt="" src="../../images/week04/FreeCAD_parametric2.resized.png" /></p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/FreeCAD_parametric1.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FreeCAD Spreadsheet</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/FreeCAD_parametric2.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FreeCAD parametric design</td>
+</tr>
+</tbody>
+</table>
 <p>It was somehow difficult to export sketch or 3D model outlines as vector format needed for laser cutter. On ideal case you just need to save/export it some format and that's all - but it is far from that. The way I did it was I made FreeCAD TehcnicalDrawing from part and exported it as a .svg (small button on bar, hardly visible on attached picture). After that you can edit it on Inkscape, change line width to 0.02mm required by laser (if line width is too large laser refuses and does error beep). From Inkscape save drawing as a .pdf and use laser printer workstation to print it.</p>
-<p>I still wonder if there really is better tool chain to do all these tasks a bit more automatically.
-<img alt="" src="../../images/week04/FreeCAD_techdraw.resized.png" />
-<img alt="" src="../../images/week04/FreeCAD_block.resized.png" /></p>
+<p>I still wonder if there really is better tool chain to do all these tasks a bit more automatically.</p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/FreeCAD_techdraw.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FreeCAD TechDraw</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/FreeCAD_block.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FreeCAD 3D model</td>
+</tr>
+</tbody>
+</table>
 <h4 id="download-design">Download design:</h4>
 <ul>
 <li><a href="../../images/week04/block.FCStd">block.FCStd</a></li>
@@ -577,18 +869,30 @@ ans =  0.13600
 <li>Laser workstation; Select printer and edit printer (laser) settings</li>
 <li>Laser workstation; Load correct laser settings per material used (you should not need to define your own settings as there is existing settings for most common materials)</li>
 <li>Laser workstation; Send printer work to laser</li>
-<li>Laser cutter; JOG. It is staring point of your laser print - upper left corner of document you sent to laser. There is red laser pointer showing exact point, use joystick to adjust.</li>
-<li>Laser cutter; FOCUS. It is distance between laser beam and material. Mechanical triangle tool is for that. Use joystick to adjust, moves bed up/down.</li>
+<li>Laser cutter; JOG. Interface for positioning laser head to given point, for example setting starting point for your laser cut (top-left corner). There is red laser pointer showing exact point, use joystick to adjust.</li>
+<li>Laser cutter; FOCUS. Interface for moving laser cutter bed up and down. Used for adjusting distance between laser beam and material, there is mechanical triangle tool on laser for setting correct distance.</li>
 <li>Laser cutter; JOB. That's is printing document queue received by the laser machine. Select your job - it is likely the last one.</li>
 <li>Laser cutter; GO. Start cutting.</li>
-<li>Laser cutter; Wait minute or so after laser is finished before opening the lid. That's in order to get all burning products like dangerous smoke to get removed from the machine.</li>
+<li>Laser cutter; Wait 1 minute or so after laser is finished before opening the lid. That's in order to get all burning products like dangerous smoke to get removed from the machine.</li>
 </ul>
 <p>Unfortunately there is very many things you can do wrong. It must be very careful with safety issues when working with laser cutter. Always do the basic checks mentioned on many places near laser (air intake, air outlet) and check the material compatibility. Check where fire blanket is and make plan on your head what you will do if it starts burning before you start cutting.</p>
 <p>Laser cut blocks in random configuration. If something useful is needed then these blocks can be reconfigured as a kettle base :-)</p>
-<p><img alt="" src="../../images/week04/laser_work1.resized.jpg" /></p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week04/laser_work1.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set of Blocks...</td>
+</tr>
+</tbody>
+</table>
 <h2 id="design-files">Design files</h2>
 <ul>
-<li><a href="../../images/week04/pokemon_valor_logo.svg">pokemon_valor_logo.svg</a></li>
+<li><a href="../../images/week04/autotrace.svg">Valor logo autotrace.svg</a></li>
+<li><a href="../../images/week04/brightness_cutoff.svg">Valor logo brightness_cutoff.svg</a></li>
 <li><a href="../../images/week04/block.FCStd">block.FCStd</a></li>
 <li><a href="../../images/week04/block.stl">block.stl</a></li>
 <li><a href="../../images/week04/block.pdf">block.pdf</a></li>
@@ -627,6 +931,20 @@ ans =  0.13600
             </div>
           </a>
         
+        
+          <a href="../week05/" title="5. Invention, intellectual property and income" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                5. Invention, intellectual property and income
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
         
       </nav>
     </div>
