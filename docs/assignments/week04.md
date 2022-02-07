@@ -37,7 +37,7 @@ Here is the original image of the used [Valor logo](https://www.seekpng.com/ima/
 * Cutter; Open vinyl load lever, located back left
 * Cutter; Insert large enough piece of vinyl
 * Cutter; Close vinyl load lever, located back left
-* Cutter; Set left and right rollers. Those need to be on white markings. Roller locations are used to detect material width.
+* Cutter; Set left and right rollers. Those need to be on white markings. Roller locations are used to detect the width of the cut area.
 * Cutter; Select "PIECE" from "SELECT SHEET" cutter menu. There is some other material options available too like "ROLL", but for small cutting "PIECE" is enough. Piece means small piece of material, cutter measures height automatically and width is taken automatically from roller locations.
 * Inkscape; Open your vector design file
 * Inkscape; Open "Extensions -> Roland CutStudio". This extension is installed on our fab lab workstation. It opens CutStudio with your design from Inkscape.
