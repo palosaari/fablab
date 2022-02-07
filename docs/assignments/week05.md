@@ -18,11 +18,11 @@ Licenses are: CC0 and MIT.
 
 ## Slide
 
-[presentation.png](/presentation.png)
+[presentation.png](../presentation.png)
 
 ## Video
 
 At this point of Fab Lab courses I really don't have basically any material manufacturing the final project. Due to that video is just a place holder at the moment.
 
-[presentation.mp4](/presentation.mp4)
+[presentation.mp4](../presentation.mp4)
 
