@@ -1,0 +1,1127 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.2">
+    
+    
+      
+        <title>5. Electronics production - Fab Lab Oulu Student Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c1a4d03f.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#5-electronics-production" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Fab Lab Oulu Student Blog" class="md-header-nav__button md-logo" aria-label="Fab Lab Oulu Student Blog">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Fab Lab Oulu Student Blog
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              5. Electronics production
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Fab Lab Oulu Student Blog" class="md-nav__button md-logo" aria-label="Fab Lab Oulu Student Blog">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Fab Lab Oulu Student Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="About Me" class="md-nav__link">
+      About Me
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Assignments
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Assignments" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Assignments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week01/" title="1. Principles and practices" class="md-nav__link">
+      1. Principles and practices
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week02/" title="2. Project management" class="md-nav__link">
+      2. Project management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week03/" title="3. Computer Aided design" class="md-nav__link">
+      3. Computer Aided design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week04/" title="4. Computer controlled cutting" class="md-nav__link">
+      4. Computer controlled cutting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week05/" title="5. Invention, intellectual property and income" class="md-nav__link">
+      5. Invention, intellectual property and income
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        5. Electronics production
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="5. Electronics production" class="md-nav__link md-nav__link--active">
+      5. Electronics production
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pcb-production-with-roland-monofab-srm-20-milling-machine" class="md-nav__link">
+    PCB production with Roland MonoFab SRM-20 milling machine
+  </a>
+  
+    <nav class="md-nav" aria-label="PCB production with Roland MonoFab SRM-20 milling machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-modules-you-generally-need-to-touch-when-using-mods" class="md-nav__link">
+    6 modules you generally need to touch when using Mods
+  </a>
+  
+    <nav class="md-nav" aria-label="6 modules you generally need to touch when using Mods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-png" class="md-nav__link">
+    "read png"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-pcb-defaults" class="md-nav__link">
+    "set PCB defaults"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mill-raster-2d" class="md-nav__link">
+    "mill raster 2D"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roland-srm-20-milling-machine" class="md-nav__link">
+    "Roland SRM-20 milling machine"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-file" class="md-nav__link">
+    "save file"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-toolpath-module" class="md-nav__link">
+    "view toolpath" module
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research" class="md-nav__link">
+    Research
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-updi-programmer" class="md-nav__link">
+    Testing UPDI programmer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-updi-programmer_1" class="md-nav__link">
+    Testing UPDI programmer
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing UPDI programmer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microchip-attiny412-support-for-arduino" class="md-nav__link">
+    Microchip ATtiny412 support for Arduino
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compiling-hellot412echoino-test-program" class="md-nav__link">
+    Compiling hello.t412.echo.ino test program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfer-hellot412echo-program-to-chip" class="md-nav__link">
+    Transfer hello.t412.echo program to chip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-hellot412echo-board" class="md-nav__link">
+    Test hello.t412.echo board
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pcb-production-with-roland-monofab-srm-20-milling-machine" class="md-nav__link">
+    PCB production with Roland MonoFab SRM-20 milling machine
+  </a>
+  
+    <nav class="md-nav" aria-label="PCB production with Roland MonoFab SRM-20 milling machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-modules-you-generally-need-to-touch-when-using-mods" class="md-nav__link">
+    6 modules you generally need to touch when using Mods
+  </a>
+  
+    <nav class="md-nav" aria-label="6 modules you generally need to touch when using Mods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-png" class="md-nav__link">
+    "read png"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-pcb-defaults" class="md-nav__link">
+    "set PCB defaults"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mill-raster-2d" class="md-nav__link">
+    "mill raster 2D"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roland-srm-20-milling-machine" class="md-nav__link">
+    "Roland SRM-20 milling machine"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-file" class="md-nav__link">
+    "save file"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-toolpath-module" class="md-nav__link">
+    "view toolpath" module
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research" class="md-nav__link">
+    Research
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-updi-programmer" class="md-nav__link">
+    Testing UPDI programmer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-updi-programmer_1" class="md-nav__link">
+    Testing UPDI programmer
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing UPDI programmer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microchip-attiny412-support-for-arduino" class="md-nav__link">
+    Microchip ATtiny412 support for Arduino
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compiling-hellot412echoino-test-program" class="md-nav__link">
+    Compiling hello.t412.echo.ino test program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfer-hellot412echo-program-to-chip" class="md-nav__link">
+    Transfer hello.t412.echo program to chip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-hellot412echo-board" class="md-nav__link">
+    Test hello.t412.echo board
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="5-electronics-production">5. Electronics production</h1>
+<p>This week I worked on defining my final project idea and started to getting used to the documentation process.</p>
+<p>Group assignment:</p>
+<pre><code>characterize the design rules for your PCB production process
+https://mods.cba.mit.edu/
+
+traces interior 1/64" 0.010" fiber laser
+</code></pre>
+<h2 id="pcb-production-with-roland-monofab-srm-20-milling-machine">PCB production with Roland MonoFab SRM-20 milling machine</h2>
+<p>Roland MonoFab SRM-20 is rather small desktop CNC milling machine. It is general purpose milling machine which means it is not the best one for the special purposes like PCB milling though. Anyhow, it could do rather nice PCB milling on cases where PCB size is not very large, single side PCB is enough and traces needed are relatively large. It is also quite slow compared to milling machines that are made just for the PCB milling.</p>
+<p>On the lab I did that "linetest" using Roland MonoFab SRM-20. Toolpath traces were generated with "Mods" tool https://mods.cba.mit.edu/</p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_00.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Empty workbench. https://mods.cba.mit.edu/</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_01.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select "programs"</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_02.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select "open server program"</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_03.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select "machines-&gt;Roland-&gt;mill-&gt;SRM-20-&gt;PCB png"</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_04.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Milling design tool main view</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_05.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select "select png file"</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_06.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"linetest.png" file selected from computer</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_07.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set tool diameter to 0.25</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_08.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Change milling machine origin to 0/0/0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_09.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select "delete"</td>
+</tr>
+</tbody>
+</table>
+<p>Delete "WebSocket device" module because we don't have network connection on our milling machine. We create "save file" module as a replacement.</p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_10.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select "modules"</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_11.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select "open server module"</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_12.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select "file-&gt;save"</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_13.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add connection between modules. Red line is new connection.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_14.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select "calculate"</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_15.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Save Roland SRM-20 toolpath file for traces</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_16.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select "select png file"</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_17.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"linetest.interior.png" file selected from computer</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_18.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>select "mill outline (1/32)"</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_19.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set tool diameter to 1</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_20.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select "calculate"</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/mods_21.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Save Roland SRM-20 toolpath file for outline</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/toolpath_traces.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generated toolpath for traces (linetest.png)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/mods/toolpath_outline.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generated toolpath for outline (linetest.interior.png)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/linetest/linetest.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fab Academy linetest.png used on that exercise</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/linetest/linetest.interior.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fab Academy linetest.interior.png used on that exercise</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../images/week06/mods/mods_.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fig</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-modules-you-generally-need-to-touch-when-using-mods">6 modules you generally need to touch when using Mods</h3>
+<h4 id="read-png">"read png"</h4>
+<p>Basic input file operations, self explaining?</p>
+<h4 id="set-pcb-defaults">"set PCB defaults"</h4>
+<p>This module is just for select suitable default values for "mill raster 2D" module. Two choices, one for traces and one for outlines.</p>
+<h4 id="mill-raster-2d">"mill raster 2D"</h4>
+<p>That is most important module. Default settings are pretty good, change if needed. Our lab has for example smaller drill for traces than default and larger drill for outlines than default. Change accordingly. Our PCB was FR-1 which is something like 1.6mm substrate and 0.035mm copper or so. Default values fit very well for those PCB thickness no need to adjust even slightly off.</p>
+<p>Our lab re-uses LPKF ProtoMat PCB machine milling bits for SRM-20 PCB milling. Especially tracing drill is different as it is V-shaped 0.2mm-0.5mm drill. For more depth you cut the more wide trace will be. I used 0.25mm value for that bit with all the other settings default, which produces very nice cut.</p>
+<p>Offset number setting means how many rounds drill is run in parallel, bigger the number the larger area is skinned from the the copper. Different values can be tested and result seen from "view toolpath" module. You may compensate smaller drill by adding more offset, but V-shaped drill bits are not aimed for that so better to remove extra copper from more suitable drill bit.</p>
+<h4 id="roland-srm-20-milling-machine">"Roland SRM-20 milling machine"</h4>
+<p>Module for positioning. origin should be zeroed as we set origin from machine in order to avoid "double" origin. Those defaults are for situation SRM-20 is connected and controlled directly by that module, but on out case toolpath is transferred on file.</p>
+<p>"jog height" is value how much drill is moved top of Z-origin when transferred (not cut) to different position. Default 2mm is OK, I would say do not decrease.</p>
+<p>"home" is position where head is moved after the job is finished.</p>
+<h4 id="save-file">"save file"</h4>
+<p>Saves our toolpath to file.</p>
+<h4 id="view-toolpath-module">"view toolpath" module</h4>
+<p>Open and see how your calculated toolpath looks.</p>
+<h2 id="research">Research</h2>
+<p>https://gitlab.fabcloud.org/pub/programmers/programmer-swd-d11c</p>
+<h2 id="testing-updi-programmer">Testing UPDI programmer</h2>
+<p>For testing build UPDI programmer I need some device to flash. For that I loaned hello.t412.echo board from lab. I already had </p>
+<p>https://gitlab.fabcloud.org/pub/programmers/programmer-updi-d11c</p>
+<h2 id="testing-updi-programmer_1">Testing UPDI programmer</h2>
+<p>For testing build UPDI programmer I need some device to flash. For that I loaned hello.t412.echo board from lab. I already had Arduino installed on my workstation as I earlier did some esp8266 projects, so I needed only install ATtiny412 specific development files to Arduino.</p>
+<p>hello.t412.echo board is tiny PCB having ATtiny412 chip with two communication interfaces:</p>
+<ul>
+<li>UPDI for programming the chip</li>
+<li>UART for serial receive and transmit</li>
+</ul>
+<p>Board had initially some slightly tweaked software, it output was Finnish language. I replaced it with "standard" one.</p>
+<h3 id="microchip-attiny412-support-for-arduino">Microchip ATtiny412 support for Arduino</h3>
+<p>I added megaTinyCore using Arduino Boards Manager as descripted in installation instructions:
+https://github.com/SpenceKonde/megaTinyCore/blob/master/Installation.md</p>
+<p>Add additional board manager:</p>
+<ul>
+<li>"File-&gt;Preferences"</li>
+<li>"Additional Boards Manager URLS:" (http://drazzy.com/package_drazzy.com_index.json)</li>
+</ul>
+<p>Then open Boards Manager and install megaTinyCore:</p>
+<ul>
+<li>"Tools-&gt;Board-&gt;Boards Manager"</li>
+<li>install "megaTinyCore"</li>
+</ul>
+<p>After that Arduino should have support for ATtiny412 and many other chips from that family.</p>
+<h3 id="compiling-hellot412echoino-test-program">Compiling hello.t412.echo.ino test program</h3>
+<p>I downloaded hello.t412.echo.ino and opened it to Arduino.
+http://academy.cba.mit.edu/classes/embedded_programming/t412/hello.t412.echo.ino</p>
+<p>Select correct environment for that ATtiny412 chip.</p>
+<ul>
+<li>"Tools-&gt;Board-&gt;megaTinyCore-&gt;ATtiny412/402/212/202"</li>
+<li>"Tools-&gt;Chip-&gt;ATtiny412"</li>
+<li>"Sketch-&gt;Compile/Verify"</li>
+</ul>
+<pre><code class="language-console">Sketch uses 1918 bytes (46%) of program storage space. Maximum is 4096 bytes.
+Global variables use 91 bytes (35%) of dynamic memory, leaving 165 bytes for local variables. Maximum is 256 bytes.
+</code></pre>
+<p>It compiled correctly.</p>
+<h3 id="transfer-hellot412echo-program-to-chip">Transfer hello.t412.echo program to chip</h3>
+<p>Connect UPDI, Vcc and GND wires between programmer and device carefully and correctly. Plug UPDI programmer to computer. On my case, Linux, it appears as /dev/ttyACM0 serial device.</p>
+<p>UPDI programmer pinout:
+https://gitlab.fabcloud.org/pub/programmers/programmer-updi-d11c</p>
+<p>hello.t412.echo pinout:
+http://academy.cba.mit.edu/classes/embedded_programming/t412/hello.t412.echo.png</p>
+<ul>
+<li>"Tools-&gt;Port" (/dev/ttyACM0)</li>
+<li>"Tools-&gt;Programmer-&gt;SerialUPDI - SLOW: 57600 baud, any platform, any voltage, any adapter."</li>
+<li>"Sketch-&gt;Upload"</li>
+</ul>
+<pre><code class="language-console">SerialUPDI
+UPDI programming for Arduino using a serial adapter
+Based on pymcuprog, with significant modifications
+By Quentin Bolsee and Spence Konde
+Version 1.2.3 - Jan 2022
+Using serial port /dev/ttyACM0 at 57600 baud.
+Target: attiny412
+Set fuses: ['2:0x02', '6:0x04', '8:0x00']
+Action: write
+File: /tmp/arduino_build_547357/hello.t412.echo.ino.hex
+Pinging device...
+Ping response: 1E9223
+Setting fuse 0x2=0x2
+Writing literal values...
+Verifying literal values...
+Action took 0.02s
+Setting fuse 0x6=0x4
+Writing literal values...
+Verifying literal values...
+Action took 0.02s
+Setting fuse 0x8=0x0
+Writing literal values...
+Verifying literal values...
+Action took 0.02s
+Finished writing fuses.
+Chip/Bulk erase,
+Memory type eeprom is conditionally erased (depending upon EESAVE fuse setting)
+Memory type flash is always erased
+Memory type lockbits is always erased
+...
+Erased.
+Action took 0.01s
+Writing from hex file...
+Writing flash...
+[==================================================] 30/30
+Action took 0.65s
+Verifying...
+[==================================================] 4/4
+Verify successful. Data in flash matches data in specified hex-file
+Action took 0.42s
+</code></pre>
+<p>Chip firmware is uploaded successfully, which is is enough to confirm our UPDI programmer works correctly.</p>
+<h3 id="test-hellot412echo-board">Test hello.t412.echo board</h3>
+<p>I think this is out of scope of that week, but here it is briefly.</p>
+<p>I used USB UART board to test hello.t412.echo board. Connect TX&lt;-&gt;RX and RX&lt;-&gt;TX lines between USB UART and hello.t412.echo board. Also connect 5V Vcc and GND from USB UART to hello.t412.echo board. Disable hw flow control from USB UART (not sure if it is needed, I didn't test).</p>
+<p>Plug USB cable to computer and open terminal with following settings and test to type some letters.</p>
+<pre><code class="language-console">[crope@localhost hello.t412.echo]$ python -m serial.tools.miniterm /dev/ttyUSB0 115200
+--- Miniterm on /dev/ttyUSB0  115200,8,N,1 ---
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+hello.t412.echo: you typed &quot;H&quot;
+hello.t412.echo: you typed &quot;He&quot;
+hello.t412.echo: you typed &quot;Hel&quot;
+hello.t412.echo: you typed &quot;Hell&quot;
+hello.t412.echo: you typed &quot;Hello&quot;
+hello.t412.echo: you typed &quot;Hello &quot;
+hello.t412.echo: you typed &quot;Hello F&quot;
+hello.t412.echo: you typed &quot;Hello Fa&quot;
+hello.t412.echo: you typed &quot;Hello Fab&quot;
+hello.t412.echo: you typed &quot;Hello Fab &quot;
+hello.t412.echo: you typed &quot;Hello Fab L&quot;
+hello.t412.echo: you typed &quot;Hello Fab La&quot;
+hello.t412.echo: you typed &quot;Hello Fab Lab&quot;
+hello.t412.echo: you typed &quot;Hello Fab Lab &quot;
+hello.t412.echo: you typed &quot;Hello Fab Lab O&quot;
+hello.t412.echo: you typed &quot;Hello Fab Lab Ou&quot;
+hello.t412.echo: you typed &quot;Hello Fab Lab Oul&quot;
+hello.t412.echo: you typed &quot;Hello Fab Lab Oulu&quot;
+
+--- exit ---
+[crope@localhost hello.t412.echo]$ 
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../week05/" title="5. Invention, intellectual property and income" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                5. Invention, intellectual property and income
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.606193c2.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b90b6d1d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
