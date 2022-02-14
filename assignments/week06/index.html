@@ -292,11 +292,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#6-modules-you-generally-need-to-touch-when-using-mods" class="md-nav__link">
-    6 modules you generally need to touch when using Mods
+  <a href="#toolpath-generation-modscbamitedu" class="md-nav__link">
+    Toolpath generation mods.cba.mit.edu
   </a>
   
-    <nav class="md-nav" aria-label="6 modules you generally need to touch when using Mods">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules-generally-needed-to-touch-when-using-mods-for-pcb-milling" class="md-nav__link">
+    Modules generally needed to touch when using Mods for PCB milling
+  </a>
+  
+    <nav class="md-nav" aria-label="Modules generally needed to touch when using Mods for PCB milling">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -335,8 +342,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#view-toolpath-module" class="md-nav__link">
-    "view toolpath" module
+  <a href="#view-toolpath" class="md-nav__link">
+    "view toolpath"
   </a>
   
 </li>
@@ -346,27 +353,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#milling-the-pcb" class="md-nav__link">
+    Milling the PCB
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#research" class="md-nav__link">
-    Research
+  <a href="#programmer-updi-d11c" class="md-nav__link">
+    Programmer UPDI D11C
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Programmer UPDI D11C">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#testing-updi-programmer" class="md-nav__link">
-    Testing UPDI programmer
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-updi-programmer_1" class="md-nav__link">
     Testing UPDI programmer
   </a>
   
@@ -398,6 +406,11 @@
   <a href="#test-hellot412echo-board" class="md-nav__link">
     Test hello.t412.echo board
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -452,11 +465,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#6-modules-you-generally-need-to-touch-when-using-mods" class="md-nav__link">
-    6 modules you generally need to touch when using Mods
+  <a href="#toolpath-generation-modscbamitedu" class="md-nav__link">
+    Toolpath generation mods.cba.mit.edu
   </a>
   
-    <nav class="md-nav" aria-label="6 modules you generally need to touch when using Mods">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules-generally-needed-to-touch-when-using-mods-for-pcb-milling" class="md-nav__link">
+    Modules generally needed to touch when using Mods for PCB milling
+  </a>
+  
+    <nav class="md-nav" aria-label="Modules generally needed to touch when using Mods for PCB milling">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -495,8 +515,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#view-toolpath-module" class="md-nav__link">
-    "view toolpath" module
+  <a href="#view-toolpath" class="md-nav__link">
+    "view toolpath"
   </a>
   
 </li>
@@ -506,27 +526,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#milling-the-pcb" class="md-nav__link">
+    Milling the PCB
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#research" class="md-nav__link">
-    Research
+  <a href="#programmer-updi-d11c" class="md-nav__link">
+    Programmer UPDI D11C
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Programmer UPDI D11C">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#testing-updi-programmer" class="md-nav__link">
-    Testing UPDI programmer
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-updi-programmer_1" class="md-nav__link">
     Testing UPDI programmer
   </a>
   
@@ -565,6 +586,11 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
     </ul>
   
@@ -583,16 +609,49 @@
                 
                 
                 <h1 id="5-electronics-production">5. Electronics production</h1>
-<p>This week I worked on defining my final project idea and started to getting used to the documentation process.</p>
 <p>Group assignment:</p>
 <pre><code>characterize the design rules for your PCB production process
 https://mods.cba.mit.edu/
 
 traces interior 1/64" 0.010" fiber laser
 </code></pre>
+<p>Individual assignment:</p>
+<pre><code>make an in-circuit programmer by milling and stuffing the PCB
+https://gitlab.fabcloud.org/pub/programmers/programmer-swd-d11c
+https://gitlab.fabcloud.org/pub/programmers/programmer-updi-d11c
+ test it, then optionally try other PCB processes
+</code></pre>
 <h2 id="pcb-production-with-roland-monofab-srm-20-milling-machine">PCB production with Roland MonoFab SRM-20 milling machine</h2>
-<p>Roland MonoFab SRM-20 is rather small desktop CNC milling machine. It is general purpose milling machine which means it is not the best one for the special purposes like PCB milling though. Anyhow, it could do rather nice PCB milling on cases where PCB size is not very large, single side PCB is enough and traces needed are relatively large. It is also quite slow compared to milling machines that are made just for the PCB milling.</p>
-<p>On the lab I did that "linetest" using Roland MonoFab SRM-20. Toolpath traces were generated with "Mods" tool https://mods.cba.mit.edu/</p>
+<p>Roland MonoFab SRM-20 is rather small desktop CNC milling machine. It is a general purpose milling machine which means it is not the best one for the special purposes like PCB milling though. Anyhow, it could do rather nice PCB milling in cases where PCB area is not very large, PCB is single sided and used traces are relatively wide. It is also quite slow compared to milling machines that are made just for the PCB milling.</p>
+<p>On the lab I did that "linetest" using Roland MonoFab SRM-20. Toolpath traces were generated with "Mods" tool <a href="https://mods.cba.mit.edu/">https://mods.cba.mit.edu/</a>.</p>
+<h3 id="toolpath-generation-modscbamitedu">Toolpath generation mods.cba.mit.edu</h3>
+<p><a href="http://academy.cba.mit.edu/classes/electronics_production/linetest.png">http://academy.cba.mit.edu/classes/electronics_production/linetest.png</a></p>
+<p><a href="http://academy.cba.mit.edu/classes/electronics_production/linetest.interior.png">http://academy.cba.mit.edu/classes/electronics_production/linetest.interior.png</a></p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/linetest/linetest.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fab Academy linetest.png used on this exercise</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/linetest/linetest.interior.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fab Academy linetest.interior.png used on this exercise</td>
+</tr>
+</tbody>
+</table>
+<p>Here is step-by-step screenshots how I generated toolpaths for "linetest".</p>
 <table>
 <thead>
 <tr>
@@ -882,75 +941,247 @@ traces interior 1/64" 0.010" fiber laser
 </tr>
 </tbody>
 </table>
-<table>
-<thead>
-<tr>
-<th><img alt="" src="../../images/week06/linetest/linetest.png" /></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Fab Academy linetest.png used on that exercise</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th><img alt="" src="../../images/week06/linetest/linetest.interior.png" /></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Fab Academy linetest.interior.png used on that exercise</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th><img alt="" src="../images/week06/mods/mods_.png" /></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>fig</td>
-</tr>
-</tbody>
-</table>
-<h3 id="6-modules-you-generally-need-to-touch-when-using-mods">6 modules you generally need to touch when using Mods</h3>
+<h3 id="modules-generally-needed-to-touch-when-using-mods-for-pcb-milling">Modules generally needed to touch when using Mods for PCB milling</h3>
 <h4 id="read-png">"read png"</h4>
 <p>Basic input file operations, self explaining?</p>
 <h4 id="set-pcb-defaults">"set PCB defaults"</h4>
-<p>This module is just for select suitable default values for "mill raster 2D" module. Two choices, one for traces and one for outlines.</p>
+<p>This module is just to select suitable default values for "mill raster 2D" module. Two choices, one for traces and one for outlines.</p>
 <h4 id="mill-raster-2d">"mill raster 2D"</h4>
-<p>That is most important module. Default settings are pretty good, change if needed. Our lab has for example smaller drill for traces than default and larger drill for outlines than default. Change accordingly. Our PCB was FR-1 which is something like 1.6mm substrate and 0.035mm copper or so. Default values fit very well for those PCB thickness no need to adjust even slightly off.</p>
-<p>Our lab re-uses LPKF ProtoMat PCB machine milling bits for SRM-20 PCB milling. Especially tracing drill is different as it is V-shaped 0.2mm-0.5mm drill. For more depth you cut the more wide trace will be. I used 0.25mm value for that bit with all the other settings default, which produces very nice cut.</p>
-<p>Offset number setting means how many rounds drill is run in parallel, bigger the number the larger area is skinned from the the copper. Different values can be tested and result seen from "view toolpath" module. You may compensate smaller drill by adding more offset, but V-shaped drill bits are not aimed for that so better to remove extra copper from more suitable drill bit.</p>
+<p>This is the most important module. Default settings are pretty good, change if needed. Our lab has for example smaller drill bit for traces than default and larger bit for outlines than default. Change accordingly. Our PCB was FR-1 which is something like 1.6mm substrate and 0.035mm copper or so. Default values fit very well for those PCB thickness, so there is no need to adjust even if those are slightly off.</p>
+<p>Our lab re-uses LPKF ProtoMat S62 PCB machine milling bits for SRM-20 PCB milling. Especially tracing drill is different as it is V-shaped 0.2mm-0.5mm drill bit. The bigger the cut depth is, the wider the trace will be. I used 0.25mm value for that bit with all the other settings default, which produces very nice cut.</p>
+<p>Offset number setting means how many rounds drill will run in parallel, the bigger the number the larger area is skinned off from the the copper. Different values can be tested and result seen from "view toolpath" module. You may compensate smaller drill by adding more offset, but V-shaped drill bits are not aimed for that so it is better to remove extra copper using more suitable drill bit.</p>
 <h4 id="roland-srm-20-milling-machine">"Roland SRM-20 milling machine"</h4>
-<p>Module for positioning. origin should be zeroed as we set origin from machine in order to avoid "double" origin. Those defaults are for situation SRM-20 is connected and controlled directly by that module, but on out case toolpath is transferred on file.</p>
-<p>"jog height" is value how much drill is moved top of Z-origin when transferred (not cut) to different position. Default 2mm is OK, I would say do not decrease.</p>
-<p>"home" is position where head is moved after the job is finished.</p>
+<p>Module for head positioning. Module "origin" should be zeroed as we set origin from machine UI "VPanel for SRM-20" in order to avoid "double" origin. Those defaults are for a situation where SRM-20 is connected and controlled directly by this "Mods" module, but on our case the toolpath is transferred by file.</p>
+<p>"jog height" is the value how much drill is lifted above the Z-origin when transferred (not cut) to different position. Default 2mm is OK, I would say do not decrease.</p>
+<p>"home" is position where head is moved after the milling job is finished.</p>
 <h4 id="save-file">"save file"</h4>
 <p>Saves our toolpath to file.</p>
-<h4 id="view-toolpath-module">"view toolpath" module</h4>
+<h4 id="view-toolpath">"view toolpath"</h4>
 <p>Open and see how your calculated toolpath looks.</p>
-<h2 id="research">Research</h2>
-<p>https://gitlab.fabcloud.org/pub/programmers/programmer-swd-d11c</p>
-<h2 id="testing-updi-programmer">Testing UPDI programmer</h2>
-<p>For testing build UPDI programmer I need some device to flash. For that I loaned hello.t412.echo board from lab. I already had </p>
-<p>https://gitlab.fabcloud.org/pub/programmers/programmer-updi-d11c</p>
-<h2 id="testing-updi-programmer_1">Testing UPDI programmer</h2>
-<p>For testing build UPDI programmer I need some device to flash. For that I loaned hello.t412.echo board from lab. I already had Arduino installed on my workstation as I earlier did some esp8266 projects, so I needed only install ATtiny412 specific development files to Arduino.</p>
+<h3 id="milling-the-pcb">Milling the PCB</h3>
+<p>Machine used was Roland MonoFab SRM-20.</p>
+<p>Firstly, PCB needs to be attached very well to milling machine bed. PCB has very thin layer of copper which is removed by milling. We are speaking of tolerances about 0.1mm - so attached PCB needs to be very flat! Often PCB is attached to bed using double sided adhesive tape, but we used single side tape for both bed and PCB and used super glue between tapes.</p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/srm20_linetest/srm20_pcb_mounting_1.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bed and PCB taped</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/srm20_linetest/srm20_pcb_mounting_2.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bed and PCB glued</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/srm20_linetest/srm20_vpanel.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VPanel for SRM-20 - Roland MonoFab SRM-20 application UI</td>
+</tr>
+</tbody>
+</table>
+<p>I transferred linetest toolpath files to VPanel for SRM-20 application which is ran on normal PC workstation. There is few things to do. I need those 2 drill bits, one for traces and one for outline. Insert traces bit first to SRM-20, be careful, don't drop bit. Then set X/Y-origin and finally set Z-origin. Be very careful when setting Z-origin to avoid crashing bit to PCB. Ran drill bit very near to PCB, then open drill bit lock screw in order to drop drill bit to PCB surface. Tighten lock screw. Set Z-origin to that point using VPanel. Move Z-axis upwards to avoid PCB contact after origin is set. Mill traces. Switch to outer line drill bit similar way than earlier when tracing bit was used. Z-origin needs to be set again similarly than earlier - but do not touch X/Y-origin, it should be remain same that outline milling reach correct location. Mill outline. Remove PCB.</p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/srm20_linetest/srm20_pcb_milling.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Milling "linetest" PCB</td>
+</tr>
+</tbody>
+</table>
+<p>I am milling linetest here. Three UPDI or SWD programmer PCBs are already milled as can be seen from those holes on the PCB.</p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/srm20_linetest/srm20_pcb_milling_2.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>linetest PCB is milled</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/srm20_linetest/srm20_linetest.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>linetest PCB</td>
+</tr>
+</tbody>
+</table>
+<p>Milled PCB looks pretty nice.</p>
+<p>I am not 100% sure how to interpret that, but it looks like scale is in Inches. So 0.010 * 25.4mm = 0.254mm is that smallest slot machine did. It fits to trace drill bit size, 0.25mm, I used in mods when toolpath was made.</p>
+<h2 id="programmer-updi-d11c">Programmer UPDI D11C</h2>
+<p>As a exercise I made <a href="https://gitlab.fabcloud.org/pub/programmers/programmer-updi-d11c">Programmer UPDI D11C</a>. We did PCB this time using LPKF ProtoMat S62 PCB milling machine. I had rather much earlier experience from electronics which helps a lot.</p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/LPKF_ProtoMat_S62.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LPKF ProtoMat S62 PCB milling machine</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/updi_board.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Programmer UPDI D11C PCB</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/updi_hw/capasitor.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Capasitor, 1uF</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/updi_hw/mcu.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MCU, Atmel SAM D11</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/updi_hw/pin4.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4-pin header</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/updi_hw/pin6.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6-pin header</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/updi_hw/regulator.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Voltage regulator, 3.3V</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/updi_hw/resistor.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resistor 2 pieces, 4.99k ohm</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/updi_board1.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Atmel SAM D11</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/soldering.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Soldering</td>
+</tr>
+</tbody>
+</table>
+<p>Our instructor programmed bootloader to my UPDI board chip using SWD programmer. After bootloader installation chip enumerates to USB bus and my Linux workstation detected it as a USB serial device. Finally I programmed chip with <a href="https://github.com/qbolsee/SAMD11C_serial">SAMD11C_serial</a> firmware using Arduino IDE in order to get it functioning as UPDI serial device.</p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/updi_bootloader.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flashing bootloader to SAMD11C14</td>
+</tr>
+</tbody>
+</table>
+<h3 id="testing-updi-programmer">Testing UPDI programmer</h3>
+<p>For testing build UPDI programmer I need some device to flash. For that I used hello.t412.echo board from lab. I already had Arduino installed on my workstation as I earlier did some esp8266 projects, so I only needed to install ATtiny412 specific development files to Arduino.</p>
 <p>hello.t412.echo board is tiny PCB having ATtiny412 chip with two communication interfaces:</p>
 <ul>
 <li>UPDI for programming the chip</li>
-<li>UART for serial receive and transmit</li>
+<li>serial for receive and transmit data</li>
 </ul>
-<p>Board had initially some slightly tweaked software, it output was Finnish language. I replaced it with "standard" one.</p>
-<h3 id="microchip-attiny412-support-for-arduino">Microchip ATtiny412 support for Arduino</h3>
-<p>I added megaTinyCore using Arduino Boards Manager as descripted in installation instructions:
-https://github.com/SpenceKonde/megaTinyCore/blob/master/Installation.md</p>
+<p>Board had initially some slightly tweaked software, its output was in Finnish. I replaced and tested it with the "standard" one.</p>
+<h4 id="microchip-attiny412-support-for-arduino">Microchip ATtiny412 support for Arduino</h4>
+<p>I added megaTinyCore using Arduino Boards Manager as descripted in installation instructions: <a href="https://github.com/SpenceKonde/megaTinyCore/blob/master/Installation.md">Installing megaTinyCore</a></p>
 <p>Add additional board manager:</p>
 <ul>
 <li>"File-&gt;Preferences"</li>
@@ -962,9 +1193,8 @@ https://github.com/SpenceKonde/megaTinyCore/blob/master/Installation.md</p>
 <li>install "megaTinyCore"</li>
 </ul>
 <p>After that Arduino should have support for ATtiny412 and many other chips from that family.</p>
-<h3 id="compiling-hellot412echoino-test-program">Compiling hello.t412.echo.ino test program</h3>
-<p>I downloaded hello.t412.echo.ino and opened it to Arduino.
-http://academy.cba.mit.edu/classes/embedded_programming/t412/hello.t412.echo.ino</p>
+<h4 id="compiling-hellot412echoino-test-program">Compiling hello.t412.echo.ino test program</h4>
+<p>I downloaded <a href="http://academy.cba.mit.edu/classes/embedded_programming/t412/hello.t412.echo.ino">hello.t412.echo.ino</a> and opened it to Arduino.</p>
 <p>Select correct environment for that ATtiny412 chip.</p>
 <ul>
 <li>"Tools-&gt;Board-&gt;megaTinyCore-&gt;ATtiny412/402/212/202"</li>
@@ -975,12 +1205,10 @@ http://academy.cba.mit.edu/classes/embedded_programming/t412/hello.t412.echo.ino
 Global variables use 91 bytes (35%) of dynamic memory, leaving 165 bytes for local variables. Maximum is 256 bytes.
 </code></pre>
 <p>It compiled correctly.</p>
-<h3 id="transfer-hellot412echo-program-to-chip">Transfer hello.t412.echo program to chip</h3>
+<h4 id="transfer-hellot412echo-program-to-chip">Transfer hello.t412.echo program to chip</h4>
 <p>Connect UPDI, Vcc and GND wires between programmer and device carefully and correctly. Plug UPDI programmer to computer. On my case, Linux, it appears as /dev/ttyACM0 serial device.</p>
-<p>UPDI programmer pinout:
-https://gitlab.fabcloud.org/pub/programmers/programmer-updi-d11c</p>
-<p>hello.t412.echo pinout:
-http://academy.cba.mit.edu/classes/embedded_programming/t412/hello.t412.echo.png</p>
+<p><a href="https://gitlab.fabcloud.org/pub/programmers/programmer-updi-d11c/-/raw/main/img/pinout.png">UPDI programmer pinout</a></p>
+<p><a href="http://academy.cba.mit.edu/classes/embedded_programming/t412/hello.t412.echo.png">hello.t412.echo pinout</a></p>
 <ul>
 <li>"Tools-&gt;Port" (/dev/ttyACM0)</li>
 <li>"Tools-&gt;Programmer-&gt;SerialUPDI - SLOW: 57600 baud, any platform, any voltage, any adapter."</li>
@@ -1028,11 +1256,11 @@ Verify successful. Data in flash matches data in specified hex-file
 Action took 0.42s
 </code></pre>
 <p>Chip firmware is uploaded successfully, which is is enough to confirm our UPDI programmer works correctly.</p>
-<h3 id="test-hellot412echo-board">Test hello.t412.echo board</h3>
-<p>I think this is out of scope of that week, but here it is briefly.</p>
-<p>I used USB UART board to test hello.t412.echo board. Connect TX&lt;-&gt;RX and RX&lt;-&gt;TX lines between USB UART and hello.t412.echo board. Also connect 5V Vcc and GND from USB UART to hello.t412.echo board. Disable hw flow control from USB UART (not sure if it is needed, I didn't test).</p>
+<h4 id="test-hellot412echo-board">Test hello.t412.echo board</h4>
+<p>I think this is out of scope of this week, but here it is briefly.</p>
+<p>I used USB serial board to test hello.t412.echo board. Connect TX&lt;-&gt;RX and RX&lt;-&gt;TX lines between USB serial and hello.t412.echo board. Also connect 5V Vcc and GND from USB serial to hello.t412.echo board. Disable hw flow control from USB serial (not sure if it is needed, I didn't test).</p>
 <p>Plug USB cable to computer and open terminal with following settings and test to type some letters.</p>
-<pre><code class="language-console">[crope@localhost hello.t412.echo]$ python -m serial.tools.miniterm /dev/ttyUSB0 115200
+<pre><code class="language-console">$ python -m serial.tools.miniterm /dev/ttyUSB0 115200
 --- Miniterm on /dev/ttyUSB0  115200,8,N,1 ---
 --- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
 hello.t412.echo: you typed &quot;H&quot;
@@ -1055,8 +1283,20 @@ hello.t412.echo: you typed &quot;Hello Fab Lab Oul&quot;
 hello.t412.echo: you typed &quot;Hello Fab Lab Oulu&quot;
 
 --- exit ---
-[crope@localhost hello.t412.echo]$ 
+$ 
 </code></pre>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week06/updi_testing.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Test setup used. UPDI, hello.t412.echo and USB serial.</td>
+</tr>
+</tbody>
+</table>
                 
               
               
