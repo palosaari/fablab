@@ -1,0 +1,875 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.2">
+    
+    
+      
+        <title>7. Electronics design - Fab Lab Oulu Student Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c1a4d03f.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#7-electronics-design" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Fab Lab Oulu Student Blog" class="md-header-nav__button md-logo" aria-label="Fab Lab Oulu Student Blog">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Fab Lab Oulu Student Blog
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              7. Electronics design
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Fab Lab Oulu Student Blog" class="md-nav__button md-logo" aria-label="Fab Lab Oulu Student Blog">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Fab Lab Oulu Student Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="About Me" class="md-nav__link">
+      About Me
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Assignments
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Assignments" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Assignments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week01/" title="1. Principles and practices" class="md-nav__link">
+      1. Principles and practices
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week02/" title="2. Project management" class="md-nav__link">
+      2. Project management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week03/" title="3. Computer Aided design" class="md-nav__link">
+      3. Computer Aided design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week04/" title="4. Computer controlled cutting" class="md-nav__link">
+      4. Computer controlled cutting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week05/" title="5. Invention, intellectual property and income" class="md-nav__link">
+      5. Invention, intellectual property and income
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week06/" title="6. Electronics production" class="md-nav__link">
+      6. Electronics production
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        7. Electronics design
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="7. Electronics design" class="md-nav__link md-nav__link--active">
+      7. Electronics design
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kicad-6" class="md-nav__link">
+    KiCad 6
+  </a>
+  
+    <nav class="md-nav" aria-label="KiCad 6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kicad-installation" class="md-nav__link">
+    KiCad installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kicad-fab-lab-settings" class="md-nav__link">
+    KiCad Fab Lab settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kicad-electronic-design-exercise" class="md-nav__link">
+    KiCad electronic design exercise
+  </a>
+  
+    <nav class="md-nav" aria-label="KiCad electronic design exercise">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mods-fails-to-generate-toolpath" class="md-nav__link">
+    Mods fails to generate toolpath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#different-pcb-mills" class="md-nav__link">
+    Different PCB mills
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device" class="md-nav__link">
+    Device
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kicad-6" class="md-nav__link">
+    KiCad 6
+  </a>
+  
+    <nav class="md-nav" aria-label="KiCad 6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kicad-installation" class="md-nav__link">
+    KiCad installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kicad-fab-lab-settings" class="md-nav__link">
+    KiCad Fab Lab settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kicad-electronic-design-exercise" class="md-nav__link">
+    KiCad electronic design exercise
+  </a>
+  
+    <nav class="md-nav" aria-label="KiCad electronic design exercise">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mods-fails-to-generate-toolpath" class="md-nav__link">
+    Mods fails to generate toolpath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#different-pcb-mills" class="md-nav__link">
+    Different PCB mills
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device" class="md-nav__link">
+    Device
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="7-electronics-design">7. Electronics design</h1>
+<p>Assignment:</p>
+<p>Group assignment:</p>
+<p>use the test equipment in your lab to observe the operation of a micro-controller circuit board</p>
+<p>Individual assignment:</p>
+<p>redraw an echo hello-world board, add (at least) a button and LED (with current-limiting resistor) check the design rules, make it, and test it
+extra credit: simulate its operation</p>
+<h2 id="kicad-6">KiCad 6</h2>
+<p>We used <a href="https://www.kicad.org/">KiCad</a> to design the electronics. It’s a widely used open source program and pretty good so there was no need to even evaluate at other options. I have previous experience in electronics design years ago, but the program used has been different and it has been so long since anyway.</p>
+<h3 id="kicad-installation">KiCad installation</h3>
+<p><a href="https://www.kicad.org/blog/2021/12/KiCad-6.0.0-Release/">A version 6 of the KiCad</a> design suite has been released recently on 25 December 2021. That version upgrade from 5 to 6 is a major change since earlier version was over 3 years old from the 2018. Our Fab Lab had the latest version installed and I wanted to install it on my workstation as well. I have a slightly old Fedora release 34 at my home workstation with only the older KiCad version 5 supported as native. Luckily, the newer version was easily available from the <a href="https://copr.fedorainfracloud.org/coprs/g/kicad/kicad/">Fedora Copr repository</a> so I installed it. <a href="https://www.kicad.org/download/fedora/">KiCad Install on Fedora.</a></p>
+<pre><code class="language-console">sudo dnf install dnf-plugins-core
+sudo dnf copr enable @ kicad / kicad
+sudo dnf install kicad
+</code></pre>
+<h3 id="kicad-fab-lab-settings">KiCad Fab Lab settings</h3>
+<p><a href="https://gitlab.fabcloud.org/pub/libraries/electronics/kicad">Fab electronics component library for KiCad</a> contains all the official components that should be found in every Fab Lab. The components available in the library are easy to use in KiCad and you don't have to look for components elsewhere or design yourself. There are a huge number of common components in the program anyway and you can use them as well, but then you have to take a closer look at the package of the component that it match for component in Fab Lab, for example.</p>
+<p>I followed the installation instructions for the Fab component library on my home computer and used the following settings:</p>
+<pre><code class="language-console">$ cd ~/fablab/
+$ git clone https://gitlab.fabcloud.org/pub/libraries/electronics/kicad.git
+</code></pre>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/KiCad_Configure_Paths.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KiCad Configure Paths</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/KiCad_Footprint_Libraries.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KiCad Footprint Libraries</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/KiCad_Symbol_Libraries.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KiCad Symbol Libraries</td>
+</tr>
+</tbody>
+</table>
+<h3 id="kicad-electronic-design-exercise">KiCad electronic design exercise</h3>
+<p>I did that standard echo hello device with button and led. First we looked Fab Academy board and made almost similar, having same micro-controller and UART connected to "FTDI" header, but added led and button too. Used micro-controller ATtiny 412 has very limited amount of I/O pins - only 6 - and even one of those is kinda reserved for UPDI programmer. I connected LED between PA7 and VCC in series with 1k resistor to limit current. Button is connected between PA6 and ground having also 10k pull-up resistor to Vcc. Pull-up resistor is not mandatory as I can understand chip already has integrated pull-ups that could be enabled by the software but anyhow now pull-up resistor is here still for sure.</p>
+<p>BOM exported from KiCad:</p>
+<ul>
+<li>C1    C   C_1206  1</li>
+<li>R1    1k  R_1206  1</li>
+<li>R2    10k R_1206  1</li>
+<li>D1    LED LED_1206    1</li>
+<li>U1    Microcontroller_ATtiny412_SSFR  SOIC-8_3.9x4.9mm_P1.27mm    1</li>
+<li>SW1   BUTTON_B3SN Button_Omron_B3SN_6x6mm 1</li>
+<li>J1    Conn_PinHeader_FTDI_1x06_P2.54mm_Horizontal_SMD PinHeader_FTDI_01x06_P2.54mm_Horizontal_SMD 1</li>
+<li>J2    Conn_PinHeader_1x03_P2.54mm_Horizontal_SMD  PinHeader_1x03_P2.54mm_Horizontal_SMD   1</li>
+</ul>
+<p>I forgot to add C1 value to design. 1uF was used.</p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/components.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Components</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/EchoHelloLedButton_Schematic_Editor.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KiCad Schematic Editor</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/EchoHelloLedButton_PCB_Editor.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KiCad PCB Editor</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/Board_Setup.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KiCad PCB Editor - Board Setup used</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/KiCad_Export_SVG.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KiCad Export SVG for Roland MonoFab SRM-20</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/KiCad_Plot_Gerber.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KiCad Plot Gerber for LPKF ProtoMat S62</td>
+</tr>
+</tbody>
+</table>
+<h4 id="mods-fails-to-generate-toolpath">Mods fails to generate toolpath</h4>
+<p>I exported PCB as a vector two images from KiCad, one image for traces and  other image as board outline. After that I used <a href="https://mods.cba.mit.edu/">mods</a> tool to make toolpaths for Roland monoFab SRM-20 milling machine. For that point I had a lot of problems - I could not understand why my PCB borders were all the time wrong. I tried all relevant KiCad export settings vary many times, tweaked with KiCad PCB borders (Edge Cuts layer) and some other layers but still it was always wrong and mods generated totally bad looking toolpaths which I sure didn't even want to test mill. Eventually I decided to open PCB borders file directly with my browser, Firefox, and saw the borders image were still rendered as badly as mods running on Firefox browser. At that point I started suspect it may be issue with used browser and its svg-libraries. Then I decided to install Chromium browser (it is open source version of Google Chrome) as it was available on Fedora package management. That browser shows svg-file correctly, but then I ran other problem with mods when used Chromium browser - it fails to generate toolpath itself! Two steps forward and one step back :( After mods was find out to be broken with both Firefox and Chromium I started looking yet another browser. That browser was Google Chrome. I installed it from package available from vendor site. And finally it was a browser which works with mods on that single case at least. Too many compatibility issues - I have to say I am feeling mods is not best tool to mill PCB boards.</p>
+<p>Here is pictures how simple PCB border in SVG format from KiCad is rendered on different applications. Firefox fails it badly.</p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/svg_Firefox.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCB borders .SVG on Firefox</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/svg_Chromium.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCB borders .SVG on Chromium</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/svg_Google_Chrome.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCB borders .SVG on Google Chrome</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/svg_Inkscape.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCB borders .SVG on Inkscape</td>
+</tr>
+</tbody>
+</table>
+<h4 id="different-pcb-mills">Different PCB mills</h4>
+<p>From KiCad PCB Editor I made both SVG-images and Gerber files of my PCB design. I made 2 PCBs using different milling machines, Roland MonoFab SRM-20 and LPKF ProtoMat S62. For Roland it was tricky to do PCB with that small traces as I used 0.4mm for Track Width and 0.25mm for Clearance. After two failed attempts I started adjusting trace milling depth from 0.05mm to 0.10mm by manual adjusting cut depth from step by step deeper until it was fine. 0.2-0.5mm V-shaped drill bit was used.</p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/roland_failed.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCB v1 on Roland. It is bad.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/roland_succeed.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCB v2 on Roland. It is OK.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/lpkf_succeed.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCB v2 on LPKF. It is OK.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="device">Device</h3>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/soldering.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Soldering</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/testing.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Testing</td>
+</tr>
+</tbody>
+</table>
+<p>I used Fab Academy <a href="http://academy.cba.mit.edu/classes/embedded_programming/t412/hello.t412.echo.ino">hello.t412.echo.ino</a> code to test it.</p>
+<p>To test LED I make minor modifications;</p>
+<pre><code>setup() function:
+pinMode(PIN_PA7, OUTPUT);
+
+loop() function:
+digitalWrite(PIN_PA7, HIGH);
+delay(1000);
+digitalWrite(PIN_PA7, LOW);
+delay(1000);
+</code></pre>
+<p>LED blinks slowly as expected.</p>
+<p>Compiling:</p>
+<pre><code class="language-console">Sketch uses 1918 bytes (46%) of program storage space. Maximum is 4096 bytes.
+Global variables use 91 bytes (35%) of dynamic memory, leaving 165 bytes for local variables. Maximum is 256 bytes.
+SerialUPDI
+</code></pre>
+<p>Programming:</p>
+<pre><code class="language-console">UPDI programming for Arduino using a serial adapter
+Based on pymcuprog, with significant modifications
+By Quentin Bolsee and Spence Konde
+Version 1.2.3 - Jan 2022
+Using serial port /dev/ttyACM0 at 57600 baud.
+Target: attiny412
+Set fuses: ['2:0x02', '6:0x04', '8:0x00']
+Action: write
+File: /tmp/arduino_build_271734/hello.t412.echo.ino.hex
+Pinging device...
+Ping response: 1E9223
+Setting fuse 0x2=0x2
+Writing literal values...
+Verifying literal values...
+Action took 0.02s
+Setting fuse 0x6=0x4
+Writing literal values...
+Verifying literal values...
+Action took 0.02s
+Setting fuse 0x8=0x0
+Writing literal values...
+Verifying literal values...
+Action took 0.02s
+Finished writing fuses.
+Chip/Bulk erase,
+Memory type eeprom is conditionally erased (depending upon EESAVE fuse setting)
+Memory type flash is always erased
+Memory type lockbits is always erased
+...
+Erased.
+Action took 0.01s
+Writing from hex file...
+Writing flash...
+[==================================================] 30/30
+Action took 0.65s
+Verifying...
+[==================================================] 4/4
+Verify successful. Data in flash matches data in specified hex-file
+Action took 0.42s
+</code></pre>
+<p>Testing serial port:</p>
+<pre><code class="language-console">$ python -m serial.tools.miniterm /dev/ttyUSB0 115200
+--- Miniterm on /dev/ttyUSB0  115200,8,N,1 ---
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+hello.t412.echo: you typed &quot;F&quot;
+hello.t412.echo: you typed &quot;Fa&quot;
+hello.t412.echo: you typed &quot;Fab&quot;
+hello.t412.echo: you typed &quot;Fab &quot;
+hello.t412.echo: you typed &quot;Fab L&quot;
+hello.t412.echo: you typed &quot;Fab La&quot;
+hello.t412.echo: you typed &quot;Fab Lab&quot;
+hello.t412.echo: you typed &quot;Fab Lab &quot;
+hello.t412.echo: you typed &quot;Fab Lab O&quot;
+hello.t412.echo: you typed &quot;Fab Lab Ou&quot;
+hello.t412.echo: you typed &quot;Fab Lab Oul&quot;
+hello.t412.echo: you typed &quot;Fab Lab Oulu&quot;
+
+--- exit ---
+$ 
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../week06/" title="6. Electronics production" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                6. Electronics production
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.606193c2.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b90b6d1d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
