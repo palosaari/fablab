@@ -1,10 +1,14 @@
 # 8. Input devices
 
-> ## Assignment:
-> ### Individual assignment:
-> Measure something: add a sensor to a microcontroller board that you have designed and read it
-> ### Group assignment: 
-> Probe an input device's analog levels and digital signals
+> ## Assignment
+>
+> ### Individual assignment
+>
+> - Measure something: add a sensor to a microcontroller board that you have designed and read it
+>
+> ### Group assignment
+>
+> - Probe an input device's analog levels and digital signals
 
 ## New week, new board - ESP32
 
@@ -80,11 +84,14 @@ I installed a DHT11 sensor on the IO26 pin and an NTC thermistor circuit on the 
 
 I decided to test the temperature sensors with a small snippet of code. For code development, I used Arduino where I installed ESP32 support with the Board Manager at: [https://dl.espressif.com/dl/package_esp32_index.json](https://dl.espressif.com/dl/package_esp32_index.json).
 
+From Arduino IDE I selected board:
+Tools -> Board -> ESP32 Arduino -> ESP32 Dev Module
+
 For the DHT11 sensor, many libraries were found in the Arduino Library Manager, from which I installed the ["DHT sensor library for ESPx"](https://www.arduino.cc/reference/en/libraries/dht-sensor-library-for-espx/). 
 
 I quickly tested the operation of the sensor with an example program coming with the library and it worked right away. 
 
-However, I still had that another sensor circuit based on NTC thermistor so I started to study the operation of the ADC converter. I read the values ​​of the ADC converter from the microcontroller with the analogRead() function and examined them. The values ​​returned by the function changed when I heated the resistor with my finger, so it worked more or less, although the read values ​​seemed to be a little lower than expected. I assumed that the ADC converter returns values ​​0-4095 (12-bit resolution) linearly depending on the voltage 0-3.3V connected to the pin. After researching for a while, I realized that there are quite a few configurable things in the ESP32 ADC converter, of which the analogSetAttenuation() function seemed to be quite significant. I connected the adjustable voltage source to the ADC converter and tested using different voltages what kind of values ADC returns. I measured the following maximum possible voltages for each attenuation configuration. 
+However, I still had that another sensor circuit based on NTC thermistor so I started to study the operation of the ADC converter. I read the values ​​of the ADC converter from the microcontroller with the analogRead() function and examined them. The values ​​returned by the function changed when I heated the thermistor with my finger, so it worked more or less, although the read values ​​seemed to be a little lower than expected. I assumed that the ADC converter returns values ​​0-4095 (12-bit resolution) linearly depending on the voltage 0-3.3V connected to the pin. After researching for a while, I realized that there are quite a few configurable things in the ESP32 ADC converter, of which the analogSetAttenuation() function seemed to be quite significant. I connected the adjustable voltage source to the ADC converter and tested using different voltages what kind of values ADC returns. I measured the following maximum possible voltages for each attenuation configuration. 
 
 |analogSetAttenuation()|max voltage measured|
 |||
@@ -131,7 +138,7 @@ void loop() {
   // and value 4095 is 3.3V => analogRead() / 4095 * 3.3 = voltage on pin. Only in theory.
   // It is not that simple, see analogSetAttenuation()...
 
-  // Read 10k NTC resistor on IO4. It is connected as voltage divider, so at 25C it should be 0.5 * 3.3V = 1.65V
+  // Read 10k NTC thermistor on IO4. It is connected as voltage divider, so at 25C it should be 0.5 * 3.3V = 1.65V
   unsigned int AdcValue = analogRead(4);
   
   // Get DHT11 data
@@ -160,7 +167,7 @@ I used an oscilloscope to measure the digital signal from the DHT11 sensor data 
 ||
 |NTC thermistor circuit DUT|
 
-The voltage change from the NTC resistor is not very interesting to measure with an oscilloscope, but it also got some curves - at least you can see how quickly it reacts to the temperature change. In this measurement I also used hot air gun. At 1m40, the graph shows how the voltage has risen to about 3.3V. From this it can be concluded that it is likely that the ADC is saturated and thus no actual temperature has been transmitted to the program, i.e. the voltage distribution used would not work for very high temperatures - maybe the same will happen for cold temperatures? 
+The voltage change from the NTC thermistor is not very interesting to measure with an oscilloscope, but it also got some curves - at least you can see how quickly it reacts to the temperature change. In this measurement I also used hot air gun. At 1m40, the graph shows how the voltage has risen to about 3.3V. From this it can be concluded that it is likely that the ADC is saturated and thus no actual temperature has been transmitted to the program, i.e. the voltage distribution used would not work for very high temperatures - maybe the same will happen for cold temperatures? 
 
 |![](../images/week08/ntc.resized.png)|
 ||
@@ -191,6 +198,11 @@ My oscilloscope has some protocol decoders like I2C and 1-wire, but none of thos
 |![](../images/week08/dht11_c.resized.png)|
 ||
 |Space between each symbol. LOW around 52us. That translates to 0b010.|
+
+## Files
+
+- [Esp32.zip](../images/week08/Esp32.zip)
+- [input_test.ino](../images/week08/input_test.ino)
 
 ## Final thoughts
 
