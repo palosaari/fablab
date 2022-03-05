@@ -309,22 +309,22 @@
       
         <li class="md-nav__item">
   <a href="#assignment" class="md-nav__link">
-    Assignment:
+    Assignment
   </a>
   
-    <nav class="md-nav" aria-label="Assignment:">
+    <nav class="md-nav" aria-label="Assignment">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#individual-assignment" class="md-nav__link">
-    Individual assignment:
+    Individual assignment
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#group-assignment" class="md-nav__link">
-    Group assignment:
+    Group assignment
   </a>
   
 </li>
@@ -390,6 +390,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#final-thoughts" class="md-nav__link">
     Final thoughts
   </a>
@@ -400,6 +407,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week09/" title="9. Output devices" class="md-nav__link">
+      9. Output devices
+    </a>
   </li>
 
         
@@ -435,22 +454,22 @@
       
         <li class="md-nav__item">
   <a href="#assignment" class="md-nav__link">
-    Assignment:
+    Assignment
   </a>
   
-    <nav class="md-nav" aria-label="Assignment:">
+    <nav class="md-nav" aria-label="Assignment">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#individual-assignment" class="md-nav__link">
-    Individual assignment:
+    Individual assignment
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#group-assignment" class="md-nav__link">
-    Group assignment:
+    Group assignment
   </a>
   
 </li>
@@ -516,6 +535,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#final-thoughts" class="md-nav__link">
     Final thoughts
   </a>
@@ -540,11 +566,15 @@
                 
                 <h1 id="8-input-devices">8. Input devices</h1>
 <blockquote>
-<h2 id="assignment">Assignment:</h2>
-<h3 id="individual-assignment">Individual assignment:</h3>
-<p>Measure something: add a sensor to a microcontroller board that you have designed and read it</p>
-<h3 id="group-assignment">Group assignment:</h3>
-<p>Probe an input device's analog levels and digital signals</p>
+<h2 id="assignment">Assignment</h2>
+<h3 id="individual-assignment">Individual assignment</h3>
+<ul>
+<li>Measure something: add a sensor to a microcontroller board that you have designed and read it</li>
+</ul>
+<h3 id="group-assignment">Group assignment</h3>
+<ul>
+<li>Probe an input device's analog levels and digital signals</li>
+</ul>
 </blockquote>
 <h2 id="new-week-new-board-esp32">New week, new board - ESP32</h2>
 <p>I decided to make a new circuit board with lots of I/O pins for this week. The intention is that I will cope with a new board throughout this course serie. I have been thinking of using the ESP32 circuit for the final project so I chose it as the microcontroller for the new board. Thus, I am already gaining experience with that microcontroller at the same. </p>
@@ -650,9 +680,11 @@ $
 </table>
 <p>I installed a DHT11 sensor on the IO26 pin and an NTC thermistor circuit on the IO4 pin which has the ADC converter. </p>
 <p>I decided to test the temperature sensors with a small snippet of code. For code development, I used Arduino where I installed ESP32 support with the Board Manager at: <a href="https://dl.espressif.com/dl/package_esp32_index.json">https://dl.espressif.com/dl/package_esp32_index.json</a>.</p>
+<p>From Arduino IDE I selected board:
+Tools -&gt; Board -&gt; ESP32 Arduino -&gt; ESP32 Dev Module</p>
 <p>For the DHT11 sensor, many libraries were found in the Arduino Library Manager, from which I installed the <a href="https://www.arduino.cc/reference/en/libraries/dht-sensor-library-for-espx/">"DHT sensor library for ESPx"</a>. </p>
 <p>I quickly tested the operation of the sensor with an example program coming with the library and it worked right away. </p>
-<p>However, I still had that another sensor circuit based on NTC thermistor so I started to study the operation of the ADC converter. I read the values ​​of the ADC converter from the microcontroller with the analogRead() function and examined them. The values ​​returned by the function changed when I heated the resistor with my finger, so it worked more or less, although the read values ​​seemed to be a little lower than expected. I assumed that the ADC converter returns values ​​0-4095 (12-bit resolution) linearly depending on the voltage 0-3.3V connected to the pin. After researching for a while, I realized that there are quite a few configurable things in the ESP32 ADC converter, of which the analogSetAttenuation() function seemed to be quite significant. I connected the adjustable voltage source to the ADC converter and tested using different voltages what kind of values ADC returns. I measured the following maximum possible voltages for each attenuation configuration. </p>
+<p>However, I still had that another sensor circuit based on NTC thermistor so I started to study the operation of the ADC converter. I read the values ​​of the ADC converter from the microcontroller with the analogRead() function and examined them. The values ​​returned by the function changed when I heated the thermistor with my finger, so it worked more or less, although the read values ​​seemed to be a little lower than expected. I assumed that the ADC converter returns values ​​0-4095 (12-bit resolution) linearly depending on the voltage 0-3.3V connected to the pin. After researching for a while, I realized that there are quite a few configurable things in the ESP32 ADC converter, of which the analogSetAttenuation() function seemed to be quite significant. I connected the adjustable voltage source to the ADC converter and tested using different voltages what kind of values ADC returns. I measured the following maximum possible voltages for each attenuation configuration. </p>
 <table>
 <thead>
 <tr>
@@ -729,7 +761,7 @@ void loop() {
   // and value 4095 is 3.3V =&gt; analogRead() / 4095 * 3.3 = voltage on pin. Only in theory.
   // It is not that simple, see analogSetAttenuation()...
 
-  // Read 10k NTC resistor on IO4. It is connected as voltage divider, so at 25C it should be 0.5 * 3.3V = 1.65V
+  // Read 10k NTC thermistor on IO4. It is connected as voltage divider, so at 25C it should be 0.5 * 3.3V = 1.65V
   unsigned int AdcValue = analogRead(4);
 
   // Get DHT11 data
@@ -770,7 +802,7 @@ void loop() {
 </tr>
 </tbody>
 </table>
-<p>The voltage change from the NTC resistor is not very interesting to measure with an oscilloscope, but it also got some curves - at least you can see how quickly it reacts to the temperature change. In this measurement I also used hot air gun. At 1m40, the graph shows how the voltage has risen to about 3.3V. From this it can be concluded that it is likely that the ADC is saturated and thus no actual temperature has been transmitted to the program, i.e. the voltage distribution used would not work for very high temperatures - maybe the same will happen for cold temperatures? </p>
+<p>The voltage change from the NTC thermistor is not very interesting to measure with an oscilloscope, but it also got some curves - at least you can see how quickly it reacts to the temperature change. In this measurement I also used hot air gun. At 1m40, the graph shows how the voltage has risen to about 3.3V. From this it can be concluded that it is likely that the ADC is saturated and thus no actual temperature has been transmitted to the program, i.e. the voltage distribution used would not work for very high temperatures - maybe the same will happen for cold temperatures? </p>
 <table>
 <thead>
 <tr>
@@ -846,6 +878,11 @@ void loop() {
 </tr>
 </tbody>
 </table>
+<h2 id="files">Files</h2>
+<ul>
+<li><a href="../../images/week08/Esp32.zip">Esp32.zip</a></li>
+<li><a href="../../images/week08/input_test.ino">input_test.ino</a></li>
+</ul>
 <h2 id="final-thoughts">Final thoughts</h2>
 <p>I didn't learn almost anything this week, but used too much time for making this documentation. </p>
                 
@@ -880,6 +917,20 @@ void loop() {
             </div>
           </a>
         
+        
+          <a href="../week09/" title="9. Output devices" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                9. Output devices
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
         
       </nav>
     </div>
