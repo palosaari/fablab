@@ -344,12 +344,17 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#kicad-electronic-design-exercise" class="md-nav__link">
-    KiCad electronic design exercise
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attiny-412-board" class="md-nav__link">
+    ATtiny 412 board
   </a>
   
-    <nav class="md-nav" aria-label="KiCad electronic design exercise">
+    <nav class="md-nav" aria-label="ATtiny 412 board">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -366,20 +371,36 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#device" class="md-nav__link">
-    Device
+  <a href="#testing-the-board" class="md-nav__link">
+    Testing the board
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observe-uart-data" class="md-nav__link">
+    Observe UART data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    Final thoughts
+  </a>
   
 </li>
       
@@ -493,12 +514,17 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#kicad-electronic-design-exercise" class="md-nav__link">
-    KiCad electronic design exercise
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attiny-412-board" class="md-nav__link">
+    ATtiny 412 board
   </a>
   
-    <nav class="md-nav" aria-label="KiCad electronic design exercise">
+    <nav class="md-nav" aria-label="ATtiny 412 board">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -515,20 +541,36 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#device" class="md-nav__link">
-    Device
+  <a href="#testing-the-board" class="md-nav__link">
+    Testing the board
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observe-uart-data" class="md-nav__link">
+    Observe UART data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    Final thoughts
+  </a>
   
 </li>
       
@@ -566,16 +608,16 @@
 </ul>
 </blockquote>
 <h2 id="kicad-6">KiCad 6</h2>
-<p>We used <a href="https://www.kicad.org/">KiCad</a> to design the electronics. It’s a widely used open source program and pretty good so there was no need to even evaluate at other options. I have previous experience in electronics design years ago, but the program used was different and it has been so long since that anyway.</p>
+<p>We used <a href="https://www.kicad.org/">KiCad</a> to design the electronics. It’s a widely used open source program and pretty good so there was no need to even evaluate at other options. I have previous experience in electronics design years ago, but the program used was different and it has been so long since that anyway. </p>
 <h3 id="kicad-installation">KiCad installation</h3>
-<p><a href="https://www.kicad.org/blog/2021/12/KiCad-6.0.0-Release/">A version 6 of the KiCad</a> design suite is released recently, on 25th of December 2021. That version upgrade from 5 to 6 is a major change since earlier version was over 3 years old from the 2018. Our Fab Lab had the latest version installed and I wanted to install it on my workstation as well. I have a slightly old Fedora release 34 at my home workstation with only the older KiCad version 5 supported as native. Luckily, the newer version was easily available from the <a href="https://copr.fedorainfracloud.org/coprs/g/kicad/kicad/">Fedora Copr repository</a> so I installed it. <a href="https://www.kicad.org/download/fedora/">KiCad Install on Fedora.</a></p>
+<p><a href="https://www.kicad.org/blog/2021/12/KiCad-6.0.0-Release/">A version 6 of the KiCad</a> design suite is released recently, on 25th of December 2021. That version upgrade from 5 to 6 is a major change since earlier version was over 3 years old from the 2018. Our Fab Lab had the latest version installed and I wanted to install it on my workstation as well. I have a slightly old Fedora release 34 at my home workstation with only the older KiCad version 5 supported as native. Luckily, the newer version was easily available from the <a href="https://copr.fedorainfracloud.org/coprs/g/kicad/kicad/">Fedora Copr repository</a> so I installed it. <a href="https://www.kicad.org/download/fedora/">KiCad Install on Fedora</a>. </p>
 <pre><code class="language-console">sudo dnf install dnf-plugins-core
 sudo dnf copr enable @ kicad / kicad
 sudo dnf install kicad
 </code></pre>
 <h3 id="kicad-fab-lab-settings">KiCad Fab Lab settings</h3>
-<p><a href="https://gitlab.fabcloud.org/pub/libraries/electronics/kicad">Fab electronics component library for KiCad</a> contains all the official components that should be found in every Fab Lab. The components available in the library are easy to use in KiCad and you don't have to look for components elsewhere or design them yourself. There are a huge number of common components in the program anyway and you can use them as well, but then you have to take a closer look at the package of the component that it matches for component in Fab Lab, for example.</p>
-<p>I followed the installation instructions for the Fab component library on my home computer and used the following settings:</p>
+<p><a href="https://gitlab.fabcloud.org/pub/libraries/electronics/kicad">Fab electronics component library for KiCad</a> contains all the official components that should be found in every Fab Lab. The components available in the library are easy to use in KiCad and you don't have to look for components elsewhere or design them yourself. There are a huge number of common components in the program anyway and you can use them as well, but then you have to take a closer look at the package of the component that it matches for component in Fab Lab, for example. </p>
+<p>I followed the installation instructions for the Fab component library on my home computer and used the following settings: </p>
 <pre><code class="language-console">$ cd ~/fablab/
 $ git clone https://gitlab.fabcloud.org/pub/libraries/electronics/kicad.git
 </code></pre>
@@ -615,19 +657,69 @@ $ git clone https://gitlab.fabcloud.org/pub/libraries/electronics/kicad.git
 </tr>
 </tbody>
 </table>
-<h3 id="kicad-electronic-design-exercise">KiCad electronic design exercise</h3>
-<p>I did the standard echo hello device with button and led. First we looked Fab Academy board and made almost similar to it, having same micro-controller and UART connected to "FTDI" header, but added led and button too. Used micro-controller ATtiny 412 has very limited amount of I/O pins - only 6 - and even one of those is kinda reserved for the UPDI programmer. I connected LED between PA7 and VCC in series with 1k resistor to limit current. Button is connected between PA6 and ground having also 10k pull-up resistor to Vcc. Pull-up resistor is not mandatory as I can understand chip already has integrated pull-ups that could be enabled by the software but anyhow now pull-up resistor is here still for sure.</p>
-<p>BOM exported from KiCad:</p>
-<ul>
-<li>C1    C   C_1206  1</li>
-<li>R1    1k  R_1206  1</li>
-<li>R2    10k R_1206  1</li>
-<li>D1    LED LED_1206    1</li>
-<li>U1    Microcontroller_ATtiny412_SSFR  SOIC-8_3.9x4.9mm_P1.27mm    1</li>
-<li>SW1   BUTTON_B3SN Button_Omron_B3SN_6x6mm 1</li>
-<li>J1    Conn_PinHeader_FTDI_1x06_P2.54mm_Horizontal_SMD PinHeader_FTDI_01x06_P2.54mm_Horizontal_SMD 1</li>
-<li>J2    Conn_PinHeader_1x03_P2.54mm_Horizontal_SMD  PinHeader_1x03_P2.54mm_Horizontal_SMD   1</li>
-</ul>
+<h2 id="attiny-412-board">ATtiny 412 board</h2>
+<p>I did the standard echo hello device with button and led. First we looked Fab Academy board and made almost similar to it, having same micro-controller and UART connected to "FTDI" header, but added led and button too. Used micro-controller ATtiny 412 has very limited amount of I/O pins - only 6 - and even one of those is kinda reserved for the UPDI programmer. I connected LED between PA7 and VCC in series with 1k resistor to limit current. Button is connected between PA6 and ground having also 10k pull-up resistor to Vcc. Pull-up resistor is not mandatory as I can understand chip already has integrated pull-ups that could be enabled by the software but anyhow now pull-up resistor is here still for sure. </p>
+<p>BOM exported from KiCad.</p>
+<table>
+<thead>
+<tr>
+<th>References</th>
+<th>Value</th>
+<th>Footprint</th>
+<th>Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>C</td>
+<td>C_1206</td>
+<td>1</td>
+</tr>
+<tr>
+<td>R1</td>
+<td>1k</td>
+<td>R_1206</td>
+<td>1</td>
+</tr>
+<tr>
+<td>R2</td>
+<td>10k</td>
+<td>R_1206</td>
+<td>1</td>
+</tr>
+<tr>
+<td>D1</td>
+<td>LED</td>
+<td>LED_1206</td>
+<td>1</td>
+</tr>
+<tr>
+<td>U1</td>
+<td>Microcontroller_ATtiny412_SSFR</td>
+<td>SOIC-8_3.9x4.9mm_P1.27mm</td>
+<td>1</td>
+</tr>
+<tr>
+<td>SW1</td>
+<td>BUTTON_B3SN</td>
+<td>Button_Omron_B3SN_6x6mm</td>
+<td>1</td>
+</tr>
+<tr>
+<td>J1</td>
+<td>Conn_PinHeader_FTDI_1x06_P2.54mm_Horizontal_SMD</td>
+<td>PinHeader_FTDI_01x06_P2.54mm_Horizontal_SMD</td>
+<td>1</td>
+</tr>
+<tr>
+<td>J2</td>
+<td>Conn_PinHeader_1x03_P2.54mm_Horizontal_SMD</td>
+<td>PinHeader_1x03_P2.54mm_Horizontal_SMD</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
 <p>I forgot to add C1 value to design. 1uF was used.</p>
 <table>
 <thead>
@@ -701,9 +793,9 @@ $ git clone https://gitlab.fabcloud.org/pub/libraries/electronics/kicad.git
 </tr>
 </tbody>
 </table>
-<h4 id="mods-fails-to-generate-toolpath">Mods fails to generate toolpath</h4>
-<p>I exported PCB as a vector two images from KiCad, one image for traces and  other image as board outline. After that I used <a href="https://mods.cba.mit.edu/">mods</a> tool to make toolpaths for Roland monoFab SRM-20 milling machine. At this point I had a lot of problems - I could not understand why my PCB borders were all the time wrong. I tried all relevant KiCad export settings very many times, tweaked with KiCad PCB borders (Edge Cuts layer) and some other layers but still it was always wrong and mods generated totally bad looking toolpaths which I sure didn't even want to test mill. Eventually I decided to open PCB borders file directly with my browser, Firefox, and saw the borders image were still rendered as badly as mods running on Firefox browser. At that point I started to suspect it might be an issue coused by the used browser and its svg-libraries. Then I decided to install Chromium browser (it is open source version of Google Chrome) as it was available on Fedora package management. That browser shows svg-file correctly, but then I ran other problem with mods when used Chromium browser - it fails to generate toolpath itself! Two steps forward and one step back :( After mods was find out to be broken with both Firefox and Chromium I started looking yet another browser. That browser was Google Chrome. I installed it from package available from vendor site. And finally it was a browser which works with mods on this single case at least. Too many compatibility issues - I have to say I am feeling mods is not best tool to mill PCB boards.</p>
-<p>Here is pictures how simple PCB border in SVG format from KiCad is rendered on different applications. Firefox fails it badly.</p>
+<h3 id="mods-fails-to-generate-toolpath">Mods fails to generate toolpath</h3>
+<p>I exported PCB as a vector two images from KiCad, one image for traces and  other image as board outline. After that I used <a href="https://mods.cba.mit.edu/">mods</a> tool to make toolpaths for Roland monoFab SRM-20 milling machine. At this point I had a lot of problems - I could not understand why my PCB borders were all the time wrong. I tried all relevant KiCad export settings very many times, tweaked with KiCad PCB borders (Edge Cuts layer) and some other layers but still it was always wrong and mods generated totally bad looking toolpaths which I sure didn't even want to test mill. Eventually I decided to open PCB borders file directly with my browser, Firefox, and saw the borders image were still rendered as badly as mods running on Firefox browser. At that point I started to suspect it might be an issue coused by the used browser and its svg-libraries. Then I decided to install Chromium browser (it is open source version of Google Chrome) as it was available on Fedora package management. That browser shows svg-file correctly, but then I ran other problem with mods when used Chromium browser - it fails to generate toolpath itself! Two steps forward and one step back :( After mods was find out to be broken with both Firefox and Chromium I started looking yet another browser. That browser was Google Chrome. I installed it from package available from vendor site. And finally it was a browser which works with mods on this single case at least. Too many compatibility issues - I have to say I am feeling mods is not best tool to mill PCB boards. </p>
+<p>Here is pictures how simple PCB border in SVG format from KiCad is rendered on different applications. Firefox fails it badly. </p>
 <table>
 <thead>
 <tr>
@@ -752,8 +844,8 @@ $ git clone https://gitlab.fabcloud.org/pub/libraries/electronics/kicad.git
 </tr>
 </tbody>
 </table>
-<h4 id="different-pcb-mills">Different PCB mills</h4>
-<p>From KiCad PCB Editor I made both SVG-images and Gerber files of my PCB design. I made 2 PCBs using different milling machines, Roland MonoFab SRM-20 and LPKF ProtoMat S62. For Roland it was tricky to do PCB with that small traces as I used 0.4mm for Track Width and 0.25mm for Clearance. After two failed attempts I started adjusting trace milling depth from 0.05mm to 0.10mm by manual adjusting cut depth from step by step deeper until it was fine. 0.2-0.5mm V-shaped drill bit was used.</p>
+<h3 id="different-pcb-mills">Different PCB mills</h3>
+<p>From KiCad PCB Editor I made both SVG-images and Gerber files of my PCB design. I made 2 PCBs using different milling machines, Roland MonoFab SRM-20 and LPKF ProtoMat S62. For Roland it was tricky to do PCB with that small traces as I used 0.4mm for Track Width and 0.25mm for Clearance. After two failed attempts I started adjusting trace milling depth from 0.05mm to 0.10mm by manual adjusting cut depth from step by step deeper until it was fine. 0.2-0.5mm V-shaped drill bit was used. </p>
 <table>
 <thead>
 <tr>
@@ -790,7 +882,6 @@ $ git clone https://gitlab.fabcloud.org/pub/libraries/electronics/kicad.git
 </tr>
 </tbody>
 </table>
-<h3 id="device">Device</h3>
 <table>
 <thead>
 <tr>
@@ -803,6 +894,7 @@ $ git clone https://gitlab.fabcloud.org/pub/libraries/electronics/kicad.git
 </tr>
 </tbody>
 </table>
+<h3 id="testing-the-board">Testing the board</h3>
 <table>
 <thead>
 <tr>
@@ -811,29 +903,32 @@ $ git clone https://gitlab.fabcloud.org/pub/libraries/electronics/kicad.git
 </thead>
 <tbody>
 <tr>
-<td>Testing</td>
+<td>Test setup</td>
 </tr>
 </tbody>
 </table>
-<p>I used Fab Academy <a href="http://academy.cba.mit.edu/classes/embedded_programming/t412/hello.t412.echo.ino">hello.t412.echo.ino</a> code to test it.</p>
-<p>To test LED I make minor modifications;</p>
-<pre><code class="language-c">setup() function:
-pinMode(PIN_PA7, OUTPUT);
-
-loop() function:
-digitalWrite(PIN_PA7, HIGH);
-delay(1000);
-digitalWrite(PIN_PA7, LOW);
-delay(1000);
+<p>I used Arduino IDE and Fab Academy <a href="http://academy.cba.mit.edu/classes/embedded_programming/t412/hello.t412.echo.ino">hello.t412.echo.ino</a> code to test it. </p>
+<p>To test LED and button I make minor modifications to that Fab Academy hello echo program. </p>
+<pre><code class="language-console">$ diff hello.t412.echo/hello.t412.echo.ino echo.hello.led.button.t412/echo.hello.led.button.t412.ino 
+24a25,27
+&gt; 
+&gt;    pinMode(PIN_PA6, INPUT); // button
+&gt;    pinMode(PIN_PA7, OUTPUT); // led
+36a40,43
+&gt; 
+&gt;     // toggle led when button is pressed
+&gt;     if (!digitalRead(PIN_PA6))
+&gt;       digitalWrite(PIN_PA7, !digitalRead(PIN_PA7));
+$ 
 </code></pre>
-<p>LED blinks slowly as expected.</p>
+<p>The button and LED work as expected. The microcontroller reads the state of the button in the loop at a very high frequency, so during a single physical press, its status is read many, many times. Therefore, it is random which value happens to stay there when the button is released. </p>
 <p>Compiling:</p>
-<pre><code class="language-console">Sketch uses 1918 bytes (46%) of program storage space. Maximum is 4096 bytes.
+<pre><code class="language-console">Sketch uses 2020 bytes (49%) of program storage space. Maximum is 4096 bytes.
 Global variables use 91 bytes (35%) of dynamic memory, leaving 165 bytes for local variables. Maximum is 256 bytes.
-SerialUPDI
 </code></pre>
 <p>Programming:</p>
-<pre><code class="language-console">UPDI programming for Arduino using a serial adapter
+<pre><code class="language-console">SerialUPDI
+UPDI programming for Arduino using a serial adapter
 Based on pymcuprog, with significant modifications
 By Quentin Bolsee and Spence Konde
 Version 1.2.3 - Jan 2022
@@ -841,7 +936,7 @@ Using serial port /dev/ttyACM0 at 57600 baud.
 Target: attiny412
 Set fuses: ['2:0x02', '6:0x04', '8:0x00']
 Action: write
-File: /tmp/arduino_build_271734/hello.t412.echo.ino.hex
+File: /tmp/arduino_build_609485/echo.hello.led.button.t412.ino.hex
 Pinging device...
 Ping response: 1E9223
 Setting fuse 0x2=0x2
@@ -893,6 +988,68 @@ hello.t412.echo: you typed &quot;Fab Lab Oulu&quot;
 --- exit ---
 $ 
 </code></pre>
+<h2 id="observe-uart-data">Observe UART data</h2>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/smartscope_dut.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sniffing the UART signals with a logic analyzer</td>
+</tr>
+</tbody>
+</table>
+<p>I measured the signals from the device UART with LabNation SmartScope. The device has both an oscilloscope and a logic analyzer. </p>
+<p>A UART is a slow digital bus with two data lines TX and RX, one for receiving data and the other for transmitting. There is no clock signal at all. Both the oscilloscope and the logic analyzer can measure the signal traveling on the bus, but from slightly different angles. An oscilloscope is more suitable for examining the waveform of a signal, while a logic analyzer is better suited for capturing and examining the data itself that travels on a bus. I connected the device's TX and RX lines using test clips to a logic analyzer and captured data from both buses. I turned the UART decoder on the analyzer and selected ASCII as the data format to be decoded because the device is sending text. This allowed me to easily check what text was transfered between the device and the computer. On that case it can be seen the board responds with a text: <strong>hello.t412.echo: you typed "Hello Fab Lab Oulu"</strong>. </p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/smartscope_1.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ATtiny 412 UART data</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/smartscope_2.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UART pulse timings</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week07/smartscope_3.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UART decoder settings</td>
+</tr>
+</tbody>
+</table>
+<h2 id="files">Files</h2>
+<ul>
+<li><a href="../../images/week07/EchoHelloLedButton.zip">EchoHelloLedButton.zip</a></li>
+<li><a href="../../images/week07/EchoHelloLedButton-F_Cu.svg">EchoHelloLedButton-F_Cu.svg</a></li>
+<li><a href="../../images/week07/EchoHelloLedButton-Edge_Cuts.svg">EchoHelloLedButton-Edge_Cuts.svg</a></li>
+<li><a href="../../images/week07/traces.rml">traces.rml</a></li>
+<li><a href="../../images/week07/outline.rml">outline.rml</a></li>
+<li><a href="../../images/week07/echo.hello.led.button.t412.patch">echo.hello.led.button.t412.patch</a></li>
+</ul>
+<h2 id="final-thoughts">Final thoughts</h2>
+<p>This week I learned the basics of KiCad and gained a lot more experience in PCB milling. I already knew the theory of electronics design at this level, though. </p>
                 
               
               
