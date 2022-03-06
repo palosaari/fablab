@@ -1,0 +1,9 @@
+24a25,27
+> 
+>    pinMode(PIN_PA6, INPUT); // button
+>    pinMode(PIN_PA7, OUTPUT); // led
+36a40,43
+> 
+>     // toggle led when button is pressed
+>     if (!digitalRead(PIN_PA6))
+>       digitalWrite(PIN_PA7, !digitalRead(PIN_PA7));
