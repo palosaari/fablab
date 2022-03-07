@@ -608,9 +608,9 @@
 </ul>
 </blockquote>
 <h2 id="kicad-6">KiCad 6</h2>
-<p>We used <a href="https://www.kicad.org/">KiCad</a> to design the electronics. It’s a widely used open source program and pretty good so there was no need to even evaluate at other options. I have previous experience in electronics design years ago, but the program used was different and it has been so long since that anyway. </p>
+<p>We used <a href="https://www.kicad.org/">KiCad</a> to design the electronics. It’s a widely used open source program and pretty good so there was no need to even evaluate at other options. I have previous experience in electronics design from years ago, but the program used was different and it has been so long since that anyway. </p>
 <h3 id="kicad-installation">KiCad installation</h3>
-<p><a href="https://www.kicad.org/blog/2021/12/KiCad-6.0.0-Release/">A version 6 of the KiCad</a> design suite is released recently, on 25th of December 2021. That version upgrade from 5 to 6 is a major change since earlier version was over 3 years old from the 2018. Our Fab Lab had the latest version installed and I wanted to install it on my workstation as well. I have a slightly old Fedora release 34 at my home workstation with only the older KiCad version 5 supported as native. Luckily, the newer version was easily available from the <a href="https://copr.fedorainfracloud.org/coprs/g/kicad/kicad/">Fedora Copr repository</a> so I installed it. <a href="https://www.kicad.org/download/fedora/">KiCad Install on Fedora</a>. </p>
+<p><a href="https://www.kicad.org/blog/2021/12/KiCad-6.0.0-Release/">A version 6 of the KiCad</a> design suite is released recently, on 25th of December 2021. That version upgrade from 5 to 6 is a major change since earlier version was over 3 years old from year 2018. Our Fab Lab had the latest version installed and I wanted to install it on my workstation as well. I have a slightly old Fedora release 34 at my home workstation with only the older KiCad version 5 supported as native. Luckily, the newer version was easily available from the <a href="https://copr.fedorainfracloud.org/coprs/g/kicad/kicad/">Fedora Copr repository</a> so I installed it. <a href="https://www.kicad.org/download/fedora/">KiCad Install on Fedora</a>. </p>
 <pre><code class="language-console">sudo dnf install dnf-plugins-core
 sudo dnf copr enable @ kicad / kicad
 sudo dnf install kicad
@@ -658,7 +658,7 @@ $ git clone https://gitlab.fabcloud.org/pub/libraries/electronics/kicad.git
 </tbody>
 </table>
 <h2 id="attiny-412-board">ATtiny 412 board</h2>
-<p>I did the standard echo hello device with button and led. First we looked Fab Academy board and made almost similar to it, having same micro-controller and UART connected to "FTDI" header, but added led and button too. Used micro-controller ATtiny 412 has very limited amount of I/O pins - only 6 - and even one of those is kinda reserved for the UPDI programmer. I connected LED between PA7 and VCC in series with 1k resistor to limit current. Button is connected between PA6 and ground having also 10k pull-up resistor to Vcc. Pull-up resistor is not mandatory as I can understand chip already has integrated pull-ups that could be enabled by the software but anyhow now pull-up resistor is here still for sure. </p>
+<p>I did the standard echo hello device with button and led. First we looked Fab Academy board and made almost similar to it, having same micro-controller and UART connected to "FTDI" header, but added led and button too. Used micro-controller ATtiny 412 has very limited amount of I/O pins - only 6 - and even one of those is kinda reserved for the UPDI programmer. I connected LED between PA7 and VCC in series with 1k resistor to limit current. Button is connected between PA6 and ground having also 10k pull-up resistor to Vcc. Pull-up resistor is not mandatory, as I can understand the chip already has integrated pull-ups, that could be enabled by the software but anyhow now pull-up resistor is here still for sure. </p>
 <p>BOM exported from KiCad.</p>
 <table>
 <thead>
@@ -845,7 +845,7 @@ $ git clone https://gitlab.fabcloud.org/pub/libraries/electronics/kicad.git
 </tbody>
 </table>
 <h3 id="different-pcb-mills">Different PCB mills</h3>
-<p>From KiCad PCB Editor I made both SVG-images and Gerber files of my PCB design. I made 2 PCBs using different milling machines, Roland MonoFab SRM-20 and LPKF ProtoMat S62. For Roland it was tricky to do PCB with that small traces as I used 0.4mm for Track Width and 0.25mm for Clearance. After two failed attempts I started adjusting trace milling depth from 0.05mm to 0.10mm by manual adjusting cut depth from step by step deeper until it was fine. 0.2-0.5mm V-shaped drill bit was used. </p>
+<p>From KiCad PCB Editor I made both SVG-images and Gerber files of my PCB design. I made 2 PCBs using different milling machines, Roland MonoFab SRM-20 and LPKF ProtoMat S62. For Roland it was tricky to do PCB with that small traces as I used 0.4mm for Track Width and 0.25mm for Clearance. After two failed attempts I started adjusting trace milling depth from 0.05mm to 0.10mm by manual adjusting cut depth step by step deeper until it was fine. 0.2-0.5mm V-shaped drill bit was used. </p>
 <table>
 <thead>
 <tr>
@@ -908,7 +908,7 @@ $ git clone https://gitlab.fabcloud.org/pub/libraries/electronics/kicad.git
 </tbody>
 </table>
 <p>I used Arduino IDE and Fab Academy <a href="http://academy.cba.mit.edu/classes/embedded_programming/t412/hello.t412.echo.ino">hello.t412.echo.ino</a> code to test it. </p>
-<p>To test LED and button I make minor modifications to that Fab Academy hello echo program. </p>
+<p>To test LED and button I make minor modifications to this Fab Academy hello echo program. </p>
 <pre><code class="language-console">$ diff hello.t412.echo/hello.t412.echo.ino echo.hello.led.button.t412/echo.hello.led.button.t412.ino 
 24a25,27
 &gt; 
@@ -921,7 +921,7 @@ $ git clone https://gitlab.fabcloud.org/pub/libraries/electronics/kicad.git
 &gt;       digitalWrite(PIN_PA7, !digitalRead(PIN_PA7));
 $ 
 </code></pre>
-<p>The button and LED work as expected. The microcontroller reads the state of the button in the loop at a very high frequency, so during a single physical press, its status is read many, many times. Therefore, it is random which value happens to stay there when the button is released. </p>
+<p>The button and LED works as expected. The microcontroller reads the state of the button in the loop at a very high frequency, so during a single physical press, it's status is read many, many times. Therefore, it is random which value happens to stay there, when the button is released. </p>
 <p>Compiling:</p>
 <pre><code class="language-console">Sketch uses 2020 bytes (49%) of program storage space. Maximum is 4096 bytes.
 Global variables use 91 bytes (35%) of dynamic memory, leaving 165 bytes for local variables. Maximum is 256 bytes.
