@@ -1,18 +1,24 @@
 # 6. Electronics production
 
-Group assignment:
+> ## Assignment
+>
+> ### Individual assignment
+>
+> - make an [in-circuit programmer](http://academy.cba.mit.edu/classes/embedded_programming/index.html#programmers) by milling and stuffing the PCB
+> - [https://gitlab.fabcloud.org/pub/programmers/programmer-swd-d11c](https://gitlab.fabcloud.org/pub/programmers/programmer-swd-d11c)
+> - [https://gitlab.fabcloud.org/pub/programmers/programmer-updi-d11c](https://gitlab.fabcloud.org/pub/programmers/programmer-updi-d11c)
+> - test it, then optionally try other PCB processes
+>
+> ### Group assignment
+>
+> - characterize the design rules for your PCB production process
+> - [https://mods.cba.mit.edu/](https://mods.cba.mit.edu/)
+> - [traces](http://academy.cba.mit.edu/classes/electronics_production/linetest.png)
+[interior](http://academy.cba.mit.edu/classes/electronics_production/linetest.interior.png)
+[1/64"](http://academy.cba.mit.edu/classes/electronics_production/0156.jpg)
+[0.010"](http://academy.cba.mit.edu/classes/electronics_production/010.jpg)
+[fiber laser](http://academy.cba.mit.edu/classes/electronics_production/fiber.jpg)
 
-    characterize the design rules for your PCB production process
-    https://mods.cba.mit.edu/
-
-    traces interior 1/64" 0.010" fiber laser
-
-Individual assignment:
-
-    make an in-circuit programmer by milling and stuffing the PCB
-    https://gitlab.fabcloud.org/pub/programmers/programmer-swd-d11c
-    https://gitlab.fabcloud.org/pub/programmers/programmer-updi-d11c
-     test it, then optionally try other PCB processes
 
 ## PCB production with Roland MonoFab SRM-20 milling machine
 
@@ -246,13 +252,81 @@ As a exercise I made [Programmer UPDI D11C](https://gitlab.fabcloud.org/pub/prog
 ||
 |Soldering|
 
-Our instructor programmed bootloader to my UPDI board chip using SWD programmer. After bootloader installation chip enumerates to USB bus and my Linux workstation detected it as a USB serial device. Finally I programmed chip with [SAMD11C_serial](https://github.com/qbolsee/SAMD11C_serial) firmware using Arduino IDE in order to get it functioning as UPDI serial device.
+## UPDI D11C bootloader
+
+Our instructor programmed bootloader to my UPDI board chip using SWD programmer. After bootloader installation chip enumerates to USB bus and my Linux workstation detected it as a USB serial device. 
 
 |![](../images/week06/updi_bootloader.resized.jpg)|
 ||
 |Flashing bootloader to SAMD11C14|
 
-### Testing UPDI programmer
+## UPDI D11C firmware
+
+Finally I programmed chip with [SAMD11C_serial](https://github.com/qbolsee/SAMD11C_serial) firmware using Arduino IDE in order to get it functioning as UPDI serial device. 
+
+### Microchip ATSAMD11C14 support for Arduino
+
+Add additional board manager:
+
+* "File->Preferences"
+* "Additional Boards Manager URLS:" (https://raw.githubusercontent.com/qbolsee/ArduinoCore-fab-sam/master/json/package_Fab_SAM_index.json)
+
+Then open Boards Manager and install Fab SAM core for Arduino:
+
+* "Tools->Board->Boards Manager"
+* install "Fab SAM core for Arduino"
+
+After that Arduino should have support for ATSAMD11C14 and many other chips from that family. 
+
+### Compiling SAMD11C_serial firmware
+
+I downloaded [SAMD11C_serial.ino](https://github.com/qbolsee/SAMD11C_serial/blob/main/SAMD11C_serial/SAMD11C_serial.ino) and opened it to Arduino.
+
+Select correct environment for that ATSAMD11C14 chip. Instructions from [SAMD11C_serial](https://github.com/qbolsee/SAMD11C_serial).
+
+* "Tools->Board->Fab SAM core for Arduino->Generic D11C14A"
+* "Tools->USB config->CDC_only"
+* "Tools->Serial config->TWO_UART_NO_WIRE_NO_SPI"
+* "Tools->Bootloader Size->4KB_BOOTLOADER"
+* "Tools->Port->/dev/ttyACM0 (Generic D11C14A)"
+* "Sketch->Compile/Verify"
+
+### Transfer SAMD11C_serial firmware to chip
+
+* "Sketch->Upload"
+
+``` console
+Sketch uses 10156 bytes (82%) of program storage space. Maximum is 12288 bytes.
+Atmel SMART device 0x10030006 found
+Device       : ATSAMD11C14A
+Chip ID      : 10030006
+Version      : v2.0 Aug 31 2021 14:06:56
+Address      : 4096
+Pages        : 192
+Page Size    : 64 bytes
+Total Size   : 12KB
+Planes       : 1
+Lock Regions : 16
+Locked       : none
+Security     : false
+Boot Flash   : true
+BOD          : true
+BOR          : true
+Erase flash
+done in 0.338 seconds
+
+Write 10508 bytes to flash (165 pages)
+[==============================] 100% (165/165 pages)
+done in 2.908 seconds
+
+Verify 10508 bytes of flash
+[==============================] 100% (165/165 pages)
+Verify successful
+done in 0.481 seconds
+CPU reset.
+```
+
+## Testing UPDI programmer
 
 For testing build UPDI programmer I need some device to flash. For that I used hello.t412.echo board from lab. I already had Arduino installed on my workstation as I earlier did some esp8266 projects, so I only needed to install ATtiny412 specific development files to Arduino.
 
@@ -263,7 +337,7 @@ hello.t412.echo board is tiny PCB having ATtiny412 chip with two communication i
 
 Board had initially some slightly tweaked software, its output was in Finnish. I replaced and tested it with the "standard" one.
 
-#### Microchip ATtiny412 support for Arduino
+### Microchip ATtiny412 support for Arduino
 
 I added megaTinyCore using Arduino Boards Manager as descripted in installation instructions: [Installing megaTinyCore](https://github.com/SpenceKonde/megaTinyCore/blob/master/Installation.md)
 
@@ -279,7 +353,7 @@ Then open Boards Manager and install megaTinyCore:
 
 After that Arduino should have support for ATtiny412 and many other chips from that family.
 
-#### Compiling hello.t412.echo.ino test program
+### Compiling hello.t412.echo.ino test program
 
 I downloaded [hello.t412.echo.ino](http://academy.cba.mit.edu/classes/embedded_programming/t412/hello.t412.echo.ino) and opened it to Arduino.
 
@@ -289,14 +363,14 @@ Select correct environment for that ATtiny412 chip.
 * "Tools->Chip->ATtiny412"
 * "Sketch->Compile/Verify"
 
-```console
+``` console
 Sketch uses 1918 bytes (46%) of program storage space. Maximum is 4096 bytes.
 Global variables use 91 bytes (35%) of dynamic memory, leaving 165 bytes for local variables. Maximum is 256 bytes.
 ```
 
 It compiled correctly.
 
-#### Transfer hello.t412.echo program to chip
+### Transfer hello.t412.echo program to chip
 
 Connect UPDI, Vcc and GND wires between programmer and device carefully and correctly. Plug UPDI programmer to computer. On my case, Linux, it appears as /dev/ttyACM0 serial device.
 
@@ -308,7 +382,7 @@ Connect UPDI, Vcc and GND wires between programmer and device carefully and corr
 * "Tools->Programmer->SerialUPDI - SLOW: 57600 baud, any platform, any voltage, any adapter."
 * "Sketch->Upload"
 
-```console
+``` console
 SerialUPDI
 UPDI programming for Arduino using a serial adapter
 Based on pymcuprog, with significant modifications
@@ -353,7 +427,7 @@ Action took 0.42s
 
 Chip firmware is uploaded successfully, which is is enough to confirm our UPDI programmer works correctly.
 
-#### Test hello.t412.echo board
+### Test hello.t412.echo board
 
 I think this is out of scope of this week, but here it is briefly.
 
@@ -361,7 +435,7 @@ I used USB serial board to test hello.t412.echo board. Connect TX<->RX and RX<->
 
 Plug USB cable to computer and open terminal with following settings and test to type some letters.
 
-```console
+``` console
 $ python -m serial.tools.miniterm /dev/ttyUSB0 115200
 --- Miniterm on /dev/ttyUSB0  115200,8,N,1 ---
 --- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
@@ -392,4 +466,12 @@ $
 ||
 |Test setup used. UPDI, hello.t412.echo and USB serial.|
 
+## Files
+
+- [linetest.png.rml](../images/week06/linetest/linetest.png.rml)
+- [linetest.interior.png.rml](../images/week06/linetest/linetest.interior.png.rml)
+
+## Final thoughts
+
+This week I learned the basics of milling a PCB. I have designed and milled some PCBs many many years ago, but I no longer remember the process very well. Also, in the past back then I used a real PCB milling machine and not a universal milling machine like the Roland MonoFab SRM-20. Now I gained more experience from Roland and a little less from LPKF ProtoMat S62. Soldering this simple device was nothing new to me. Also, Arduino and device programming was something that I was already very familiar with. 
 
