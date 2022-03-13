@@ -21,12 +21,6 @@
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.c1a4d03f.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.fdbf4049.min.css">
-      
-      
-        
-        
-        <meta name="theme-color" content="#ff7043">
       
     
     
@@ -46,9 +40,7 @@
   </head>
   
   
-    
-    
-    <body dir="ltr" data-md-color-primary="deep-orange" data-md-color-accent="red">
+    <body dir="ltr">
   
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -244,6 +236,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#assignment" class="md-nav__link">
+    Assignment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#setup-tools" class="md-nav__link">
     Setup tools
   </a>
@@ -292,15 +291,22 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#graph-easy" class="md-nav__link">
-    Graph-Easy
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-github-process" class="md-nav__link">
+    Git / GitHub process
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#creating-website" class="md-nav__link">
+    Creating website
+  </a>
   
 </li>
       
@@ -426,6 +432,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#assignment" class="md-nav__link">
+    Assignment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#setup-tools" class="md-nav__link">
     Setup tools
   </a>
@@ -474,15 +487,22 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#graph-easy" class="md-nav__link">
-    Graph-Easy
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-github-process" class="md-nav__link">
+    Git / GitHub process
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#creating-website" class="md-nav__link">
+    Creating website
+  </a>
   
 </li>
       
@@ -503,12 +523,20 @@
                 
                 
                 <h1 id="2-project-management">2. Project management</h1>
+<blockquote>
+<h2 id="assignment">Assignment</h2>
+<ul>
+<li>Work through a git tutorial</li>
+<li>Build a personal site in the class archive describing you and your final project</li>
+</ul>
+</blockquote>
 <h2 id="setup-tools">Setup tools</h2>
-<p>I am using Fedora Linux workstation so many of needed tools were easily available from the distribution package management. Also I have used many of the needed tools earlier so those were already installed.</p>
+<p>I am using Fedora Linux workstation so many of needed tools were easily available from the distribution package management. Also I have used many of the needed tools earlier so those were already installed. </p>
 <h3 id="git">Git</h3>
+<p>Git is the most popular distributed version control tool. It does not in itself limit what kind of files are stored there, but it is typically used in software projects. Version control takes place locally on the machine, from where it is then synchronized to the servers. This decentralization model via servers allows multiple people to develop the same code base in parallel at the same time. </p>
 <pre><code class="language-console">sudo dnf install git
 </code></pre>
-<p>Tool was already installed. I have used it a lot.</p>
+<p>Tool was already installed. I have used it a lot. </p>
 <p>Here is some basic commands I use most often:</p>
 <pre><code class="language-console">git status
 git log
@@ -519,47 +547,284 @@ git add &lt;filename&gt;
 git commit -s
 git push origin master
 </code></pre>
-<p>Status shows general state of your current tree, like edited or new files. Log shows your commit history. Show shows last commit on your tree. Diff shows uncommitted changes what you have made your files. Reset --hard is handy when you have made changes to tree, but you need to discard those for some reason. Add adds file or directory you have edited to your commit you are going to do. Commit does the commit itself. Push uploads your local working tree to GitHub on my chase.</p>
+<p>Status shows general state of your current tree, like edited or new files. Log shows your commit history. Show shows last commit on your tree. Diff shows uncommitted changes what you have made your files. Reset --hard is handy when you have made changes to tree, but you need to discard those for some reason. Add adds file or directory you have edited to your commit you are going to do. Commit does the commit itself. Push uploads your local working tree to GitHub on my chase. </p>
 <h3 id="github">GitHub</h3>
-<p>https://github.com/</p>
-<p>GitHub was already in use and configured. No need to to anything special. I decided to use it instead of GitLab due to that reason.</p>
-<p>For GitHub you need account. After that you need to add your public ssh key to GitHub in order to access using git-command.</p>
+<p><a href="https://github.com/">GitHub</a> is a very popular server / service for Git repositories - a place on the Internet where you can store and share your own Git repositories. Today, GitHub offers a large number of related services, e.g. bug tracker, documentation and web pages (GitHub Pages). </p>
+<p>GitHub was already in use and configured. No need to to anything special. I decided to use it instead of GitLab due to that reason. </p>
+<p>You need to create a user account for GitHub. In addition, it is often practical, but not necessary if https used, to add ssh keys in addition to the password, so you don't have to enter the password every time you update the repository on GitHub. </p>
 <h4 id="github-ssh-keys">GitHub SSH keys</h4>
-<p>Here is yet another documentation required by documentation how to add ssh keys to GitHub.</p>
-<p>On GitHub web user interface, go to your account settings. Settings =&gt; SSh and GPG keys. Push green button "New SSH key".</p>
-<p><img alt="" src="../../images/week02/GitHub_ssh_key_1.png" /></p>
-<p>Give some name you like to key, I used "Home Workstation".</p>
-<p>Then you need to find your personal PUBLIC key. Here is how it is found from Linux workstation - assuming you have already generated it. Copy &amp; paste that ssh key (do not paste this unique key, it is my public key, you need your own) to GitHub as seen on picture below.</p>
+<p>Here is yet another documentation required by documentation how to add ssh keys to GitHub. </p>
+<p>On GitHub web user interface, go to your account settings. Settings =&gt; SSh and GPG keys. Push green button "New SSH key". </p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week02/GitHub_ssh_key_1.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add SSH key</td>
+</tr>
+</tbody>
+</table>
+<p>Give some name you like to key, I used "Home Workstation". </p>
+<p>Then you need to find your personal PUBLIC key. Here is how it is found from Linux workstation - assuming you have already generated it. Copy &amp; paste that ssh key (do not paste this unique key, it is my public key, you need your own) to GitHub as seen on picture below. I already had ssh keys because I usually use them in many places. ssh keys can be generated with the ssh-keygen command, for example. </p>
 <pre><code class="language-console">cat ~/.ssh/id_rsa.pub 
 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA5X7AWrmUrXkaqkgtyf7t4/j1miUFQu/j+BYfi/yiJswm2ampZE+eBI16EooCwK8z3l//M/DE98pY5ClMI8ulzqrStHdLXxFm4enLBr891/w0U+utejjKeenOGq8oJ0zQJLlVZ31JQwtdAO+hWyz+nz18TvmzQSs8dwA73nf9tGLkfbfTDxnoRio83NUHA3I0ReOH9ukK5EM4uM9HvCGDlObtm2atjnJAI63AS8ztEnEJGUhPFjTy1FX79yPSnClm2XfJeF4Lid4lb7jtpVmWtqQPnHH6kB0Qt+b5a+ZF2LXHGq47yoVTnnZhnUTdMyMLtCQ/rMlBpPil1/5vYizzUQ== crope@localhost.localdomain
 </code></pre>
-<p><img alt="" src="../../images/week02/GitHub_ssh_key_2.png" /></p>
-<p>As you are going to add new login method / key to your existing GitHub account it will ask your password as confirmation.</p>
-<p><img alt="" src="../../images/week02/GitHub_ssh_key_3.png" /></p>
-<p>If everything went correctly added key should appear to list of ssh keys at your GitHub account.</p>
-<p><img alt="" src="../../images/week02/GitHub_ssh_key_4.png" /></p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week02/GitHub_ssh_key_2.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add new SSH key</td>
+</tr>
+</tbody>
+</table>
+<p>As you are going to add new login method / key to your existing GitHub account it will ask your password as confirmation. </p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week02/GitHub_ssh_key_3.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Confirm SSH key</td>
+</tr>
+</tbody>
+</table>
+<p>If everything went correctly added key should appear to list of ssh keys at your GitHub account. </p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week02/GitHub_ssh_key_4.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSH key added</td>
+</tr>
+</tbody>
+</table>
 <h3 id="github-pages">GitHub Pages</h3>
-<p>https://github.com/</p>
-<p>Used to host this WWW-site. It is easy to maintain that document just by pulling tree to GitHub using Git. Pages needed to be enabled from GitHub settings.</p>
-<p>Following settings are needed to GitHub Pages to point out location it loads that WWW-site.
-<img alt="" src="../../images/week02/GitHub_Pages_settings.png" /></p>
+<p><a href="https://pages.github.com/">GitHub Pages</a> is a GitHub-related website publishing platform. The website is uploaded to the GitHub repository from where it is automatically updated to the GitHub Pages. The GitHub Pages feature must be turned on in the GitHub settings. </p>
+<p>I generate a site to publish to GitHub Pages on my own machine and publish it with the mkdocs gh-deploy command. </p>
+<p>Following settings are needed to GitHub Pages to point out location it loads that website. </p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week02/GitHub_Pages_settings.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub Pages</td>
+</tr>
+</tbody>
+</table>
 <h3 id="mkdocs">MkDocs</h3>
+<p>First I thought I will maintain static HTML pages by hand. After I looked some videos, recommended MkDocs starts feeling more handy so I decided to give it a try. Also there was Material theme based existing template for the course. Installation was pretty straightforward from the package manager: <em>sudo dnf install mkdocs-material</em>. It will install both theme and documentation tool as a dependency. After that I manually copied course template files to my local working Git tree and tested it with command <em>mkdocs serve</em>. Worked, pretty simple. </p>
 <pre><code class="language-console">sudo dnf install mkdocs-material
 </code></pre>
-<p>First I thought I will maintain static HTML pages by hand. After I looked some videos, recommended MkDocs starts feeling more handy so I decided to give it a try. Also there was Material theme based existing template for the course. Installation was pretty straightforward from the package manager: <em>sudo dnf install mkdocs-material</em>. It will install both theme and documentation tool as a dependency. After that I manually copied course template files to my local working Git tree and tested it with command <em>mkdocs serve</em>. Worked, pretty simple.</p>
 <p>There was some challenges releasing that documentation on GitHub Pages. MkDocs documentation needs to be build in order to get site that can be released on GitHub Pages. It didn't feel very comfortable to commit machine build documentation to my working Git branch as it pollutes branch unintentionally without a reason. Fortunately there was a command <em>mkdocs gh-deploy</em> which makes new branch for documentation and publish it automatically.</p>
 <pre><code class="language-console">mkdocs serve
 mkdocs gh-deploy
 </code></pre>
-<p>Serve launch local development site to your computer. gh-deploy builds site and uploads it to the GitHub Pages.</p>
-<h3 id="graph-easy">Graph-Easy</h3>
-<pre><code class="language-console">sudo dnf install perl-Graph-Easy
+<p>Serve launch local development site to your computer. gh-deploy builds site and uploads it to the GitHub Pages. </p>
+<h2 id="git-github-process">Git / GitHub process</h2>
+<p>I created a simple MkDocs Material page for GitHub for testing purposes and to test the operation of the tools. </p>
+<p>In addition to the tools already mentioned, you need the github gh tool to control GitHub from the command line. </p>
+<pre><code class="language-console">sudo dnf install gh
 </code></pre>
-<p>Makes those simple diagrams used.</p>
-<pre><code class="language-console">echo &quot;[sensor 1], [sensor 2], [sensor N] -&gt; [logic] &lt;-&gt; [radio] [power] -&gt; [logic]&quot; | graph-easy --as_dot | dot -Tpng -o weather_station_graph.png
+<pre><code class="language-console">$ mkdocs new .
+INFO    -  Writing config file: ./mkdocs.yml 
+INFO    -  Writing initial docs: ./docs/index.md 
+$ echo &quot;theme:&quot; &gt;&gt; mkdocs.yml 
+$ echo &quot;  name: material&quot; &gt;&gt; mkdocs.yml 
+$ git init -b master
+Initialized empty Git repository in /home/crope/fablab/tmp/.git/
+$ git add .
+$ git commit -m &quot;initial commit&quot;
+[master (root-commit) 63bc513] initial commit
+ 2 files changed, 21 insertions(+)
+ create mode 100644 docs/index.md
+ create mode 100644 mkdocs.yml
+$ gh repo create fablab_test --push --public --source ./
+✓ Created repository palosaari/fablab_test on GitHub
+✓ Added remote git@github.com:palosaari/fablab_test.git
+✓ Pushed commits to git@github.com:palosaari/fablab_test.git
+$ mkdir docs/assignments
+$ echo &quot;# 1. Hello World&quot;  &gt; docs/assignments/week01.md
+$ git add .
+$ git commit -m &quot;add week 1&quot;
+[master 6cb5515] add week 1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 docs/assignments/week01.md
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use &quot;git push&quot; to publish your local commits)
+
+nothing to commit, working tree clean
+$ git push 
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 420 bytes | 420.00 KiB/s, done.
+Total 5 (delta 0), reused 4 (delta 0), pack-reused 0
+To github.com:palosaari/fablab_test.git
+   d872937..6cb5515  master -&gt; master
+$ git reset --hard HEAD~1
+HEAD is now at d872937 initial commit
+$ git fetch 
+$ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use &quot;git pull&quot; to update your local branch)
+
+nothing to commit, working tree clean
+$ git pull
+Updating d872937..6cb5515
+Fast-forward
+ docs/assignments/week01.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 docs/assignments/week01.md
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+$ gh repo delete fablab_test
+? Type palosaari/fablab_test to confirm deletion: palosaari/fablab_test
+✓ Deleted repository palosaari/fablab_test
+$ 
 </code></pre>
-<p>Gives you graph:</p>
-<p><img alt="" src="../../images/weather_station_graph.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mkdocs new .</td>
+<td>Create new MkDocs site</td>
+</tr>
+<tr>
+<td>echo "theme:" &gt;&gt; mkdocs.yml</td>
+<td>Use Material theme for MkDocs</td>
+</tr>
+<tr>
+<td>echo "  name: material" &gt;&gt; mkdocs.yml</td>
+<td>Use Material theme for MkDocs</td>
+</tr>
+<tr>
+<td>git init -b master</td>
+<td>Create Git repository</td>
+</tr>
+<tr>
+<td>git add .</td>
+<td>Add all files in current directory to commit set</td>
+</tr>
+<tr>
+<td>git commit -m "initial commit"</td>
+<td>Commit changes to local repository</td>
+</tr>
+<tr>
+<td>gh repo create fablab_test --push --public --source ./</td>
+<td>Create GitHub repository and push local repository to GitHub</td>
+</tr>
+<tr>
+<td>mkdir docs/assignments</td>
+<td>Create directory for MkDocs web-page</td>
+</tr>
+<tr>
+<td>echo "# 1. Hello World"  &gt; docs/assignments/week01.md</td>
+<td>Add Hello World MkDocs web-page</td>
+</tr>
+<tr>
+<td>git add .</td>
+<td>Add docs/assignments/week01.md to commit set</td>
+</tr>
+<tr>
+<td>git commit -m "add week 1"</td>
+<td>Commit changes to local repository</td>
+</tr>
+<tr>
+<td>git status</td>
+<td>Check git repository status. It says it has one commit more than remote repository.</td>
+</tr>
+<tr>
+<td>git push</td>
+<td>Synch changes from local to remote repository.</td>
+</tr>
+<tr>
+<td>git reset --hard HEAD~1</td>
+<td>Remove most recent commit from local repository</td>
+</tr>
+<tr>
+<td>git fetch</td>
+<td>Download changes from remote repository.</td>
+</tr>
+<tr>
+<td>git status</td>
+<td>Check git repository status. It says local has one commit less than remote repository.</td>
+</tr>
+<tr>
+<td>git pull</td>
+<td>Add changes from remote to local repository.</td>
+</tr>
+<tr>
+<td>git status</td>
+<td>It says local repository is same than remote.</td>
+</tr>
+<tr>
+<td>gh repo delete fablab_test</td>
+<td>Delete test GitHub repository</td>
+</tr>
+</tbody>
+</table>
+<h2 id="creating-website">Creating website</h2>
+<p>MkDocs is the web page generation tool I use. Its operation is based on the generation of static web pages from code written in Markdown markup language. Markdown, on the other hand, is a very simple language in syntax. A document written with Markdown is easy to read and write with just a text editor. MkDocs converts documents written with Markdown to html format, which is used on web pages. </p>
+<p>I had no previous experience with MkDocs, so it felt easy to try the Fab Academy template provided. The template was simple, including in practically a blank page for each week. After learning the basics I removed all the extra weeks as I will add them as I do them. MkDocs uses a directory structure to specify the layout of a site. You can see that in this case as <strong>./docs/assignments/</strong> directory forms a section on your site called <strong>Assignments</strong>. All the public documentation files must go under <strong>./docs/</strong> directory, root <strong>./</strong> has only configuration file. Site public pages must have a .md file extension, which is then converted to html by MkDocs. </p>
+<p>The directory structure of the site looks like this. </p>
+<pre><code>.
+├── docs
+│   ├── assignments
+│   │   ├── week01.md
+│   │   └── week02.md
+│   ├── images
+│   │   ├── week01
+│   │   │   ├── directory
+│   │   │   │   └── file.img
+│   │   │   └── file.img
+│   │   └── week02
+│   │       └── file.img
+│   └── index.md
+└── mkdocs.yml
+</code></pre>
+<p>The configuration file <strong>mkdocs.yml</strong> had a lot of settings and add-ons that I didn't need, so I generated a new configuration file with the <strong>mkdocs new</strong> command. The only extension I used was <strong>markdown_extensions: extra</strong> because I used the html tag it provides for the image caption tag. I deleted it later because I started using tables to add images and caption. I try to avoid adding anything extra, staying as default MkDocs as possible if there is no compelling need. </p>
+<p>The configuration file is so simple. You can add a lot of stuff there if needed. I’ll probably add some css style or something to change the background color of the tables from gray to white. </p>
+<pre><code>site_name: Fab Lab Oulu Student Blog
+
+theme:
+    name: material
+</code></pre>
+<p>I test pages written with Markdown locally on the machine using the mkdocs serve command. I save the changes to the local git and from there upload them to the GitHub Pages service with the <strong>mkdocs gh-deploy</strong> command and the <strong>git push</strong> command to the GitHub remote repository. </p>
+<p>So all-in-all, whole toolchain behind the site is:</p>
+<ul>
+<li><a href="https://www.mkdocs.org/">MkDocs</a></li>
+<li><a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></li>
+<li><a href="https://git-scm.com/">Git</a></li>
+<li><a href="https://github.com/">GitHub</a></li>
+<li><a href="https://pages.github.com/">GitHub Pages</a></li>
+</ul>
                 
               
               
