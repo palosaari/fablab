@@ -52,9 +52,10 @@ Printing technology: Stereolithography (SLA)
 
 |printer<br />nozzle<br />filament|Fortus 380mc<br />0.4 mm<br />ABS|Form 3+<br />0.08 mm<br />Tough 1500 Resin|Pro2<br />0.4 mm<br />PLA|Pro2<br />0.8 mm<br />PLA|
 |               |                        |                    |                |                      |
+|OVERHANG       |                        |≤ 6mm               |≤ 1mm           |≤ 2mm                 |
 |OVERHANG ANGLE |≥ 30°                   |                    |≥ 20°           |≥ 20°                 |
 |CLEARANCE      |≥ 0.3mm                 |≥ 0.6mm             |≥ 0.2mm         |≥ 1.0mm fails totally |
-|BRIDGE / SPAN  |                        |                    |18mm            |                      |
+|BRIDGE / SPAN  |                        |                    |≤ 18mm          |≤ 20mm                |
 |WALL THICKNESS |≥ 0.3mm                 |                    |≥ 0.2mm         |≥ 0.4mm               |
 |GAP            |≥ 0.3mm                 |                    |≥ 0.1mm         |≥ 2mm                 |
 |DIMENSION      |9.70mm                  |                    |9.97mm          |9.20mm                |
