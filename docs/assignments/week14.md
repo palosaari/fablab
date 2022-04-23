@@ -52,14 +52,16 @@ Printing technology: Stereolithography (SLA)
 
 |printer<br />nozzle<br />filament|Fortus 380mc<br />0.4 mm<br />ABS|Form 3+<br />0.08 mm<br />Tough 1500 Resin|Pro2<br />0.4 mm<br />PLA|Pro2<br />0.8 mm<br />PLA|
 |               |                        |                    |                |                      |
-|OVERHANG       |                        |≤ 6mm               |≤ 1mm           |≤ 2mm                 |
-|OVERHANG ANGLE |≥ 30°                   |                    |≥ 20°           |≥ 20°                 |
+|OVERHANG       |≤ 1mm                   |≤ 6mm               |≤ 1mm           |≤ 2mm                 |
+|OVERHANG ANGLE |≥ 30°                   |-                   |≥ 20°           |≥ 20°                 |
 |CLEARANCE      |≥ 0.3mm                 |≥ 0.6mm             |≥ 0.2mm         |≥ 1.0mm fails totally |
-|BRIDGE / SPAN  |                        |                    |≤ 18mm          |≤ 20mm                |
-|WALL THICKNESS |≥ 0.3mm                 |                    |≥ 0.2mm         |≥ 0.4mm               |
-|GAP            |≥ 0.3mm                 |                    |≥ 0.1mm         |≥ 2mm                 |
-|DIMENSION      |9.70mm                  |                    |9.97mm          |9.20mm                |
-|SURFACE FINNISH|7/10                    |                    |8/10            |1/10                  |
+|BRIDGE / SPAN  |≤ 14mm                  |-                   |≤ 18mm          |≤ 20mm                |
+|WALL THICKNESS |≥ 0.3mm                 |-                   |≥ 0.2mm         |≥ 0.4mm               |
+|GAP            |≥ 0.3mm                 |-                   |≥ 0.1mm         |≥ 2mm                 |
+|DIMENSION      |9.70/10.0mm             |-                   |9.97/10.0mm     |9.20/10.0mm           |
+|SURFACE FINNISH|7/10                    |10/10 [*]           |8/10            |1/10                  |
+
+[*] The surface finish is best with the Formlabs Form 3+ printer, although we did not perform a similar surface test on it. The smoothness of the surface is clearly visible from other printed test pieces. 
 
 |![](../images/week14/Fortus_380mc.resized.jpg)|
 ||
@@ -68,6 +70,10 @@ Printing technology: Stereolithography (SLA)
 |![](../images/week14/Form_3.resized.jpg)|
 ||
 |Formlabs Form 3+|
+
+|![](../images/week14/Form_3_overhang.resized.jpg)|
+||
+|Formlabs Form 3+ overhang|
 
 |![](../images/week14/Pro2_0.4.resized.jpg)|
 ||
