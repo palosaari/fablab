@@ -86,6 +86,70 @@ Printing technology: Stereolithography (SLA)
 
 Raise3D Pro2 with 0.4mm nozzle does very nice looking print!
 
+## 3D Design Pokeball
+
+As a 3D printing exercise, I designed a simple Pokemon ball. In the designed ball, the requirement for the exercise task is met by the hinge structure used. The pin of the hinge goes inside the hinge so that it cannot be installed there when manufactured from separate parts. 
+
+|![](../images/week14/pokeball.resized.png)|
+||
+|Pokeball|
+
+The ball is like a box with lids connected by a hinge. The object consists of 3 parts, the upper half, the lower half and the hinge pin. All parts are printed at once so that they are mechanically connected during the printing phase.
+
+As a ball model, I used a factory-made toy Pokemon ball. I didn’t care to model the existing Pokemon ball very accurately but made the simplest possible version of it that met the criteria for the exercise task.
+
+First, I created the top side of the ball with FreeCAD.
+
+* I created a half ball with the Additive Sphere tool
+* I drew the hinge Sketch and created a pad from it
+* I used the LinearPattern tool to Duplicate the hinge
+* I removed the inside of the ball with the Subractive Sphere tool
+
+|![](../images/week14/pokeball_top.resized.png)|
+||
+|Pokeball top part|
+
+|![](../images/week14/pokeball_hinge_sketch.resized.png)|
+||
+|Pokeball hinge sketch|
+
+The top and bottom of the ball are symmetrical so I created the bottom body by copying the top body, ctrl-c + ctrl-v. The bottom body created by copying had to be rotated to the correct position - select body, mouse right-click, select Transform. It is essential to get the top and bottom hinges fully in place, although it was not difficult with that tool because the rotations required are 180 degrees around the axes.
+
+|![](../images/week14/pokeball_bottom.resized.png)|
+||
+|Pokeball bottom part|
+
+The pin of the hinge had to be created as its own body because it is a separate part and is not attached to other parts. The pin had to be connected to the hinge frame somehow so that its position could be bound to the coordinates of the 3D model. I used the Binder tool to transfer geometry from one body to another body. 
+
+|![](../images/week14/pokeball_hinge_binder.resized.png)|
+||
+|Pokeball hinge binder|
+
+With Binder, I attached the hinge body from the top of the ball to the hinge pin body. I drew the pin of the hinge using a sketch and made a pad of it. When dimensioning the hinge, I used a clearance value of 0.2mm, which means that the hole in the hinge is 0.4mm larger in diameter than the pin. The value is easy to change from the Spreadsheet tab as needed - as are almost all other values ​​because the model is comprehensively parameterized. 
+
+|![](../images/week14/pokeball_pin.resized.png)|
+||
+|Pokeball hinge pin|
+
+
+The finished Pokemon ball was in bad shape for 3D printing. To print, the halves of the ball had to open 180 degrees. I did this in the Draft workbench with the Rotate tool. The Rotate tool works in the 2D plane so the ball first had to be placed at the right angle in the 2D plane. At the end of the hinge pin is a surface in the correct position to which the 2D plane can be synchronized - Utilities-> SelectPlane sets the plane to this surface. Set the Snap Center option to On to select the center of rotation of the hinge pin center. Use the Modification-> Rotate tool to open the ball halves.
+
+|![](../images/week14/pokeball_rotate.resized.png)|
+||
+|Pokeball rotate|
+
+|![](../images/week14/pokeball_rotated.resized.png)|
+||
+|Pokeball rotated open for printing|
+
+
+I saved the opened ball in .STL format and printed several more and less successful versions of it. I used Raise3D Pro2 and Creality Ender 3 V2 printers.
+
+|![](../images/week14/printed_pokeballs.resized.jpg)|
+||
+|Pokeballs. Blue one is factory made.|
+
+
 ## Final thoughts
 
 Hello World.
