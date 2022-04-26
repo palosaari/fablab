@@ -52,6 +52,53 @@ I used the VPanel for SRM-20 program to drive the cutter. I installed the specif
 ||
 |Mill wax mold using VPanel for SRM-20|
 
+
+### Making a silicone rubber mold
+
+After making the wax mold, I started making silicone rubber molds. Our Fab Lab had OOMOO 25 and Smooth‑Sil 940 silicone manufactured by Smooth-On, from which I selected Smooth‑Sil 940. The silicone used is mixed from the two components A and B by weight in a ratio of 100A:10B. 
+
+|![](../images/week15/silicone_mold_smooth-sil-940.resized.jpg)|
+||
+|Smooth-On Smooth‑Sil 940|
+
+I switch on laboratory ventilation, wear protective clothing, safety goggles and vinyl gloves. I added the required amount of component A to the plastic cup and then added the required amount of component B, measuring the correct amount with a small scale. 
+
+|![](../images/week15/silicone_mold_part_a.resized.jpg)|
+||
+|Smooth‑Sil 940 mix A|
+
+|![](../images/week15/silicone_mold_part_b.resized.jpg)|
+||
+|Smooth‑Sil 940 mix A+B|
+
+I mixed it thoroughly and put it to vacuum pump for degassing for a while. 
+
+|![](../images/week15/silicone_mold_vacuum.resized.jpg)|
+||
+|Smooth‑Sil 940 vacuum degassing|
+
+Finally, I casted silicone into my wax mold. The silicone was left a little over so I casted the rest into another test mold which I had milled into the same wax mold. Cure time for the silicone used was 24 hours so I left the casting to dry overnight in the lab. 
+
+|![](../images/week15/silicone_mold_wax_mold.resized.jpg)|
+||
+|Wax mold|
+
+|![](../images/week15/silicone_mold_cast.resized.jpg)|
+||
+|Wax mold, silicone casted|
+
+The next day I took the casting out of the mold a little ahead of time, about after 20h drying. Silicone rubber is a flexible material and came off the wax mold easily. 
+
+|![](../images/week15/silicone_mold_ready.resized.jpg)|
+||
+|Silicone rubber molds|
+
+The silicone rubber mold for the Pokemon ball is double-sided and had no filler hole, so after thinking, I decided to drill a filler hole into it with a small column drill. The mold was ready. 
+
+|![](../images/week15/silicone_mold_fill_hole.resized.jpg)|
+||
+|Drill fill hole|
+
 ## Final thoughts
 
 Hello World.
