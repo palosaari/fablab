@@ -99,6 +99,26 @@ The silicone rubber mold for the Pokemon ball is double-sided and had no filler 
 ||
 |Drill fill hole|
 
+### Casting plastic Pokemon ball 
+
+The final cast was a small Pokemon ball. The ball casting was done into a previously made silicone rubber mold. As the plastic, I used the Smooth-Cast 305 plastic from Smooth-On found from the Fab Lab. 
+
+I taped the halves of the silicone rubber mold together because the item to be cast was a pokemon ball that was cast in a two-piece mold. I wore protective clothing, safety goggles and rubber gloves. Switch on laboratory room ventilation. I mixed a small amount of Smooth-Cast 305 plastic A + B components into a plastic cup. I mixed the plastic thoroughly and did vacuum degassing even if it wasn’t necessary. I poured the liquid plastic into the molds and left to dry for a while. The plastic hardened really fast, the cure time was only 30 minutes. 
+
+|![](../images/week15/cast_a.resized.jpg)|
+||
+|Plastic cast inside silicone mold|
+
+|![](../images/week15/cast_b.resized.jpg)|
+||
+|Cast ready|
+
+The casted ball looked reasonably neat. There was a pretty big seam between the halves of the ball, due to the ball nose milling bit I used to make the wax mold. The seam could be removed mechanically with a knife or sanding, but I didn't care to remove it. 
+
+|![](../images/week15/cast_c.resized.jpg)|
+||
+|Pokemon ball I made|
+
 ## Final thoughts
 
 Hello World.
