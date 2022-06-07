@@ -1,0 +1,890 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.2">
+    
+    
+      
+        <title>19. Machine Design (part 2 of 2) - Fab Lab Oulu Student Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c1a4d03f.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#19-machine-design-part-2-of-2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Fab Lab Oulu Student Blog" class="md-header-nav__button md-logo" aria-label="Fab Lab Oulu Student Blog">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Fab Lab Oulu Student Blog
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              19. Machine Design (part 2 of 2)
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Fab Lab Oulu Student Blog" class="md-nav__button md-logo" aria-label="Fab Lab Oulu Student Blog">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Fab Lab Oulu Student Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="About Me" class="md-nav__link">
+      About Me
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Assignments
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Assignments" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Assignments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week01/" title="1. Principles and practices" class="md-nav__link">
+      1. Principles and practices
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week02/" title="2. Project management" class="md-nav__link">
+      2. Project management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week03/" title="3. Computer-Aided Design" class="md-nav__link">
+      3. Computer-Aided Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week04/" title="4. Computer controlled cutting" class="md-nav__link">
+      4. Computer controlled cutting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week05/" title="5. Invention, intellectual property and income" class="md-nav__link">
+      5. Invention, intellectual property and income
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week06/" title="6. Electronics production" class="md-nav__link">
+      6. Electronics production
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week07/" title="7. Electronics design" class="md-nav__link">
+      7. Electronics design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week08/" title="8. Input devices" class="md-nav__link">
+      8. Input devices
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week09/" title="9. Output devices" class="md-nav__link">
+      9. Output devices
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week10/" title="10. Embedded programming" class="md-nav__link">
+      10. Embedded programming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week11/" title="11. Interface and application programming" class="md-nav__link">
+      11. Interface and application programming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week12/" title="12. Applications and implications" class="md-nav__link">
+      12. Applications and implications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week13/" title="13. Networking and communications" class="md-nav__link">
+      13. Networking and communications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week14/" title="14. 3D Scanning and Printing" class="md-nav__link">
+      14. 3D Scanning and Printing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week15/" title="15. Molding and Casting" class="md-nav__link">
+      15. Molding and Casting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week16/" title="16. Computer Controlled Machining" class="md-nav__link">
+      16. Computer Controlled Machining
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week18/" title="18. Mechanical Design (part 1 of 2)" class="md-nav__link">
+      18. Mechanical Design (part 1 of 2)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        19. Machine Design (part 2 of 2)
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="19. Machine Design (part 2 of 2)" class="md-nav__link md-nav__link--active">
+      19. Machine Design (part 2 of 2)
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#assignment" class="md-nav__link">
+    Assignment
+  </a>
+  
+    <nav class="md-nav" aria-label="Assignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#group-assignment" class="md-nav__link">
+    Group assignment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#individual-assignment" class="md-nav__link">
+    Individual assignment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pen-plotter-functionality" class="md-nav__link">
+    Pen Plotter functionality
+  </a>
+  
+    <nav class="md-nav" aria-label="Pen Plotter functionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-main-logic" class="md-nav__link">
+    Hardware main logic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stepper-motor-driver" class="md-nav__link">
+    Stepper motor driver
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-software" class="md-nav__link">
+    Device software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-control-application" class="md-nav__link">
+    Device control application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-drawings" class="md-nav__link">
+    Test drawings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bill-of-material" class="md-nav__link">
+    Bill of material
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    Final thoughts
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#assignment" class="md-nav__link">
+    Assignment
+  </a>
+  
+    <nav class="md-nav" aria-label="Assignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#group-assignment" class="md-nav__link">
+    Group assignment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#individual-assignment" class="md-nav__link">
+    Individual assignment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pen-plotter-functionality" class="md-nav__link">
+    Pen Plotter functionality
+  </a>
+  
+    <nav class="md-nav" aria-label="Pen Plotter functionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-main-logic" class="md-nav__link">
+    Hardware main logic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stepper-motor-driver" class="md-nav__link">
+    Stepper motor driver
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-software" class="md-nav__link">
+    Device software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-control-application" class="md-nav__link">
+    Device control application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-drawings" class="md-nav__link">
+    Test drawings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bill-of-material" class="md-nav__link">
+    Bill of material
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    Final thoughts
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="19-machine-design-part-2-of-2">19. Machine Design (part 2 of 2)</h1>
+<blockquote>
+<h2 id="assignment">Assignment</h2>
+<h3 id="group-assignment">Group assignment</h3>
+<ul>
+<li>Actuate and automate your machine.</li>
+<li>Document the group project</li>
+</ul>
+<h3 id="individual-assignment">Individual assignment</h3>
+<ul>
+<li>Document your individual contribution.</li>
+</ul>
+</blockquote>
+<h2 id="pen-plotter-functionality">Pen Plotter functionality</h2>
+<p>I don’t understand why this exercise is divided into two exercise tasks, Mechanical Design and Machine Design. In this part, which deals with the functionality of the device, I didn’t really have any individual work, or well - it has only been self-study of the techniques used. </p>
+<h3 id="hardware-main-logic">Hardware main logic</h3>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week19/graph_hw.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hardware diagram</td>
+</tr>
+</tbody>
+</table>
+<p>Aleksi already had experience in controlling stepper motors and had the appropriate control electronics ready that we used. The stepper motors used in the device were controlled by an <a href="http://store.arduino.cc/products/arduino-uno-rev3">Arduino UNO</a> board. CNC Shield was installed on the Arduino UNO board and we connected 3 DRV8825 stepper motor drivers to the CNC Shield - one for each stepper motor. Each stepper motor was connected with a four-wire cable to the stepper driver via the CNC Shield. The Arduino UNO board was connected to a computer with a USB cable. </p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week19/arduino_uno.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arduino UNO</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week19/cnc_shield.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arduino CNC Shield</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stepper-motor-driver">Stepper motor driver</h3>
+<p>The stepper motor drivers we used were based on the <a href="https://www.ti.com/product/DRV8825">Texas Instruments DRV8825</a> Stepper Motor Controller IC. That circuit supports a maximum of 1/32 microstepping. Since we had no problems with the speed of the stepper motors, we introduced the maximum 1/32 microstepping using the jumpers in the CNC Shield. Each stepper motor driver has a mechanical potentiometer for current limitation. We adjusted the current for each motor individually so that the maximum current was limited to just over what the motor required for normal operation. The small stepper motor taken from the CD-ROM drive overheated quite a bit which worried us a bit, but we estimate that the motor will withstand it. The 3D-printed pen lifting mechanism could move even lighter to further reduce motor power. </p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week19/stepper_driver.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stepper motor driver</td>
+</tr>
+</tbody>
+</table>
+<p>The stepper motors we used consumed many watts of power and we did not have a suitable power supply, so we used a lab power supply in our tests. The lab power supply also has the advantage that in the test phase it was possible to limit the current supplied and thus prevent equipment damage, for example in a case of a short circuit. </p>
+<h3 id="device-software">Device software</h3>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week19/graph_sw.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Software diagram</td>
+</tr>
+</tbody>
+</table>
+<p>The device logic comes from the <a href="https://github.com/grbl/grbl">Grbl</a> software installed on the Arduino UNO. It is a fully-fledged software package that receives commands with Gcode and controls stepper motors based on it. The Arduino UNO is connected to a computer via a USB port, and the Grbl software installed on it provides a serial port over the USB bus from which the device's control commands, Gcodes, are given. We didn't have to implement our own logic at all, we just had to configure the settings used on the device in the Grbl software. The most important of the settings were, of course, the configurations of the stepper motors, such as how many steps are in one revolution and how fast any axis is moved. We sent movement commands to the device with Gcode and measured the physical movements. Based on them, we were able to calculate the settings correctly. </p>
+<p>The stepper motors we used were all typical 4-wire so-called bipolar motors. The order in which the wires were connected was a bit unclear, so we had to try several times before we found the correct wiring. This was helped by the fact that we knew how the motor winding was built so we could use a multimeter to measure which wire pairs belong to the same winding. </p>
+<h3 id="device-control-application">Device control application</h3>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week19/ChiliPeppr.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChiliPeppr Grbl-Workspace</td>
+</tr>
+</tbody>
+</table>
+<p>To control the device, we used the browser-based <a href="http://chilipeppr.com/">ChiliPeppr</a> <a href="http://chilipeppr.com/grbl">Grbl-Workspace</a>. It provided a handy graphical user interface to control the device and also allowed you to manually enter Gcodes into the machine. The program receives the toolpaths as Gcodes and sends them to the Grbl program running in Arduino UNO. The program had some toolpaths with which we could test the operation of the device without having to generate our own drawings - which we also did. </p>
+<p>We had two different motorized pencil holders for the device. The other was made by Antti with a 3D printer and used a stepper motor taken from the CD-ROM drive. The other was made by Aleksi from a wood board by laser cutting and the mechanics were moved by a servomotor. We tested both and they work. The servomotor works differently than the stepper motor so its control had to be implemented differently, the control signal was taken directly from the Arduino UNO and bypassed the stepper motor control. </p>
+<h2 id="test-drawings">Test drawings</h2>
+<p><div class="video-container"><iframe src="../../images/week19/combined_test.mp4" style="position: relative; width: 100%; height: 22.172vw" frameborder="0" allowfullscreen></iframe></div></p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week19/aleksi_face.resized.jpeg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>It is Aleksi :)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week19/hello_fab_lab_oulu.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Upper with stepper motor, lower with servomotor</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bill-of-material">Bill of material</h2>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Part</th>
+<th>Supplier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Arduino Uno</td>
+<td>Aleksi</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Arduino CNC Shield v3</td>
+<td>Aleksi</td>
+</tr>
+<tr>
+<td>3</td>
+<td>DRV8825 Stepper Driver</td>
+<td>Fab Lab</td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Stepper_motor">Wikipedia - Stepper motor</a></li>
+<li><a href="https://github.com/grbl/grbl">Grbl</a></li>
+<li><a href="https://www.ti.com/product/DRV8825">Texas Instruments DRV8825</a></li>
+<li><a href="http://store.arduino.cc/products/arduino-uno-rev3">Arduino UNO Rev3</a></li>
+<li><a href="https://ooznest.co.uk/product/arduino-cnc-shield/">Arduino CNC Shield</a></li>
+<li><a href="http://chilipeppr.com/">ChiliPeppr</a></li>
+</ul>
+<h2 id="files">Files</h2>
+<p>Did Aleksi had some?</p>
+<h2 id="final-thoughts">Final thoughts</h2>
+<p>This week I learned quite a bit of new stuff about the operation of stepper motors and especially how to control them. The topic is quite interesting and I would like to make my own CNC wood milling machine. Maybe I should change the current final project to design and manufacture a CNC milling machine. </p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../week18/" title="18. Mechanical Design (part 1 of 2)" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                18. Mechanical Design (part 1 of 2)
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.606193c2.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b90b6d1d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

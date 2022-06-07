@@ -1,0 +1,1137 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.2">
+    
+    
+      
+        <title>18. Mechanical Design (part 1 of 2) - Fab Lab Oulu Student Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c1a4d03f.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#18-mechanical-design-part-1-of-2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Fab Lab Oulu Student Blog" class="md-header-nav__button md-logo" aria-label="Fab Lab Oulu Student Blog">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Fab Lab Oulu Student Blog
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              18. Mechanical Design (part 1 of 2)
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Fab Lab Oulu Student Blog" class="md-nav__button md-logo" aria-label="Fab Lab Oulu Student Blog">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Fab Lab Oulu Student Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="About Me" class="md-nav__link">
+      About Me
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Assignments
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Assignments" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Assignments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week01/" title="1. Principles and practices" class="md-nav__link">
+      1. Principles and practices
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week02/" title="2. Project management" class="md-nav__link">
+      2. Project management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week03/" title="3. Computer-Aided Design" class="md-nav__link">
+      3. Computer-Aided Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week04/" title="4. Computer controlled cutting" class="md-nav__link">
+      4. Computer controlled cutting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week05/" title="5. Invention, intellectual property and income" class="md-nav__link">
+      5. Invention, intellectual property and income
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week06/" title="6. Electronics production" class="md-nav__link">
+      6. Electronics production
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week07/" title="7. Electronics design" class="md-nav__link">
+      7. Electronics design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week08/" title="8. Input devices" class="md-nav__link">
+      8. Input devices
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week09/" title="9. Output devices" class="md-nav__link">
+      9. Output devices
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week10/" title="10. Embedded programming" class="md-nav__link">
+      10. Embedded programming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week11/" title="11. Interface and application programming" class="md-nav__link">
+      11. Interface and application programming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week12/" title="12. Applications and implications" class="md-nav__link">
+      12. Applications and implications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week13/" title="13. Networking and communications" class="md-nav__link">
+      13. Networking and communications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week14/" title="14. 3D Scanning and Printing" class="md-nav__link">
+      14. 3D Scanning and Printing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week15/" title="15. Molding and Casting" class="md-nav__link">
+      15. Molding and Casting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week16/" title="16. Computer Controlled Machining" class="md-nav__link">
+      16. Computer Controlled Machining
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        18. Mechanical Design (part 1 of 2)
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="18. Mechanical Design (part 1 of 2)" class="md-nav__link md-nav__link--active">
+      18. Mechanical Design (part 1 of 2)
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#assignment" class="md-nav__link">
+    Assignment
+  </a>
+  
+    <nav class="md-nav" aria-label="Assignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#group-assignment" class="md-nav__link">
+    Group assignment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#individual-assignment" class="md-nav__link">
+    Individual assignment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-idea-pen-plotter" class="md-nav__link">
+    Project idea - Pen Plotter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-mechanical-design" class="md-nav__link">
+    My mechanical design
+  </a>
+  
+    <nav class="md-nav" aria-label="My mechanical design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mounting-the-stepper-motor-on-the-slide-rail" class="md-nav__link">
+    Mounting the stepper motor on the slide rail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pen-holder-version-1" class="md-nav__link">
+    Pen holder version 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pen-holder-version-2" class="md-nav__link">
+    Pen holder version 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#further-improvement-ideas" class="md-nav__link">
+    Further improvement ideas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aleksis-mechanical-design" class="md-nav__link">
+    Aleksi's mechanical design
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-prototype" class="md-nav__link">
+    First prototype
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bill-of-material" class="md-nav__link">
+    Bill of material
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    Final thoughts
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week19/" title="19. Machine Design (part 2 of 2)" class="md-nav__link">
+      19. Machine Design (part 2 of 2)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#assignment" class="md-nav__link">
+    Assignment
+  </a>
+  
+    <nav class="md-nav" aria-label="Assignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#group-assignment" class="md-nav__link">
+    Group assignment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#individual-assignment" class="md-nav__link">
+    Individual assignment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-idea-pen-plotter" class="md-nav__link">
+    Project idea - Pen Plotter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-mechanical-design" class="md-nav__link">
+    My mechanical design
+  </a>
+  
+    <nav class="md-nav" aria-label="My mechanical design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mounting-the-stepper-motor-on-the-slide-rail" class="md-nav__link">
+    Mounting the stepper motor on the slide rail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pen-holder-version-1" class="md-nav__link">
+    Pen holder version 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pen-holder-version-2" class="md-nav__link">
+    Pen holder version 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#further-improvement-ideas" class="md-nav__link">
+    Further improvement ideas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aleksis-mechanical-design" class="md-nav__link">
+    Aleksi's mechanical design
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-prototype" class="md-nav__link">
+    First prototype
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bill-of-material" class="md-nav__link">
+    Bill of material
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    Final thoughts
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="18-mechanical-design-part-1-of-2">18. Mechanical Design (part 1 of 2)</h1>
+<blockquote>
+<h2 id="assignment">Assignment</h2>
+<h3 id="group-assignment">Group assignment</h3>
+<ul>
+<li>Design a machine that includes mechanism + actuation + automation</li>
+<li>Build the mechanical parts and operate it manually.</li>
+<li>Document the group project</li>
+</ul>
+<h3 id="individual-assignment">Individual assignment</h3>
+<ul>
+<li>Document your individual contribution.</li>
+</ul>
+</blockquote>
+<h2 id="project-idea-pen-plotter">Project idea - Pen Plotter</h2>
+<p>I did this group work with Aleksi. We chose the design and manufacture of a computer-controlled pen plotter as the topic of the group work. The idea for the group work was Aleksi and he had a bit of previous experience on the subject. </p>
+<p>It was decided to build the device so that in the X/Y-plane the drawing is controlled by two stepper motors, using the traditional mechanics where only the pen moves while the paper stays in place. To lift and lower the pen, the Z-axis uses either a stepper motor or a servomotor. </p>
+<p>Aleksi had a good and very suitable slide rail that it was decided to use as a base for the device. Other suitable parts were searched in Fab Lab and we found NEMA 17 stepper motors, sliding shafts and bearings. We couldn’t find a suitable stepper motor for lifting and lowering the pen so we decided to look into it later. </p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/parts.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Finding and selecting suitable parts</td>
+</tr>
+</tbody>
+</table>
+<p>After finding the basic components, we started thinking about how to make the rest of the parts and divide the workload. It was my responsibility to design the mounting of the stepper motor on the slide rail and the mechanics of the pen control. Aleksi is responsible for the design of the stand, the attachment of the slide rail to the stand and the mechanics that move the slide rail using the stepper motor. Aleksi informs me of the dimensions of the slide rail transmission belt attachment so I can design it to the right size. </p>
+<h2 id="my-mechanical-design">My mechanical design</h2>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/cad_mechanics_1.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mechanics</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/cad_mechanics_2.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mechanics</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mounting-the-stepper-motor-on-the-slide-rail">Mounting the stepper motor on the slide rail</h3>
+<p>My job was to design the mechanics from the top of the slide rail to the pen. As components, I chose a stepper motor with a threaded rod and an 8mm thick sliding shaft and a bearing suitable for the sliding shaft. The attachment of these parts to the slide rail had to be designed firmly enough for the pen movement mechanism to be stable enough. I chose the 3D-printed plastic mounting bracket as the manufacturing technique. The slide rail had a bracket with 2 bolt holes for mounting. I measured the attachment on the slide rail with a caliper and entered the dimensions into the FreeCAD model. The stepper motor was NEMA 17 compliant, so I took the exact dimensions of the motor mount from the data sheet and modeled the mount with FreeCAD. In addition to the stepper motor, an 8mm sliding shaft was added to the bracket, which I fitted next to the stepper motor so that everything fit nicely into the mounting on the slide rail. The purpose of the sliding shaft is to stabilize the mechanics of the pen holder to a certain position and to enable the use of a threaded shaft. The attached picture should clarify the matter. </p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/cad_motor_mount.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Motor mount</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/motor_mount_1.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Motor mount, 3D printed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/motor_mount_2.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Slide rail and shaft mounted</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/motor_mount_3.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Slide rail and shaft mounted</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pen-holder-version-1">Pen holder version 1</h3>
+<p>I modeled a simple pen holder with FreeCAD while making the stepper motor mount bracket. This bracket was almost the simplest possible - it didn’t even have a mechanism for lifting or lowering the pen. The intention was to get only the first prototype ready and see how it could work. Controlling the pen requires some kind of motor and mechanics that have not yet been designed. </p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/cad_pen_holder_v1.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pen Holder v1</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/pen_holder_v1.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pen holder v1, 3D printed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/install_bearing.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Installing linear bearing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pen-holder-version-2">Pen holder version 2</h3>
+<p>The pen holder v1 worked as planned - that is, incompletely :). A solution to the pen lifting and lowering mechanism was considered. I wanted to use a stepper motor but the Fab Lab didn’t have a suitably sized motor because it would have to be pretty small. The use of a servomotor was also studied, but the integration of a stepper motor into a control that already had stepper motors seemed easier. Aleksi suggested that the old CD-ROM drive usually has suitably sized stepper motors. Jani said there is a few old computers in the junkyard of the Faculty of Information and Electrical Engineering where CD-ROM drives could be found. I went to retrieve an old computer with 2 CD-ROM drives from the trash. I disassembled the CD-ROM drives and studied their mechanics. One had a normal DC motor and an encoder to read the motor position and the other had a stepper motor, good. In addition to the stepper motor, the CD-ROM drive's read head mechanics had small 3mm diameter sliding shafts that I also removed for reuse. </p>
+<p>I measured the removed parts with a caliper and wondered how to get the pen lifting and lowering mechanics implemented sensibly. I had modeled the original mechanics in a really compact space and there was only about 20mm of space between the shafts. The pen fits well in the space, but not much else. The original mechanics were perfect at the time so I didn’t want to start changing it anymore. After thinking, I left the pen between the shafts and placed the stepper motor on the other side of the shaft. It was pretty easy and the mechanics remained compact. </p>
+<p>I made a new pen holder with a 3D printer in two parts. The parts slide against each other and I didn’t leave any extra space between them during the design phase even though it came to mind. It was a slight mistake, as the mechanics did not slide very freely when assembled and the small stepper motor would not have been able to move it in any way. I solved the problem by sanding the parts a little with sandpaper and a file. Next time I will definitely put a ~ 0.2mm gap in the 3D model when I do mechanics like this to avoid the nasty post-processing. Lessons learned :)</p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/cad_pen_holder_v2.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pen holder v2</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/cad_pen_holder_v2_1.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pen holder v2 part 1</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/cad_pen_holder_v2_2.resized.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pen holder v2 part 2</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/pen_holder_v2_parts.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pen holder v2, 3D printed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/pen_holder_v2.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pen holder v2 assembled</td>
+</tr>
+</tbody>
+</table>
+<h3 id="further-improvement-ideas">Further improvement ideas</h3>
+<p>The mechanics I designed worked roughly as expected. However, there are some room for improvement. </p>
+<p>1) The mechanism that moves the pen using stepper motor and threaded rod is not completely stable. The farther from the stepper motor the pen holder is driven the more unstable it goes. As an improvement, one sliding shaft can be added. Now there is only one real sliding shaft (8mm in diameter, ~ 30cm long) and another shaft is a threaded rod permanently attached to the stepper motor whose rigidity does not correspond to the real sliding shaft. </p>
+<p>2) The pen holder can be improved. It could easily be made about half as thin. The smaller bracket saves plastic, is lighter and looks nicer. However, the rigidity of the mechanics must be taken into account. </p>
+<h2 id="aleksis-mechanical-design">Aleksi's mechanical design</h2>
+<p>Aleksi designed and fabricated the base from plywood by laser cutting. The transmission from the stepper motor is by belt drive. </p>
+<p>Aleksi also made another version of the pen holder. It is also cut from plywood by laser cutting. </p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/aleksi_stand1.resized.jpeg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stand at the end of the roller</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/aleksi_stand2.resized.jpeg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stand at the end of the stepper motor</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/aleksi_pen_holder.resized.jpeg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pen holder</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/aleksi_proto.resized.jpeg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Proto assembly</td>
+</tr>
+</tbody>
+</table>
+<h2 id="first-prototype">First prototype</h2>
+<p>Here are a few pictures of the first prototype. The mechanics of the stepper motor mount and pen mount described above are made by me, the rest is designed and manufactured by Alex. </p>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/first_proto.resized.jpg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First proto mechanics</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img alt="" src="../../images/week18/aleksi_proto2.resized.jpeg" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First proto tested</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bill-of-material">Bill of material</h2>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Part</th>
+<th>Supplier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>slide rail</td>
+<td>Aleksi</td>
+</tr>
+<tr>
+<td>1</td>
+<td>NEMA-17</td>
+<td>Fab Lab</td>
+</tr>
+<tr>
+<td>1</td>
+<td>NEMA-17 with threaded rod</td>
+<td>Fab Lab</td>
+</tr>
+<tr>
+<td>1</td>
+<td>CD-ROM stepper motor</td>
+<td>Trash</td>
+</tr>
+<tr>
+<td>1</td>
+<td>8mm sliding shaft</td>
+<td>Fab Lab</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3mm sliding shaft</td>
+<td>Trash</td>
+</tr>
+<tr>
+<td>1</td>
+<td>shaft bearing</td>
+<td>Fab Lab</td>
+</tr>
+<tr>
+<td>1</td>
+<td>sprocket to motor end</td>
+<td>Fab Lab</td>
+</tr>
+<tr>
+<td>1</td>
+<td>sprocket</td>
+<td>Fab Lab</td>
+</tr>
+<tr>
+<td>1</td>
+<td>belt 6mm wide</td>
+<td>Fab Lab</td>
+</tr>
+<tr>
+<td>1</td>
+<td>PLA</td>
+<td>Fab Lab</td>
+</tr>
+<tr>
+<td>1</td>
+<td>plywood</td>
+<td>Fab Lab</td>
+</tr>
+<tr>
+<td>-</td>
+<td>small parts</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="files">Files</h2>
+<ul>
+<li>Antti's Design<ul>
+<li><a href="../../images/week18/PenPlotter.FCStd">PenPlotter.FCStd</a></li>
+<li><a href="../../images/week18/PenPlotter.step">PenPlotter.step</a></li>
+</ul>
+</li>
+<li>Aleksi's Design<ul>
+<li><a href="../../images/week18/rail.f3d">rail.f3d</a></li>
+<li><a href="../../images/week18/rail.svg">rail.svg</a></li>
+<li><a href="../../images/week18/servo.f3d">servo.f3d</a></li>
+<li><a href="../../images/week18/servo.svg">servo.svg</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="final-thoughts">Final thoughts</h2>
+<p>This exercise taught me a lot about mechanics with stepper motors that I had no previous experience with. I also gained more experience in 3D design, although I am still not happy with the level of expertise in it. </p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../week16/" title="16. Computer Controlled Machining" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                16. Computer Controlled Machining
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../week19/" title="19. Machine Design (part 2 of 2)" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                19. Machine Design (part 2 of 2)
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.606193c2.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b90b6d1d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
