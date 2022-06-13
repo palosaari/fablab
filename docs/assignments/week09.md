@@ -12,7 +12,7 @@
 
 ## TFT display
 
-This week I decided to add a display to the thermometer I made the previous week. I compared the displays on the Fab Lab component rack and ended up with a 2.4" SPI TFT Module (SKU: MSP2402) because it seemed interesting and had an SPI bus that I have a little less experience than the I2C bus. The ESP32 board I made last week also has enough I/O pins to connect the display so there is no problem either. The display has an ILI9341 control chip and a resolution of 240x320. The display module also has an SD card reader and a touch screen which I did not intend to use however. 
+This week I decided to add a display to the thermometer I made the previous week. I compared the displays on the Fab Lab component rack and ended up with a [2.4" SPI TFT Module (SKU: MSP2402)](http://www.lcdwiki.com/2.4inch_SPI_Module_ILI9341_SKU:MSP2402) because it seemed interesting and had an SPI bus that I have a little less experience than the I2C bus. The ESP32 board I made last week also has enough I/O pins to connect the display so there is no problem either. The display has a [Ilitek ILI9341](http://www.ilitek.com/page/about/index.aspx?kind=9) control chip and a resolution of 240x320. The display module also has an SD card reader and a touch screen which I did not intend to use however. 
 
 ### Display wiring
 
@@ -32,7 +32,7 @@ I followed the instructions on [techtutorialsx - ESP32: ILI9341 Display Hello wo
 #define TFT_LED    21
 ```
 
-The display backlight is not controlled through the library but directly from my test program. It can be feed with voltages 0-3.3V to obtain different brightnesses for the backlight. I connected the backlight directly to the normal I/O pin, allowing the light to be turned on or off by the ESP32. When connecting to the DAC output, the brightness could be adjusted by adjusting voltage levels, but I didn't do it now. 
+The display backlight is not controlled through the library but directly from my test program. It can be feed with voltages 0-3.3V to obtain different brightnesses for the backlight. I connected the backlight directly to the normal I/O pin, allowing the light to be turned on or off by the ESP32. When connecting to the DAC output, the brightness could be adjusted by adjusting voltage levels, but I didn't do it for now. 
 
 ### Display library for Arduino
 
@@ -112,7 +112,7 @@ void loop() {
 ||
 |Measurement setup|
 
-I measured the power consumed by the display with a YZXStudio ZY1266 USB power meter. I connected the meter to the USB cable between the computer and the USB-serial adapter and performed 4 different power measurements: display on with black background, display on with white background, display off by I/O, and display completely disconnected (all wires disconnected physically). From these results, the current consumed by the display can be calculated.
+I measured the power consumed by the display with a [YZXStudio ZY1266](https://yzxstudio.com/product/yzxstudio-qc4-pd3-0powerz/) USB power meter. I connected the meter to the USB cable between the computer and the USB-serial adapter and performed 4 different power measurements: display on with black background, display on with white background, display off by I/O, and display completely disconnected (all wires disconnected physically). From these results, the current consumed by the display can be calculated.
 
 |power consumption|operation mode|
 |||
@@ -126,6 +126,13 @@ I measured the power consumed by the display with a YZXStudio ZY1266 USB power m
 |YZXStudio ZY1266 USB power meter|
 
 From the measurement results, it can be calculated that the display consumes about 0.34W of power (0.67W - 0.33W = 0.34W), which is about half of the whole hardware. It is noteworthy that the measurements also include the power consumption of the USB-serial adapter - I did not measure a value for it, but presumably it is small compared to other components. 
+
+## References 
+
+- [2.4" SPI TFT Module (SKU: MSP2402)](http://www.lcdwiki.com/2.4inch_SPI_Module_ILI9341_SKU:MSP2402)
+- [Ilitek ILI9341](http://www.ilitek.com/page/about/index.aspx?kind=9)
+- [YZXStudio ZY1266](https://yzxstudio.com/product/yzxstudio-qc4-pd3-0powerz/)
+- [techtutorialsx - ESP32: ILI9341 Display Hello world](https://techtutorialsx.com/2021/01/31/esp32-ili9341-display-hello-world/)
 
 ## Files
 
