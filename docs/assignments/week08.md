@@ -12,7 +12,7 @@
 
 ## New week, new board - ESP32
 
-I decided to make a new circuit board with lots of I/O pins for this week. The intention is that I will cope with a new board throughout this course serie. I have been thinking of using the ESP32 circuit for the final project so I chose it as the microcontroller for the new board. Thus, I am already gaining experience with that microcontroller at the same. 
+I decided to make a new circuit board with lots of I/O pins for this week. The intention is that I will cope with a new board throughout this course serie. I have been thinking of using the [Espressif ESP32](https://www.espressif.com/en/products/socs/esp32) chip for the final project so I chose it as the microcontroller for the new board. Thus, I am already gaining experience with that microcontroller at the same. 
 
 I designed the schematic and the PCB like in previous exercises with KiCad. I wanted to make the board as compact as possible, using surface mount technology and a single sided PCB. This posed some challenges, among other things, to the widths and clearances of the tracks used, which had to be made quite narrow. Another factor influencing the size of the tracks is the circuit board milling technology used, which also sets its own requirements. Because our lab has a decent circuit board milling machine, LPKF ProtoMat S62, I decided to use it to achieve a better end result and my requirements, and I didn’t even try to use generic milling machine according to Fab Academy processes. Our milling machine generally uses a 0.2-0.5mm V-bit, based on which I selected 0.2mm clearance and 0.25mm track witdh. For the operating current tracks, I used a slightly bigger witdh. 
 
@@ -32,7 +32,7 @@ The ESP32 data sheet set some requirements such as operating voltage and minimum
 
 ## Circuit board assembly
 
-Assembling the circuit board succeeded without major problems. ESP32 WROOM-32E, the module I used, was a little difficult to solder because the legs in it were like a 90-degree angle to the surface of the circuit board. Luckily, I had a [QuadHands Jumbo Workbench](https://www.quadhands.com/products/quadhands-jumbo-workbench) in my home lab with which I got the circuit board at a suitable angle so that the soldering could be done with ease. 
+Assembling the circuit board succeeded without major problems. ESP32 [WROOM-32E](https://www.espressif.com/en/products/modules), the module I used, was a little difficult to solder because the legs in it were like a 90-degree angle to the surface of the circuit board. Luckily, I had a [QuadHands Jumbo Workbench](https://www.quadhands.com/products/quadhands-jumbo-workbench) in my home lab with which I got the circuit board at a suitable angle so that the soldering could be done with ease. 
 
 |![](../images/week08/pcb.resized.jpg)|
 ||
@@ -50,7 +50,7 @@ After assembly, I did basic tests with a multimeter for possible short circuits.
 
 My USB serial port uses 5V voltages, so I started thinking if it would be safe to use due to too high a voltages. There was no concern with the operating voltage (Vcc) because the circuit board has a 3.3V regulator but the voltages on the TX/RX lines caused concern. There is no mention in the ESP32 data sheet whether those pins are 5V tolerant or not, so I had to find out if it is safe to plug TX/RX with that high voltage. Searching the internet I found information that all ESP32 digital I/O pins are 5V tolerant, although this is not explicitly mentioned in the data sheet. 
 
-I connected USB serial port adapter to PCB normally, TX, RX, Vcc, GND. I checked the functionality of my board by trying to read the chip id with esptool. After a few attempts, it worked so I knew the circuit would work. Here I had to press the BOOT and EN buttons I had installed on the circuit board a few times. At the same time, it was found that the circuit enters programming mode when you hold down the BOOT button and resets the ESP32 with the EN button or by turning on the power. 
+I connected USB serial port adapter to PCB normally, TX, RX, Vcc, GND. I checked the functionality of my board by trying to read the chip id with esptool. After a few attempts, it worked so I knew the circuit would work. Here I had to press the BOOT and EN buttons I had installed on the circuit board a few times. At the same time, it was found that the chip enters programming mode when you hold down the BOOT button and resets the ESP32 with the EN button or by turning on the power. 
 
 ``` console
 $ esptool --chip esp32 chip_id
@@ -73,12 +73,11 @@ $
 
 ## Temperature sensors
 
-Since my final project is a weather station I decided to use temperature sensors as input devices. I installed two different temperature sensors, a DHT11 and a 10k NTC thermistor. The DHT11 was a ready-made module with one data line in addition to the operating power interface. NTC thermistor is connected using simple voltage divider circuit to the ESP32 ADC converter. 
+Since my final project is a weather station I decided to use temperature sensors as input devices. I installed two different temperature sensors, a [Aosong Electronics DHT11](http://www.aosong.com/en/products-21.html) and a 10k NTC thermistor ([Amphenol Advanced Sensors NHQ103B375T10](https://www.amphenol-sensors.com/en/thermometrics/ntc-thermistors/smd/951-smd)). The DHT11 was a ready-made module with one data line in addition to the operating power interface. NTC thermistor is connected using simple voltage divider circuit to the ESP32 ADC converter. 
 
 |![](../images/week08/ntc_voltage_divider.resized.png)|
 ||
 |NTC thermistor voltage divider|
-
 
 I installed a DHT11 sensor on the IO26 pin and an NTC thermistor circuit on the IO4 pin which has the ADC converter. 
 
@@ -155,7 +154,7 @@ void loop() {
 
 ## Oscilloscope exercise
 
-I used an oscilloscope to measure the digital signal from the DHT11 sensor data line and the analog signal from the NTC thermistor circuit. I used LabNation SmartScope for measurements, which is a small oscilloscope with a USB connection. 
+I used an oscilloscope to measure the digital signal from the DHT11 sensor data line and the analog signal from the NTC thermistor circuit. I used [LabNation SmartScope](https://www.lab-nation.com/) for measurements, which is a small oscilloscope with a USB connection. 
 
 |![](../images/week08/osc_a.resized.jpg)|
 ||
@@ -167,7 +166,7 @@ I used an oscilloscope to measure the digital signal from the DHT11 sensor data 
 ||
 |NTC thermistor circuit DUT|
 
-The voltage change from the NTC thermistor is not very interesting to measure with an oscilloscope, but it also got some curves - at least you can see how quickly it reacts to the temperature change. In this measurement I also used hot air gun. At 1m40, the graph shows how the voltage has risen to about 3.3V. From this it can be concluded that it is likely that the ADC is saturated and thus no actual temperature has been transmitted to the program, i.e. the voltage distribution used would not work for very high temperatures - maybe the same will happen for cold temperatures? 
+The voltage change from the NTC thermistor is not very interesting to measure with an oscilloscope, but I still got some curves - at least you can see how quickly it reacts to the temperature change. In this measurement I also used hot air gun. At 1m40, the graph shows how the voltage has risen to about 3.3V. From this it can be concluded that it is likely that the ADC is saturated and thus no actual temperature has been transmitted to the program, i.e. the voltage distribution used would not work for very high temperatures - maybe the same will happen for cold temperatures? 
 
 |![](../images/week08/ntc.resized.png)|
 ||
@@ -198,6 +197,13 @@ My oscilloscope has some protocol decoders like I2C and 1-wire, but none of thos
 |![](../images/week08/dht11_c.resized.png)|
 ||
 |Space between each symbol. LOW around 52us. That translates to 0b010.|
+
+## References 
+
+- [Espressif ESP32](https://www.espressif.com/en/products/socs/esp32)
+- [Aosong Electronics DHT11](http://www.aosong.com/en/products-21.html)
+- [Amphenol Advanced Sensors NHQ103B375T10](https://www.amphenol-sensors.com/en/thermometrics/ntc-thermistors/smd/951-smd)
+- [LabNation SmartScope](https://www.lab-nation.com/)
 
 ## Files
 
