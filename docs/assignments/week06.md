@@ -150,16 +150,16 @@ Basic input file operations, self explaining?
 This module is just to select suitable default values for "mill raster 2D" module. Two choices, one for traces and one for outlines.
 
 #### "mill raster 2D"
-This is the most important module. Default settings are pretty good, change if needed. Our lab has for example smaller drill bit for traces than default and larger bit for outlines than default. Change accordingly. Our PCB was FR-1 which is something like 1.6mm substrate and 0.035mm copper or so. Default values fit very well for those PCB thickness, so there is no need to adjust even if those are slightly off.
+This is the most important module. Default settings are pretty good, change if needed. Our lab has for example smaller milling bit for traces than default and larger bit for outlines than default. Change accordingly. Our PCB was FR-1 which is something like 1.6mm substrate and 0.035mm copper or so. Default values fit very well for those PCB thickness, so there is no need to adjust even if those are slightly off.
 
-Our lab re-uses LPKF ProtoMat S62 PCB machine milling bits for SRM-20 PCB milling. Especially tracing drill is different as it is V-shaped 0.2mm-0.5mm drill bit. The bigger the cut depth is, the wider the trace will be. I used 0.25mm value for that bit with all the other settings default, which produces very nice cut.
+Our lab re-uses LPKF ProtoMat S62 PCB machine milling bits for SRM-20 PCB milling. Especially tracing bit is different as it is V-shaped 0.2mm-0.5mm milling bit. The bigger the cut depth is, the wider the trace will be. I used 0.25mm value for that bit with all the other settings default, which produces very nice cut.
 
-Offset number setting means how many rounds drill will run in parallel, the bigger the number the larger area is skinned off from the the copper. Different values can be tested and result seen from "view toolpath" module. You may compensate smaller drill by adding more offset, but V-shaped drill bits are not aimed for that so it is better to remove extra copper using more suitable drill bit.
+Offset number setting means how many rounds milling bit will run in parallel, the bigger the number the larger area is skinned off from the the copper. Different values can be tested and result seen from "view toolpath" module. You may compensate smaller milling bit by adding more offset, but V-shaped milling bits are not aimed for that so it is better to remove extra copper using more suitable end mill bit.
 
 #### "Roland SRM-20 milling machine"
 Module for head positioning. Module "origin" should be zeroed as we set origin from machine UI "VPanel for SRM-20" in order to avoid "double" origin. Those defaults are for a situation where SRM-20 is connected and controlled directly by this "Mods" module, but on our case the toolpath is transferred by file.
 
-"jog height" is the value how much drill is lifted above the Z-origin when transferred (not cut) to different position. Default 2mm is OK, I would say do not decrease.
+"jog height" is the value how much bit is lifted above the Z-origin when transferred (not cut) to different position. Default 2mm is OK, I would say do not decrease.
 
 "home" is position where head is moved after the milling job is finished.
 
@@ -188,7 +188,7 @@ Firstly, PCB needs to be attached very well to milling machine bed. PCB has very
 ||
 |VPanel for SRM-20 - Roland MonoFab SRM-20 application UI|
 
-I transferred linetest toolpath files to VPanel for SRM-20 application which is ran on normal PC workstation. There is few things to do. I need those 2 drill bits, one for traces and one for outline. Insert traces bit first to SRM-20, be careful, don't drop bit. Then set X/Y-origin and finally set Z-origin. Be very careful when setting Z-origin to avoid crashing bit to PCB. Ran drill bit very near to PCB, then open drill bit lock screw in order to drop drill bit to PCB surface. Tighten lock screw. Set Z-origin to that point using VPanel. Move Z-axis upwards to avoid PCB contact after origin is set. Mill traces. Switch to outer line drill bit similar way than earlier when tracing bit was used. Z-origin needs to be set again similarly than earlier - but do not touch X/Y-origin, it should be remain same that outline milling reach correct location. Mill outline. Remove PCB.
+I transferred linetest toolpath files to VPanel for SRM-20 application which is ran on normal PC workstation. There is few things to do. I need those 2 milling bits, one for traces and one for outline. Insert traces bit first to SRM-20, be careful, don't drop bit. Then set X/Y-origin and finally set Z-origin. Be very careful when setting Z-origin to avoid crashing bit to PCB. Ran bit very near to PCB, then open mill bit holder lock screw in order to drop bit to PCB surface. Tighten lock screw. Set Z-origin to that point using VPanel. Move Z-axis upwards to avoid PCB contact after origin is set. Mill traces. Switch to outer line end milling bit similar way than earlier when tracing bit was used. Z-origin needs to be set again similarly than earlier - but do not touch X/Y-origin, it should be remain same that outline milling reach correct location. Mill outline. Remove PCB.
 
 |![](../images/week06/srm20_linetest/srm20_pcb_milling.resized.jpg)|
 ||
@@ -206,7 +206,7 @@ I am milling linetest here. Three UPDI or SWD programmer PCBs are already milled
 
 Milled PCB looks pretty nice.
 
-I am not 100% sure how to interpret that, but it looks like scale is in Inches. So 0.010 * 25.4mm = 0.254mm is that smallest slot machine did. It fits to trace drill bit size, 0.25mm, I used in mods when toolpath was made.
+I am not 100% sure how to interpret that, but it looks like scale is in Inches. So 0.010 * 25.4mm = 0.254mm is that smallest slot machine did. It fits to trace milling bit size, 0.25mm, I used in mods when toolpath was made.
 
 ## Programmer UPDI D11C
 
