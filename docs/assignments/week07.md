@@ -117,7 +117,7 @@ Here is pictures how simple PCB border in SVG format from KiCad is rendered on d
 
 ### Different PCB mills
 
-From KiCad PCB Editor I made both SVG-images and Gerber files of my PCB design. I made 2 PCBs using different milling machines, Roland MonoFab SRM-20 and LPKF ProtoMat S62. For Roland it was tricky to do PCB with that small traces as I used 0.4mm for Track Width and 0.25mm for Clearance. After two failed attempts I started adjusting trace milling depth from 0.05mm to 0.10mm by manual adjusting cut depth step by step deeper until it was fine. 0.2-0.5mm V-shaped drill bit was used. 
+From KiCad PCB Editor I made both SVG-images and Gerber files of my PCB design. I made 2 PCBs using different milling machines, Roland MonoFab SRM-20 and LPKF ProtoMat S62. For Roland it was tricky to do PCB with that small traces as I used 0.4mm for Track Width and 0.25mm for Clearance. After two failed attempts I started adjusting trace milling depth from 0.05mm to 0.10mm by manual adjusting cut depth step by step deeper until it was fine. 0.2-0.5mm V-shaped milling bit was used. 
 
 |![](../images/week07/roland_failed.jpg)|
 ||
