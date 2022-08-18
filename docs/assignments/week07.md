@@ -131,9 +131,21 @@ From KiCad PCB Editor I made both SVG-images and Gerber files of my PCB design. 
 ||
 |PCB v2 on LPKF. It is OK.|
 
+### Assembling circuit board boards 
+
 |![](../images/week07/soldering.resized.jpg)|
 ||
 |Soldering|
+
+I had milled two similar circuit boards with different milling machines as I wrote above. However, I assembled only one device and it was made on a circuit board made with an LPKF milling machine. Jani wanted one device to be made on a circuit board made with a Roland milling machine, because that milling machine is a milling machine according to the Fab Academy processes. 
+
+Fortunately, I still had a circuit board made with Roland in the spring, so I went to get the necessary components from the Fab Lab and made another similar device. I programmed and tested the device in the same way as the first one. Everything worked out without any problems. 
+
+|![](../images/week07/boards.resized.jpg)|
+||
+|Finished boards|
+
+The bypass capacitor in the power supply seems to be physically a different size, and I'm not quite sure why. I have either accidentally installed a component of the wrong value on one of the two devices, or the Fab Lab has received new components to replace the ones that have run out, which are physically a little different in size. In any case, the value of the bypass capacitor is not critical and both devices are functional. 
 
 ### Testing the board
 
