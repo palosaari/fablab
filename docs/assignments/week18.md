@@ -14,11 +14,16 @@
 
 ## Group project documentation 
 
-I did this work with Aleksi, but we both have our own documentation. You can choose whether you want to read [Aleksi's documentation](https://almyllym.gitlab.io/FabLab-courses/week-assignment18.html), [my documentation](../week18_groupwork/) or both :) Both should contain the same things without major nuance differences. 
+I did this work with Aleksi, but we both have our own documentation. You can choose whether you want to read Aleksi's documentation, my documentation or both. Both should contain the same things with small differences. 
 
-[Aleksi's documentation](https://almyllym.gitlab.io/FabLab-courses/week-assignment18.html)
+- Antti's Documentation 
+    - [18 A. Mechanical Design (part 1 of 2)](../week18/)
+    - [18 B. Mechanical Design (part 1 of 2) - group project ](../week18_groupwork/)
+    - [19 A. Machine Design (part 2 of 2)](../week19/)
+    - [19 B. Machine Design (part 2 of 2) - group project ](../week19_groupwork/)
 
-[Antti's documentation](../week18_groupwork/)
+- Aleksi's Documentation 
+    - [Week 18-19 assignments: Mechanical and machine design](https://almyllym.gitlab.io/FabLab-courses/week-assignment18.html)
 
 ## My mechanical design 
 
@@ -101,12 +106,6 @@ The mechanics I designed worked roughly as expected. However, there are some roo
 1) The mechanism that moves the pen using stepper motor and threaded rod is not completely stable. The farther from the stepper motor the pen holder is driven the more unstable it goes. As an improvement, one sliding shaft can be added. Now there is only one real sliding shaft (8mm in diameter, ~ 30cm long) and another shaft is a threaded rod permanently attached to the stepper motor whose rigidity does not correspond to the real sliding shaft. 
 
 2) The pen holder can be improved. It could easily be made about half as thin. The smaller bracket saves plastic, is lighter and looks nicer. However, the rigidity of the mechanics must be taken into account. 
-
-## Files 
-
-- Antti's Design
-    - [PenPlotter.FCStd](../images/week18/PenPlotter.FCStd)
-    - [PenPlotter.step](../images/week18/PenPlotter.step)
 
 ## Final thoughts 
 

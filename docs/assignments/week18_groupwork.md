@@ -12,9 +12,18 @@
 >
 > - Document your individual contribution.
 
-## Aleksi's and my documentation 
+## Group project documentation 
 
-I did this work with Aleksi, but we both have our own documentation. You can choose whether you want to read [Aleksi's documentation](https://almyllym.gitlab.io/FabLab-courses/week-assignment18.html), my documentation or both :) Both should contain the same things without major nuance differences. 
+I did this work with Aleksi, but we both have our own documentation. You can choose whether you want to read Aleksi's documentation, my documentation or both. Both should contain the same things with small differences. 
+
+- Antti's Documentation 
+    - [18 A. Mechanical Design (part 1 of 2)](../week18/)
+    - [18 B. Mechanical Design (part 1 of 2) - group project ](../week18_groupwork/)
+    - [19 A. Machine Design (part 2 of 2)](../week19/)
+    - [19 B. Machine Design (part 2 of 2) - group project ](../week19_groupwork/)
+
+- Aleksi's Documentation 
+    - [Week 18-19 assignments: Mechanical and machine design](https://almyllym.gitlab.io/FabLab-courses/week-assignment18.html)
 
 ## Project idea - Pen Plotter 
 
@@ -73,5 +82,5 @@ Here are a few pictures of the first prototype. The mechanics of the stepper mot
 
 ## Final thoughts 
 
-This exercise taught me a lot about mechanics with stepper motors that I had no previous experience with. I also gained more experience in 3D design, although I am still not happy with the level of expertise in it. 
+.
 
