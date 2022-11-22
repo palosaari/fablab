@@ -1110,6 +1110,24 @@
 <h2 id="weather-station">Weather station</h2>
 <p><img alt="" src="../images/finalproject/presentation.png" /></p>
 <p><div class="video-container"><iframe src="../images/finalproject/presentation.mp4" style="position: relative; width: 100%; height: 22.172vw" frameborder="0" allowfullscreen></iframe></div></p>
+<p>I am interested in monitoring the state of the environment and I already have several temperature, humidity and air pressure sensors that are connected to the Home Assistant home automation system. Collecting data centrally to home automation system opens up many possibilities in terms of sensor data use. For example, the system stores historical data, the automation can control the car's engine heater based on the outdoor temperature and offers multiple user interfaces, www-interface, mobile app, etc... </p>
+<p>The sensors I use outdoors are mainly connected to the automation via theEspressif Systems ESP8266-based module WiFi using the MQTT protocol. For ESP8266 firmware I use <a href="https://tasmota.github.io/docs/">Tasmota</a>. I have used several sensors from different manufacturers, e.g. Bosch Sensortec BME280, NXP LM75A, Silicon Laboratories Si7021 and Sensirion SHT31. BME280 is my favorite sensor because it has 3 sensors in the same package, temperature, humidity and air pressure. In addition my Home Assistant has some commercial weather station sensors that transmit data on the 433MHz ISM band. </p>
+<p>The sensors I use indoors are the Aqara Temperature and Humidity Sensor (WSDCGQ11LM) which connects via the ZigBee protocol and the Xiaomi Mi Home Bluetooth Thermometer 2 (LYWSD03MMC) which connects via Bluetooth. </p>
+<p>However, I'm missing an anemometer. I have considered buying some commercial anemometers based on ultrasonic technology, but they are not very common yet and are quite expensive. The Finnish winter is quite harsh and places special demands on the device. The device should be able to withstand -50C frost, because the coldest temperatures in the area have been a little over -50C, and -40C is not uncommon. In commercial devices, the coldest operating temperature is usually -40C or even worse. For example, the Auriol AHFL 433 B2 outdoor temperature sensor bought from Lidl freezes (reset loop) at temperatures slightly above -20C, which is far too low in the Finnish climate. </p>
+<p>In the end, I ended up designing my own anemometer, even though it doesn't seem very realistic due to the complexity of things. When researching microcontroller options, I ended up with the Texas Instruments MSP430FR6043 MCU, which seemed like the most reasonable package. This chip has an integrated microcontroller and an ultrasound frontend that is made for gas flow measurement. The ultrasound wave is digitized with an ADC converter and all calculations are done digitally by the microcontroller. However, due to the lack of time, I had to limit my work so that I left out the most interesting part, the ultrasound measurement, and focused on making the basic features work somehow. </p>
+<p>Here are some ultrasonic anemometer solutions I found that are somehow similar I am designing. Some of those seems to use MCU from STMicroelectronics. I did not find any anemometer build on MSP430FR6043 (or same family), the MCU I am using, but sure in the real life there must be at least some commercial ones. </p>
+<ul>
+<li>Commercial <ul>
+<li><a href="https://weatherflow.com/tempest-weather-system/">Tempest Weather Station</a></li>
+<li><a href="https://www.ecowitt.com">Ecowitt</a></li>
+<li><a href="https://www.netatmo.com/en-gb/weather/weatherstation/anemometer">Netatmo</a></li>
+</ul>
+</li>
+<li>DIY <ul>
+<li><a href="https://github.com/majianjia/QingStation">QingStation</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="microcontroller-board-electronic-design">Microcontroller board electronic design</h2>
 <table>
 <thead>
@@ -1853,7 +1871,7 @@ int main(void)
 <li><a href="https://www.ti.com/tool/EVM430-FR6043">Texas Instruments EVM430-FR6043</a></li>
 </ul>
 <h3 id="main-pcb">Main PCB</h3>
-<p>The materials cost about 30e. </p>
+<p>The materials cost about 24.25€. </p>
 <table>
 <thead>
 <tr>
@@ -1861,6 +1879,8 @@ int main(void)
 <th>Reference(s)</th>
 <th>Value</th>
 <th>LibPart</th>
+<th>Price €</th>
+<th>Supplier</th>
 </tr>
 </thead>
 <tbody>
@@ -1869,119 +1889,165 @@ int main(void)
 <td>C1, C2, C3, C4</td>
 <td>18pF</td>
 <td>Device:C_Small</td>
+<td>0.04</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>3</td>
 <td>C5, C7, C9</td>
 <td>1u</td>
 <td>pspice:C</td>
+<td>0.03</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>3</td>
 <td>C6, C8, C10</td>
 <td>100n</td>
 <td>pspice:C</td>
+<td>0.03</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>2</td>
 <td>C11, C13</td>
 <td>22u</td>
 <td>pspice:C</td>
+<td>0.02</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>2</td>
 <td>C12, C14</td>
 <td>1n</td>
 <td>pspice:C</td>
+<td>0.02</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>1</td>
 <td>C15</td>
 <td>2.2nF</td>
 <td>Device:C_Small</td>
+<td>0.01</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>1</td>
 <td>J1</td>
 <td>Conn_01x02_Male</td>
 <td>Connector:Conn_01x02_Male</td>
+<td>0.10</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>1</td>
 <td>J2</td>
 <td>Conn_01x16_Male</td>
 <td>Connector:Conn_01x16_Male</td>
+<td>0.20</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>1</td>
 <td>J3</td>
 <td>Conn_02x10_Odd_Even</td>
 <td>Connector_Generic:Conn_02x10_Odd_Even</td>
+<td>0.60</td>
+<td>SP-Elektroniikka</td>
 </tr>
 <tr>
 <td>6</td>
 <td>J4, J5, J6, J7, J8, J9</td>
 <td>Conn_01x06_Male</td>
 <td>Connector:Conn_01x06_Male</td>
+<td>0.60</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>3</td>
 <td>R1, R2, RJ1</td>
 <td>0R</td>
 <td>Device:R_Small</td>
+<td>0.03</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>2</td>
 <td>R3, R4</td>
 <td>22</td>
 <td>Device:R</td>
+<td>0.02</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>1</td>
 <td>R5</td>
 <td>47k</td>
 <td>Device:R_Small</td>
+<td>0.01</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>4</td>
 <td>R6, R7, R8, R9</td>
 <td>10k</td>
 <td>Device:R_Small</td>
+<td>0.04</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>1</td>
 <td>SW1</td>
 <td>SW_Push</td>
 <td>Switch:SW_Push</td>
+<td>0.50</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>1</td>
 <td>U1</td>
 <td>MSP430FR6043IPN</td>
 <td>wiima:MSP430FR6043IPN</td>
+<td>18.00</td>
+<td>Mouser</td>
 </tr>
 <tr>
 <td>1</td>
 <td>Y1</td>
 <td>32.768kHz</td>
 <td>Device:Crystal</td>
+<td>1.50</td>
+<td>SP-Elektroniikka</td>
 </tr>
 <tr>
 <td>1</td>
 <td>Y2</td>
 <td>8MHz</td>
 <td>Device:Crystal</td>
+<td>1.50</td>
+<td>SP-Elektroniikka</td>
 </tr>
 <tr>
 <td>1</td>
 <td></td>
 <td></td>
 <td>PCB single sided 10x10cm</td>
+<td>1.00</td>
+<td>Fab Lab inventory</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>24.25</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <h3 id="bluetooth-radio_1">Bluetooth radio</h3>
-<p>The materials cost about 20e. </p>
+<p>The materials cost about 11.22€. </p>
 <table>
 <thead>
 <tr>
@@ -1989,6 +2055,8 @@ int main(void)
 <th>Reference(s)</th>
 <th>Value</th>
 <th>LibPart</th>
+<th>Price €</th>
+<th>Supplier</th>
 </tr>
 </thead>
 <tbody>
@@ -1997,47 +2065,69 @@ int main(void)
 <td>C1</td>
 <td>10uF</td>
 <td>Device:C_Small</td>
+<td>0.01</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>1</td>
 <td>D1</td>
 <td>LED</td>
 <td>Device:LED</td>
+<td>0.10</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>1</td>
 <td>J1</td>
 <td>Conn_01x04_Male</td>
 <td>Connector:Conn_01x04_Male</td>
+<td>0.10</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>1</td>
 <td>R1</td>
 <td>0R</td>
 <td>Device:R_Small</td>
+<td>0.01</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>1</td>
 <td>R2</td>
 <td>330R</td>
 <td>Device:R_Small</td>
+<td>0.01</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>1</td>
 <td>U1</td>
 <td>RN4871</td>
 <td>RF_Bluetooth:RN4871</td>
+<td>10.00</td>
+<td>Fab Lab inventory</td>
 </tr>
 <tr>
 <td>1</td>
 <td></td>
 <td></td>
 <td>PCB single sided 3x3cm</td>
+<td>1.00</td>
+<td>Fab Lab inventory</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>11.22</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <h3 id="temperature-sensor_1">Temperature sensor</h3>
-<p>The materials cost about 2e. </p>
+<p>The materials cost about 2.54€. </p>
 <table>
 <thead>
 <tr>
@@ -2045,6 +2135,8 @@ int main(void)
 <th>Reference(s)</th>
 <th>Value</th>
 <th>LibPart</th>
+<th>Price €</th>
+<th>Supplier</th>
 </tr>
 </thead>
 <tbody>
@@ -2053,11 +2145,29 @@ int main(void)
 <td></td>
 <td>CJMCU-75</td>
 <td></td>
+<td>2.52</td>
+<td>AliExpress</td>
+</tr>
+<tr>
+<td>2</td>
+<td>R0, R1</td>
+<td>10k</td>
+<td>Device:R_Small</td>
+<td>0.02</td>
+<td>Antti inventory</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>2.54</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <h3 id="case">Case</h3>
-<p>The materials cost about 5e. </p>
+<p>The materials cost about 5.00€. </p>
 <table>
 <thead>
 <tr>
@@ -2065,6 +2175,8 @@ int main(void)
 <th>Reference(s)</th>
 <th>Value</th>
 <th>LibPart</th>
+<th>Price €</th>
+<th>Supplier</th>
 </tr>
 </thead>
 <tbody>
@@ -2073,6 +2185,16 @@ int main(void)
 <td></td>
 <td></td>
 <td>PLA filament</td>
+<td>5.00</td>
+<td>Antti inventory</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>5.00</td>
+<td></td>
 </tr>
 </tbody>
 </table>
