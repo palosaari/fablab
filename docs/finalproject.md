@@ -6,6 +6,25 @@
 
 ![type:video](./images/finalproject/presentation.mp4)
 
+I am interested in monitoring the state of the environment and I already have several temperature, humidity and air pressure sensors that are connected to the Home Assistant home automation system. Collecting data centrally to home automation system opens up many possibilities in terms of sensor data use. For example, the system stores historical data, the automation can control the car's engine heater based on the outdoor temperature and offers multiple user interfaces, www-interface, mobile app, etc... 
+
+The sensors I use outdoors are mainly connected to the automation via theEspressif Systems ESP8266-based module WiFi using the MQTT protocol. For ESP8266 firmware I use [Tasmota](https://tasmota.github.io/docs/). I have used several sensors from different manufacturers, e.g. Bosch Sensortec BME280, NXP LM75A, Silicon Laboratories Si7021 and Sensirion SHT31. BME280 is my favorite sensor because it has 3 sensors in the same package, temperature, humidity and air pressure. In addition my Home Assistant has some commercial weather station sensors that transmit data on the 433MHz ISM band. 
+
+The sensors I use indoors are the Aqara Temperature and Humidity Sensor (WSDCGQ11LM) which connects via the ZigBee protocol and the Xiaomi Mi Home Bluetooth Thermometer 2 (LYWSD03MMC) which connects via Bluetooth. 
+
+However, I'm missing an anemometer. I have considered buying some commercial anemometers based on ultrasonic technology, but they are not very common yet and are quite expensive. The Finnish winter is quite harsh and places special demands on the device. The device should be able to withstand -50C frost, because the coldest temperatures in the area have been a little over -50C, and -40C is not uncommon. In commercial devices, the coldest operating temperature is usually -40C or even worse. For example, the Auriol AHFL 433 B2 outdoor temperature sensor bought from Lidl freezes (reset loop) at temperatures slightly above -20C, which is far too low in the Finnish climate. 
+
+In the end, I ended up designing my own anemometer, even though it doesn't seem very realistic due to the complexity of things. When researching microcontroller options, I ended up with the Texas Instruments MSP430FR6043 MCU, which seemed like the most reasonable package. This chip has an integrated microcontroller and an ultrasound frontend that is made for gas flow measurement. The ultrasound wave is digitized with an ADC converter and all calculations are done digitally by the microcontroller. However, due to the lack of time, I had to limit my work so that I left out the most interesting part, the ultrasound measurement, and focused on making the basic features work somehow. 
+
+Here are some ultrasonic anemometer solutions I found that are somehow similar I am designing. Some of those seems to use MCU from STMicroelectronics. I did not find any anemometer build on MSP430FR6043 (or same family), the MCU I am using, but sure in the real life there must be at least some commercial ones. 
+
+- Commercial 
+    - [Tempest Weather Station](https://weatherflow.com/tempest-weather-system/)
+    - [Ecowitt](https://www.ecowitt.com)
+    - [Netatmo](https://www.netatmo.com/en-gb/weather/weatherstation/anemometer)
+- DIY 
+    - [QingStation](https://github.com/majianjia/QingStation)
+
 ## Microcontroller board electronic design 
 
 |![](./images/finalproject/wiima_kicad_schematic_main.png)|
