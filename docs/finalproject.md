@@ -503,59 +503,64 @@ As a special device, you also need a programming device for the microcontroller.
 
 ### Main PCB 
 
-The materials cost about 30e. 
+The materials cost about 24.25€. 
 
-|Qty|Reference(s)|Value|LibPart|
-|||||
-|4|C1, C2, C3, C4|18pF|Device:C_Small|
-|3|C5, C7, C9|1u|pspice:C|
-|3|C6, C8, C10|100n|pspice:C|
-|2|C11, C13|22u|pspice:C|
-|2|C12, C14|1n|pspice:C|
-|1|C15|2.2nF|Device:C_Small|
-|1|J1|Conn_01x02_Male|Connector:Conn_01x02_Male|
-|1|J2|Conn_01x16_Male|Connector:Conn_01x16_Male|
-|1|J3|Conn_02x10_Odd_Even|Connector_Generic:Conn_02x10_Odd_Even|
-|6|J4, J5, J6, J7, J8, J9|Conn_01x06_Male|Connector:Conn_01x06_Male|
-|3|R1, R2, RJ1|0R|Device:R_Small|
-|2|R3, R4|22|Device:R|
-|1|R5|47k|Device:R_Small|
-|4|R6, R7, R8, R9|10k|Device:R_Small|
-|1|SW1|SW_Push|Switch:SW_Push|
-|1|U1|MSP430FR6043IPN|wiima:MSP430FR6043IPN|
-|1|Y1|32.768kHz|Device:Crystal|
-|1|Y2|8MHz|Device:Crystal|
-|1|||PCB single sided 10x10cm|
+|Qty|Reference(s)|Value|LibPart|Price €|Supplier|
+|||||||
+|4|C1, C2, C3, C4|18pF|Device:C_Small|0.04|Fab Lab inventory|
+|3|C5, C7, C9|1u|pspice:C|0.03|Fab Lab inventory|
+|3|C6, C8, C10|100n|pspice:C|0.03|Fab Lab inventory|
+|2|C11, C13|22u|pspice:C|0.02|Fab Lab inventory|
+|2|C12, C14|1n|pspice:C|0.02|Fab Lab inventory|
+|1|C15|2.2nF|Device:C_Small|0.01|Fab Lab inventory|
+|1|J1|Conn_01x02_Male|Connector:Conn_01x02_Male|0.10|Fab Lab inventory|
+|1|J2|Conn_01x16_Male|Connector:Conn_01x16_Male|0.20|Fab Lab inventory|
+|1|J3|Conn_02x10_Odd_Even|Connector_Generic:Conn_02x10_Odd_Even|0.60|SP-Elektroniikka|
+|6|J4, J5, J6, J7, J8, J9|Conn_01x06_Male|Connector:Conn_01x06_Male|0.60|Fab Lab inventory|
+|3|R1, R2, RJ1|0R|Device:R_Small|0.03|Fab Lab inventory|
+|2|R3, R4|22|Device:R|0.02|Fab Lab inventory|
+|1|R5|47k|Device:R_Small|0.01|Fab Lab inventory|
+|4|R6, R7, R8, R9|10k|Device:R_Small|0.04|Fab Lab inventory|
+|1|SW1|SW_Push|Switch:SW_Push|0.50|Fab Lab inventory|
+|1|U1|MSP430FR6043IPN|wiima:MSP430FR6043IPN|18.00|Mouser|
+|1|Y1|32.768kHz|Device:Crystal|1.50|SP-Elektroniikka|
+|1|Y2|8MHz|Device:Crystal|1.50|SP-Elektroniikka|
+|1|||PCB single sided 10x10cm|1.00|Fab Lab inventory|
+|||||24.25||
 
-### Bluetooth radio  
+### Bluetooth radio 
 
-The materials cost about 20e. 
+The materials cost about 11.22€. 
 
-|Qty|Reference(s)|Value|LibPart|
-|||||
-|1|C1|10uF|Device:C_Small|
-|1|D1|LED|Device:LED|
-|1|J1|Conn_01x04_Male|Connector:Conn_01x04_Male|
-|1|R1|0R|Device:R_Small|
-|1|R2|330R|Device:R_Small|
-|1|U1|RN4871|RF_Bluetooth:RN4871|
-|1|||PCB single sided 3x3cm|
+|Qty|Reference(s)|Value|LibPart|Price €|Supplier|
+|||||||
+|1|C1|10uF|Device:C_Small|0.01|Fab Lab inventory|
+|1|D1|LED|Device:LED|0.10|Fab Lab inventory|
+|1|J1|Conn_01x04_Male|Connector:Conn_01x04_Male|0.10|Fab Lab inventory|
+|1|R1|0R|Device:R_Small|0.01|Fab Lab inventory|
+|1|R2|330R|Device:R_Small|0.01|Fab Lab inventory|
+|1|U1|RN4871|RF_Bluetooth:RN4871|10.00|Fab Lab inventory|
+|1|||PCB single sided 3x3cm|1.00|Fab Lab inventory|
+|||||11.22||
 
 ### Temperature sensor 
 
-The materials cost about 2e. 
+The materials cost about 2.54€. 
 
-|Qty|Reference(s)|Value|LibPart|
-|||||
-|1||CJMCU-75||
+|Qty|Reference(s)|Value|LibPart|Price €|Supplier|
+|||||||
+|1||CJMCU-75||2.52|AliExpress|
+|2|R0, R1|10k|Device:R_Small|0.02|Antti inventory|
+|||||2.54||
 
 ### Case 
 
-The materials cost about 5e. 
+The materials cost about 5.00€. 
 
-|Qty|Reference(s)|Value|LibPart|
-|||||
-|200g|||PLA filament|
+|Qty|Reference(s)|Value|LibPart|Price €|Supplier|
+|||||||
+|200g|||PLA filament|5.00|Antti inventory|
+|||||5.00||
 
 ## Licenses 
 
